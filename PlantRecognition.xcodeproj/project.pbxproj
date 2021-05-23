@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CB265A990200D5815F /* HomePageViewController.swift */; };
+		78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CD265A991300D5815F /* HomePageFactory.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9289265A915800986DA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9288265A915800986DA5 /* SceneDelegate.swift */; };
 		78FB928B265A915800986DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB928A265A915800986DA5 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78CF13CB265A990200D5815F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		78CF13CD265A991300D5815F /* HomePageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageFactory.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FB9288265A915800986DA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78CF13CA265A98F200D5815F /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				78CF13CB265A990200D5815F /* HomePageViewController.swift */,
+				78CF13CD265A991300D5815F /* HomePageFactory.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		78FB927A265A915800986DA5 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		78FB92B6265A92C100986DA5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				78CF13CA265A98F200D5815F /* HomePage */,
 				78FB92B7265A938A00986DA5 /* AppEntryPoint */,
 			);
 			path = Features;
@@ -275,7 +289,9 @@
 			files = (
 				78FB928B265A915800986DA5 /* ViewController.swift in Sources */,
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
+				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
+				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				78FB9289265A915800986DA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
