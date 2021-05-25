@@ -10,6 +10,21 @@ import UIKit
 
 final class HomePageFactory {
     func create() -> UIViewController {
-        return HomePageViewController()
+        let transitionable = TransitionableProxy()
+        
+        let manager = ImagePickerManager()
+        let router = HomePageRouter(transitionable: transitionable)
+        let viewModel = HomePageViewModel(
+            router: router,
+            imagePickerManager: manager
+        )
+        let controller = HomePageViewController(viewModel: viewModel)
+        
+        
+        manager.viewController = controller
+        transitionable.wrapped = controller
+        viewModel.view = controller
+        
+        return controller
     }
 }

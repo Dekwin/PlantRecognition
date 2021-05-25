@@ -6,24 +6,42 @@
 //
 
 import UIKit
+import SnapKit
+
+protocol HomePageViewControllerProtocol: AnyObject {
+    var bindings: HomePageView.Bindings { get }
+}
 
 class HomePageViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private let customView = HomePageView(frame: .zero)
+    private let viewModel: HomePageViewModelProtocol
+    
+    init(viewModel: HomePageViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSubviews()
+        viewModel.viewLoaded()
+    }
+    
+    private func setupSubviews() {
+        view.addSubview(customView)
+        
+        customView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+}
 
+extension HomePageViewController: HomePageViewControllerProtocol {
+    var bindings: HomePageView.Bindings {
+        customView.bindings
+    }
 }

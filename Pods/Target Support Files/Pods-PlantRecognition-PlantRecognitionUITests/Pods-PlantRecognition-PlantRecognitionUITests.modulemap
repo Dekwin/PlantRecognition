@@ -1,0 +1,6 @@
+framework module Pods_PlantRecognition_PlantRecognitionUITests {
+  umbrella header "Pods-PlantRecognition-PlantRecognitionUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

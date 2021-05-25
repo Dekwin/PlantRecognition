@@ -1,0 +1,19 @@
+strings:
+  inputs: Resources/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Generated/Strings.swift
+      params:
+        publicAccess: true
+        enumName: L10n
+xcassets:
+  inputs:
+    - Resources/Images.xcassets
+    - Resources/MoreImages.xcassets
+    - Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: Generated/Assets.swift
+      params:
+        publicAccess: true
+        enumName: Asset
