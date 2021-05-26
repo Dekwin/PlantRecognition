@@ -18,6 +18,9 @@
 		786F571F265D9A7F004E45EF /* PlantIdDemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571E265D9A7F004E45EF /* PlantIdDemoService.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
+		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
+		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
+		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
 		78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CB265A990200D5815F /* HomePageViewController.swift */; };
 		78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CD265A991300D5815F /* HomePageFactory.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
@@ -66,6 +69,9 @@
 		786F571E265D9A7F004E45EF /* PlantIdDemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdDemoService.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
+		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
+		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
+		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
 		78CF13CB265A990200D5815F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		78CF13CD265A991300D5815F /* HomePageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageFactory.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +184,7 @@
 			children = (
 				786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */,
 				786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */,
+				78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */,
 			);
 			path = PlantId;
 			sourceTree = "<group>";
@@ -198,9 +205,19 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */ = {
+			isa = PBXGroup;
+			children = (
+				78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */,
+				78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */,
+			);
+			path = PlantRecognitionServiceProxy;
+			sourceTree = "<group>";
+		};
 		78CF13CA265A98F200D5815F /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */,
 				78CF13CB265A990200D5815F /* HomePageViewController.swift */,
 				78CF13CD265A991300D5815F /* HomePageFactory.swift */,
 				782DD96B265A9FE700FDE44B /* HomePageView.swift */,
@@ -537,11 +554,14 @@
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
 				786F571F265D9A7F004E45EF /* PlantIdDemoService.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
+				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
+				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
+				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,

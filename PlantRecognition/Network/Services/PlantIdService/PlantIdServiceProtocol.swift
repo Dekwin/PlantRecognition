@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Combine
+
+protocol PlantIdServiceProtocol: AnyObject {
+    func identify(request: PlantIdIdentifyRequest) -> Future<PlantIdSuggestions, Error>
+}

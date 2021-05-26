@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol HomePageViewModelProtocol: AnyObject {
     func viewLoaded()
@@ -14,16 +15,16 @@ protocol HomePageViewModelProtocol: AnyObject {
 
 final class HomePageViewModel: HomePageViewModelProtocol {
     weak var view: HomePageViewControllerProtocol?
+
+    private let deps: Deps
+    
     private var cancelBag = Set<AnyCancellable>()
-    private let router: HomePageRouter
-    private let imagePickerManager: ImagePickerManagerProtocol
+    private let currentSelectedImageSubject = CurrentValueSubject<UIImage?, Never>(nil)
     
     init(
-        router: HomePageRouter,
-        imagePickerManager: ImagePickerManagerProtocol
+        deps: Deps
     ) {
-        self.router = router
-        self.imagePickerManager = imagePickerManager
+        self.deps = deps
     }
     
     func viewLoaded() {
@@ -38,10 +39,57 @@ private extension HomePageViewModel {
         
         bindings
             .selectPhotoButtonTouched
-            .flatMap { [imagePickerManager] _ in
-                imagePickerManager.pickImage()
+            .flatMap { [deps] _ in
+                deps.imagePickerManager.pickImage()
             }
+            .subscribe(currentSelectedImageSubject)
+            .store(in: &cancelBag)
+        
+        currentSelectedImageSubject
             .subscribe(bindings.selectedImage)
             .store(in: &cancelBag)
+        
+        
+        bindings
+            .resetPhotoButtonTouched
+            .map { nil }
+            .subscribe(currentSelectedImageSubject)
+            .store(in: &cancelBag)
+        
+        bindings
+            .resetPhotoButtonTouched
+            .map { nil }
+            .subscribe(bindings.plantDescription)
+            .store(in: &cancelBag)
+        
+        
+        bindings
+            .recognizePhotoButtonTouched
+            .combineLatest(currentSelectedImageSubject)
+            .removeDuplicates { $0.1 == $1.1 }
+            .compactMap { $0.1 }
+            .flatMap { [deps] in
+                deps
+                    .plantRecognitionServiceProxy
+                    .recognize(image: $0)
+                    .replaceError(with: .init(scientificName: ""))
+            }
+            .map {
+                HomePageView.PlantDescription(
+                    title: "Plant name: \($0.scientificName ?? "-")"
+                )
+            }
+            .replaceError(with: nil)
+            .subscribe(bindings.plantDescription)
+            .store(in: &cancelBag)
+        
+    }
+}
+
+extension HomePageViewModel {
+    struct Deps {
+        let router: HomePageRouter
+        let imagePickerManager: ImagePickerManagerProtocol
+        let plantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol
     }
 }
