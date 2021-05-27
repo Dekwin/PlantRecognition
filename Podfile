@@ -8,6 +8,7 @@ target 'PlantRecognition' do
   pod 'SnapKit'
   pod 'SwiftGen'
   pod 'CombineCocoa'
+  pod 'CombineExt'
 
   # pod 'RxSwift'
   # pod 'RxCocoa'

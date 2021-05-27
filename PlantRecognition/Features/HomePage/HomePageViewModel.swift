@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import UIKit
+import CombineExt
 
 protocol HomePageViewModelProtocol: AnyObject {
     func viewLoaded()
@@ -63,23 +64,57 @@ private extension HomePageViewModel {
             .store(in: &cancelBag)
         
         
-        bindings
+        let recognizingResult = bindings
             .recognizePhotoButtonTouched
-            .combineLatest(currentSelectedImageSubject)
-            .removeDuplicates { $0.1 == $1.1 }
-            .compactMap { $0.1 }
+            .withLatestFrom(currentSelectedImageSubject)
+            .compactMap { $0 }
+            .map {
+                print("tap")
+                return $0
+            }
             .flatMap { [deps] in
                 deps
                     .plantRecognitionServiceProxy
                     .recognize(image: $0)
-                    .replaceError(with: .init(scientificName: ""))
+                    .materialize()
             }
+            .share()
+            
+        
+        let recognizedData = recognizingResult
+            .compactMap { result -> PlantRecognitionServiceProxyResult?  in
+                print("data \(result)")
+                switch result {
+                case .value(let value):
+                    return value
+                default:
+                    return nil
+                }
+            }
+        
+        let recognizedError = recognizingResult
+            .compactMap { result -> Error? in
+                print("error \(result)")
+                switch result {
+                case .failure(let error):
+                    return error
+                default:
+                    return nil
+                }
+            }
+        
+        recognizedError
+            .sink { error in
+                print(error)
+            }
+            .store(in: &cancelBag)
+        
+        recognizedData
             .map {
                 HomePageView.PlantDescription(
                     title: "Plant name: \($0.scientificName ?? "-")"
                 )
             }
-            .replaceError(with: nil)
             .subscribe(bindings.plantDescription)
             .store(in: &cancelBag)
         

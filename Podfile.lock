@@ -1,24 +1,28 @@
 PODS:
   - CombineCocoa (0.2.2)
+  - CombineExt (1.3.0)
   - SnapKit (5.0.1)
   - SwiftGen (6.4.0)
 
 DEPENDENCIES:
   - CombineCocoa
+  - CombineExt
   - SnapKit
   - SwiftGen
 
 SPEC REPOS:
   trunk:
     - CombineCocoa
+    - CombineExt
     - SnapKit
     - SwiftGen
 
 SPEC CHECKSUMS:
   CombineCocoa: 66c79441761907c096ecbd0021cefd8566acaf06
+  CombineExt: 542a01bb7485a13ff891ac3e7a0b86ed7fa05939
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
 
-PODFILE CHECKSUM: 7e8e48609d3145884a7a982818a9bd7409ebd322
+PODFILE CHECKSUM: 4f221b77c895aa35398cfc1f9ae1dd937fcb0712
 
 COCOAPODS: 1.10.1
