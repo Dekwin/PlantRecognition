@@ -68,10 +68,6 @@ private extension HomePageViewModel {
             .recognizePhotoButtonTouched
             .withLatestFrom(currentSelectedImageSubject)
             .compactMap { $0 }
-            .map {
-                print("tap")
-                return $0
-            }
             .flatMap { [deps] in
                 deps
                     .plantRecognitionServiceProxy
@@ -83,7 +79,6 @@ private extension HomePageViewModel {
         
         let recognizedData = recognizingResult
             .compactMap { result -> PlantRecognitionServiceProxyResult?  in
-                print("data \(result)")
                 switch result {
                 case .value(let value):
                     return value
@@ -94,7 +89,6 @@ private extension HomePageViewModel {
         
         let recognizedError = recognizingResult
             .compactMap { result -> Error? in
-                print("error \(result)")
                 switch result {
                 case .failure(let error):
                     return error
@@ -104,8 +98,8 @@ private extension HomePageViewModel {
             }
         
         recognizedError
-            .sink { error in
-                print(error)
+            .sink { [weak self] error in
+                self?.view?.presentAlert(error: error)
             }
             .store(in: &cancelBag)
         

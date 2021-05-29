@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78146A58266160A100CDDFDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78146A57266160A100CDDFDA /* GoogleService-Info.plist */; };
 		782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D0633265C23CA001DE889 /* HomePageViewModel.swift */; };
 		782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D0638265C2CDD001DE889 /* HomePageRouter.swift */; };
 		782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782DD96B265A9FE700FDE44B /* HomePageView.swift */; };
 		782DD96F265AA15900FDE44B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782DD96E265AA15900FDE44B /* UIView+Extensions.swift */; };
 		782DD972265AA2EA00FDE44B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782DD971265AA2EA00FDE44B /* Images.xcassets */; };
 		782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782DD973265AA7F900FDE44B /* ImagePickerManager.swift */; };
+		7849E1A326626265003DBD19 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1A226626265003DBD19 /* NetworkError.swift */; };
+		7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1A62662674C003DBD19 /* AlertPresentable.swift */; };
+		7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */; };
+		7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1AB26626A49003DBD19 /* PlantIdSuggestionDetails.swift */; };
+		7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1AD26626C72003DBD19 /* PlantIdService.swift */; };
+		7849E1B126627456003DBD19 /* RequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B026627456003DBD19 /* RequestConvertible.swift */; };
+		7849E1B326627559003DBD19 /* BaseRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B226627559003DBD19 /* BaseRequestService.swift */; };
+		7849E1B526627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */; };
+		7849E1B826627971003DBD19 /* BaseRequestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */; };
+		7849E1BA26627F14003DBD19 /* BaseRequestReactiveServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B926627F14003DBD19 /* BaseRequestReactiveServiceProtocol.swift */; };
+		7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */; };
+		7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */; };
 		786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */; };
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
-		786F571F265D9A7F004E45EF /* PlantIdDemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571E265D9A7F004E45EF /* PlantIdDemoService.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
@@ -58,15 +70,27 @@
 		58AFD0E82AE01CE70AE772B3 /* Pods_PlantRecognitionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantRecognitionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		662C506A0B6D00A6516932FD /* Pods_PlantRecognition_PlantRecognitionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantRecognition_PlantRecognitionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD2E0704627A14ADC7966F7 /* Pods-PlantRecognitionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantRecognitionTests.release.xcconfig"; path = "Target Support Files/Pods-PlantRecognitionTests/Pods-PlantRecognitionTests.release.xcconfig"; sourceTree = "<group>"; };
+		78146A57266160A100CDDFDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		782D0633265C23CA001DE889 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		782D0638265C2CDD001DE889 /* HomePageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageRouter.swift; sourceTree = "<group>"; };
 		782DD96B265A9FE700FDE44B /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		782DD96E265AA15900FDE44B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		782DD971265AA2EA00FDE44B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		782DD973265AA7F900FDE44B /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		7849E1A226626265003DBD19 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7849E1A62662674C003DBD19 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertPresentable.swift"; sourceTree = "<group>"; };
+		7849E1AB26626A49003DBD19 /* PlantIdSuggestionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestionDetails.swift; sourceTree = "<group>"; };
+		7849E1AD26626C72003DBD19 /* PlantIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdService.swift; sourceTree = "<group>"; };
+		7849E1B026627456003DBD19 /* RequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConvertible.swift; sourceTree = "<group>"; };
+		7849E1B226627559003DBD19 /* BaseRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestService.swift; sourceTree = "<group>"; };
+		7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestServiceProtocol.swift; sourceTree = "<group>"; };
+		7849E1B926627F14003DBD19 /* BaseRequestReactiveServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestReactiveServiceProtocol.swift; sourceTree = "<group>"; };
+		7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Base64.swift"; sourceTree = "<group>"; };
+		7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdPlantRecognitionServiceProxy.swift; sourceTree = "<group>"; };
 		786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestions.swift; sourceTree = "<group>"; };
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
-		786F571E265D9A7F004E45EF /* PlantIdDemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdDemoService.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
@@ -145,9 +169,55 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7849E1A126626257003DBD19 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1A226626265003DBD19 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		7849E1A526626731003DBD19 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1A62662674C003DBD19 /* AlertPresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7849E1AA26626859003DBD19 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				782DD973265AA7F900FDE44B /* ImagePickerManager.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		7849E1AF26627413003DBD19 /* BaseRequestService */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1B626627960003DBD19 /* Alamofire */,
+				7849E1B026627456003DBD19 /* RequestConvertible.swift */,
+				7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */,
+				7849E1B926627F14003DBD19 /* BaseRequestReactiveServiceProtocol.swift */,
+			);
+			path = BaseRequestService;
+			sourceTree = "<group>";
+		};
+		7849E1B626627960003DBD19 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1B226627559003DBD19 /* BaseRequestService.swift */,
+				7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
 		786F5715265D9806004E45EF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7849E1AF26627413003DBD19 /* BaseRequestService */,
+				7849E1A126626257003DBD19 /* Errors */,
 				786F5717265D9815004E45EF /* Models */,
 				786F5716265D980F004E45EF /* Services */,
 			);
@@ -173,8 +243,8 @@
 		786F5718265D981D004E45EF /* PlantIdService */ = {
 			isa = PBXGroup;
 			children = (
-				786F571E265D9A7F004E45EF /* PlantIdDemoService.swift */,
 				786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */,
+				7849E1AD26626C72003DBD19 /* PlantIdService.swift */,
 			);
 			path = PlantIdService;
 			sourceTree = "<group>";
@@ -185,6 +255,7 @@
 				786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */,
 				786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */,
 				78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */,
+				7849E1AB26626A49003DBD19 /* PlantIdSuggestionDetails.swift */,
 			);
 			path = PlantId;
 			sourceTree = "<group>";
@@ -201,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				782DD96E265AA15900FDE44B /* UIView+Extensions.swift */,
+				7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */,
+				7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -210,6 +283,7 @@
 			children = (
 				78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */,
 				78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */,
+				7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */,
 			);
 			path = PlantRecognitionServiceProxy;
 			sourceTree = "<group>";
@@ -217,11 +291,11 @@
 		78CF13CA265A98F200D5815F /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				7849E1AA26626859003DBD19 /* ImagePicker */,
 				78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */,
 				78CF13CB265A990200D5815F /* HomePageViewController.swift */,
 				78CF13CD265A991300D5815F /* HomePageFactory.swift */,
 				782DD96B265A9FE700FDE44B /* HomePageView.swift */,
-				782DD973265AA7F900FDE44B /* ImagePickerManager.swift */,
 				782D0633265C23CA001DE889 /* HomePageViewModel.swift */,
 				782D0638265C2CDD001DE889 /* HomePageRouter.swift */,
 			);
@@ -253,14 +327,16 @@
 		78FB9285265A915800986DA5 /* PlantRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				7849E1A526626731003DBD19 /* Protocols */,
+				78FB92B6265A92C100986DA5 /* Features */,
 				786F5715265D9806004E45EF /* Network */,
 				7891EE77265D7D54005BEAE1 /* Helpers */,
 				782DD970265AA2B100FDE44B /* Resources */,
 				782DD96D265AA13500FDE44B /* Extensions */,
-				78FB92B6265A92C100986DA5 /* Features */,
 				78FB9286265A915800986DA5 /* AppDelegate.swift */,
 				78FB9288265A915800986DA5 /* SceneDelegate.swift */,
 				78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */,
+				78146A57266160A100CDDFDA /* GoogleService-Info.plist */,
 				78FB9294265A915A00986DA5 /* Info.plist */,
 			);
 			path = PlantRecognition;
@@ -326,6 +402,7 @@
 				78FB9280265A915800986DA5 /* Frameworks */,
 				78FB9281265A915800986DA5 /* Resources */,
 				FFBEE291259CDE8BDBB46CB4 /* [CP] Embed Pods Frameworks */,
+				7849E1A42662646C003DBD19 /* Firebase */,
 			);
 			buildRules = (
 			);
@@ -424,6 +501,7 @@
 			files = (
 				78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */,
 				782DD972265AA2EA00FDE44B /* Images.xcassets in Resources */,
+				78146A58266160A100CDDFDA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +538,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantRecognition-PlantRecognitionUITests/Pods-PlantRecognition-PlantRecognitionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7849E1A42662646C003DBD19 /* Firebase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Firebase;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/PlantRecognition/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
 		A975AA3D4A6D2A22F58BFA3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -551,24 +647,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7849E1B826627971003DBD19 /* BaseRequestServiceProtocol.swift in Sources */,
+				7849E1B326627559003DBD19 /* BaseRequestService.swift in Sources */,
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
-				786F571F265D9A7F004E45EF /* PlantIdDemoService.swift in Sources */,
+				7849E1BA26627F14003DBD19 /* BaseRequestReactiveServiceProtocol.swift in Sources */,
+				7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
+				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
+				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
+				7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */,
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
+				7849E1B526627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift in Sources */,
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
+				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */,
 				782DD96F265AA15900FDE44B /* UIView+Extensions.swift in Sources */,
 				7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */,
 				78FB9289265A915800986DA5 /* SceneDelegate.swift in Sources */,
+				7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */,
+				7849E1B126627456003DBD19 /* RequestConvertible.swift in Sources */,
+				7849E1A326626265003DBD19 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +845,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -759,6 +868,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

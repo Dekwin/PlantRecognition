@@ -14,5 +14,5 @@ struct PlantRecognitionServiceProxyResult {
 }
 
 protocol PlantRecognitionServiceProxyProtocol: AnyObject {
-    func recognize(image: UIImage) -> Future<PlantRecognitionServiceProxyResult, Error>
+    func recognize(image: UIImage) -> AnyPublisher<PlantRecognitionServiceProxyResult, Error>
 }

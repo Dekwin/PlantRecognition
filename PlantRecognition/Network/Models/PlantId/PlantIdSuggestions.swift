@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PlantIdSuggestions: Equatable {
+struct PlantIdSuggestions: Equatable, Decodable {
     let suggestions: [PlantIdSuggestion]
 }

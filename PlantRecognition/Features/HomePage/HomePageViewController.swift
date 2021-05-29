@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol HomePageViewControllerProtocol: AnyObject {
+protocol HomePageViewControllerProtocol: AlertPresentable {
     var bindings: HomePageView.Bindings { get }
 }
 

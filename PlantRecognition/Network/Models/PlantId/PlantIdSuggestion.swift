@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct PlantIdSuggestion: Equatable {
+struct PlantIdSuggestion: Equatable, Decodable {
     let plantName: String
+    let plantDetails: PlantIdSuggestionDetails
+    
+    private enum CodingKeys : String, CodingKey {
+        case plantName = "plant_name"
+        case plantDetails = "plant_details"
+    }
 }

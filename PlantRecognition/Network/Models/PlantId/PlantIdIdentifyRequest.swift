@@ -10,4 +10,5 @@ import UIKit
 
 struct PlantIdIdentifyRequest {
     let images: [UIImage]
+    let plantDetails: [String]
 }

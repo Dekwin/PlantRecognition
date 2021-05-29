@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol PlantIdServiceProtocol: AnyObject {
-    func identify(request: PlantIdIdentifyRequest) -> Future<PlantIdSuggestions, Error>
+    func identify(request: PlantIdIdentifyRequest) -> AnyPublisher<PlantIdSuggestions, Error>
 }

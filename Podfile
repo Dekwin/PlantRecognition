@@ -5,8 +5,20 @@ target 'PlantRecognition' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  # Analytics
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+
+  # UI
   pod 'SnapKit'
+
+  # Network
+  pod 'Alamofire'
+
+  # Code generation
   pod 'SwiftGen'
+  
+  # Reactive
   pod 'CombineCocoa'
   pod 'CombineExt'
 
