@@ -16,7 +16,10 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
         self.plantIdService = plantIdService
     }
     
-    func recognize(image: UIImage) -> AnyPublisher<PlantRecognitionServiceProxyResult, Error> {
+    func recognize(
+        image: UIImage,
+        completion: @escaping (Result<PlantRecognitionServiceProxyResult, Error>) -> Void
+    ){
         
 //       return Future { promise in
 //            promise(.success(
@@ -24,19 +27,23 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
 //                    scientificName: "suggestions.suggestions.first?.plantName"
 //                )
 //            ))
-//       }.eraseToAnyPublisher()
+        //       }.eraseToAnyPublisher()
         
         plantIdService.identify(
             request: .init(
                 images: [image],
                 plantDetails: ["common_names", "url", "wiki_description", "taxonomy"]
-            )
+            ),
+            completion: { result in
+                switch result {
+                case .success(let suggestions):
+                    completion(
+                        .success( PlantRecognitionServiceProxyResult(scientificName: suggestions.suggestions.first?.plantName))
+                    )
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
         )
-        .map { suggestions in
-            PlantRecognitionServiceProxyResult(
-                scientificName: suggestions.suggestions.first?.plantName
-            )
-        }
-        .eraseToAnyPublisher()
     }
 }

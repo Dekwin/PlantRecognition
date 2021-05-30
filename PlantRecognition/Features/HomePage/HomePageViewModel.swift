@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import Combine
 import UIKit
-import CombineExt
 
 protocol HomePageViewModelProtocol: AnyObject {
     func viewLoaded()
@@ -16,11 +14,10 @@ protocol HomePageViewModelProtocol: AnyObject {
 
 final class HomePageViewModel: HomePageViewModelProtocol {
     weak var view: HomePageViewControllerProtocol?
+    private var selectedPlantImage: UIImage?
+    private var recognizeResult: PlantRecognitionServiceProxyResult?
 
     private let deps: Deps
-    
-    private var cancelBag = Set<AnyCancellable>()
-    private let currentSelectedImageSubject = CurrentValueSubject<UIImage?, Never>(nil)
     
     init(
         deps: Deps
@@ -29,89 +26,59 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     }
     
     func viewLoaded() {
-        setupBindings()
+//        setupBindings()
+        updateView()
     }
-    
 }
 
 private extension HomePageViewModel {
-    func setupBindings() {
-        guard let bindings = view?.bindings else { return }
-        
-        bindings
-            .selectPhotoButtonTouched
-            .flatMap { [deps] _ in
-                deps.imagePickerManager.pickImage()
-            }
-            .subscribe(currentSelectedImageSubject)
-            .store(in: &cancelBag)
-        
-        currentSelectedImageSubject
-            .subscribe(bindings.selectedImage)
-            .store(in: &cancelBag)
-        
-        
-        bindings
-            .resetPhotoButtonTouched
-            .map { nil }
-            .subscribe(currentSelectedImageSubject)
-            .store(in: &cancelBag)
-        
-        bindings
-            .resetPhotoButtonTouched
-            .map { nil }
-            .subscribe(bindings.plantDescription)
-            .store(in: &cancelBag)
-        
-        
-        let recognizingResult = bindings
-            .recognizePhotoButtonTouched
-            .withLatestFrom(currentSelectedImageSubject)
-            .compactMap { $0 }
-            .flatMap { [deps] in
-                deps
-                    .plantRecognitionServiceProxy
-                    .recognize(image: $0)
-                    .materialize()
-            }
-            .share()
-            
-        
-        let recognizedData = recognizingResult
-            .compactMap { result -> PlantRecognitionServiceProxyResult?  in
-                switch result {
-                case .value(let value):
-                    return value
-                default:
-                    return nil
-                }
-            }
-        
-        let recognizedError = recognizingResult
-            .compactMap { result -> Error? in
-                switch result {
-                case .failure(let error):
-                    return error
-                default:
-                    return nil
-                }
-            }
-        
-        recognizedError
-            .sink { [weak self] error in
-                self?.view?.presentAlert(error: error)
-            }
-            .store(in: &cancelBag)
-        
-        recognizedData
-            .map {
-                HomePageView.PlantDescription(
-                    title: "Plant name: \($0.scientificName ?? "-")"
-                )
-            }
-            .subscribe(bindings.plantDescription)
-            .store(in: &cancelBag)
-        
+    func updateView() {
+        view?.update(
+            model: .init(
+                actions: .init(
+                    selectPhotoButtonTouched: { [weak self] in
+                        self?.deps.imagePickerManager.pickImage({ image in
+                            self?.selectedPlantImage = image
+                            self?.updateView()
+                        })
+                    },
+                    resetPhotoButtonTouched: { [weak self] in
+                        guard let self = self else { return }
+                        self.selectedPlantImage = nil
+                        self.updateView()
+                    },
+                    recognizePhotoButtonTouched: { [weak self] in
+                        guard
+                            let self = self,
+                            let image = self.selectedPlantImage
+                        else { return }
+                        
+                        self.deps.plantRecognitionServiceProxy.recognize(
+                            image: image
+                        ) { [weak self] result in
+                            guard let self = self else { return }
+                            
+                            switch result {
+                            case .success(let proxyResult):
+                                self.recognizeResult = proxyResult
+                                self.updateView()
+                            break
+                            case .failure(let error):
+                                self.view?.presentAlert(error: error)
+                            }
+                        }
+                    }
+                ),
+                selectedImage: selectedPlantImage,
+                plantDescription: mapProxyResultToPlantDescription(recognizeResult)
+            )
+        )
+    }
+    
+    private func mapProxyResultToPlantDescription(_ recognizeResult: PlantRecognitionServiceProxyResult?) -> HomePageView.PlantDescription? {
+        HomePageView.PlantDescription(
+            title: "Plant name: \(recognizeResult?.scientificName ?? "-")"
+        )
     }
 }
 

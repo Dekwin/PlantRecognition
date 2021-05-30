@@ -6,14 +6,10 @@
 //
 
 import Foundation
-import Combine
 import UIKit
 
 final class PlantRecognitionDemoServiceProxy: PlantRecognitionServiceProxyProtocol {
-    func recognize(image: UIImage) -> AnyPublisher<PlantRecognitionServiceProxyResult, Error> {
-        return  Future() { promise in
-            promise(.success(.init(scientificName: "morale tg")))
-        }
-        .eraseToAnyPublisher()
+    func recognize(image: UIImage, completion: (Result<PlantRecognitionServiceProxyResult, Error>) -> Void) {
+        completion(.success(.init(scientificName: "morale tg")))
     }
 }

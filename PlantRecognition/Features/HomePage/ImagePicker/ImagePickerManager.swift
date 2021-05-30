@@ -7,11 +7,9 @@
 
 import Foundation
 import UIKit
-import Combine
 
 protocol ImagePickerManagerProtocol: AnyObject {
     func pickImage(_ callback: @escaping ((UIImage) -> ()))
-    func pickImage() -> Future<UIImage?, Never>
 }
 
 class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImagePickerManagerProtocol {
@@ -48,14 +46,6 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         alert.popoverPresentationController?.sourceView = self.viewController?.view
 
         viewController?.present(alert, animated: true, completion: nil)
-    }
-    
-    func pickImage() -> Future<UIImage?, Never> {
-        return Future() { promise in
-            self.pickImage { image in
-                promise(.success(image))
-            }
-        }
     }
     
     func openCamera(){

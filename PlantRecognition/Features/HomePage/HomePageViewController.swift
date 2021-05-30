@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol HomePageViewControllerProtocol: AlertPresentable {
-    var bindings: HomePageView.Bindings { get }
+    func update(model: HomePageView.Model)
 }
 
 class HomePageViewController: UIViewController {
@@ -41,7 +41,7 @@ class HomePageViewController: UIViewController {
 }
 
 extension HomePageViewController: HomePageViewControllerProtocol {
-    var bindings: HomePageView.Bindings {
-        customView.bindings
+    func update(model: HomePageView.Model) {
+        customView.update(model: model)
     }
 }

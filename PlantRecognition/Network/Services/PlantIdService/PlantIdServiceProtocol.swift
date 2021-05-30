@@ -6,8 +6,10 @@
 //
 
 import Foundation
-import Combine
 
 protocol PlantIdServiceProtocol: AnyObject {
-    func identify(request: PlantIdIdentifyRequest) -> AnyPublisher<PlantIdSuggestions, Error>
+    func identify(
+        request: PlantIdIdentifyRequest,
+        completion: @escaping (Result<PlantIdSuggestions, Error>) -> Void
+    )
 }

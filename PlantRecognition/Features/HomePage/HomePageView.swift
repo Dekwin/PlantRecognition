@@ -12,20 +12,6 @@ import CombineCocoa
 import Combine
 
 final class HomePageView: UIView {
-    private var cancelBag = Set<AnyCancellable>()
-    
-    var bindings: Bindings {
-        .init(
-            selectPhotoButtonTouched: selectPhotoButton.tapPublisher,
-            resetPhotoButtonTouched: resetPhotoButton.tapPublisher,
-            recognizePhotoButtonTouched: recognizePlantButton.tapPublisher,
-            selectedImage: selectedPhotoSubject,
-            plantDescription: plantDescriptionSubject
-        )
-    }
-    
-    private let selectedPhotoSubject = PassthroughSubject<UIImage?, Never>()
-    private let plantDescriptionSubject = PassthroughSubject<PlantDescription?, Never>()
     
     private lazy var selectedImageView: UIImageView = UIImageView()
     
@@ -77,15 +63,31 @@ final class HomePageView: UIView {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func update(model: Model) {
+        let plantImageNotSelected = model.selectedImage == nil
+        selectedImageView.image = model.selectedImage
+        selectedImageView.isHidden = plantImageNotSelected
+        resetPhotoButton.isHidden = plantImageNotSelected
+        recognizePlantButton.isHidden = plantImageNotSelected
+        
+        let plantTitleNotSelected = model.plantDescription?.title == nil
+        plantNameLabel.text = model.plantDescription?.title
+        plantNameLabel.isHidden = plantImageNotSelected || plantTitleNotSelected
+    }
 }
 
 extension HomePageView {
-    struct Bindings {
-        let selectPhotoButtonTouched: AnyPublisher<Void, Never>
-        let resetPhotoButtonTouched: AnyPublisher<Void, Never>
-        let recognizePhotoButtonTouched: AnyPublisher<Void, Never>
-        let selectedImage: PassthroughSubject<UIImage?, Never>
-        let plantDescription: PassthroughSubject<PlantDescription?, Never>
+    struct Model {
+        let actions: Actions
+        let selectedImage: UIImage?
+        let plantDescription: PlantDescription?
+    }
+    
+    struct Actions {
+        let selectPhotoButtonTouched: Action
+        let resetPhotoButtonTouched: Action
+        let recognizePhotoButtonTouched: Action
     }
     
     struct PlantDescription {
@@ -100,7 +102,6 @@ private extension HomePageView {
         backgroundColor = .white
         setupSubviews()
         setupConstraints()
-        setupBindings()
     }
 
     func setupSubviews() {
@@ -134,38 +135,5 @@ private extension HomePageView {
             make.height.equalTo(300)
             make.bottom.equalTo(photoButtonsStackView.snp.top)
         }
-    }
-    
-    func setupBindings() {
-        selectedPhotoSubject
-            .assign(to: \.image, on: selectedImageView)
-            .store(in: &cancelBag)
-        
-        let photoNotSelected = selectedPhotoSubject
-            .map { $0 == nil }
-        
-        photoNotSelected
-            .assign(to: \.isHidden, on: resetPhotoButton)
-            .store(in: &cancelBag)
-        
-        photoNotSelected
-            .assign(to: \.isHidden, on: recognizePlantButton)
-            .store(in: &cancelBag)
-        
-        let plantTitle = plantDescriptionSubject
-            .map { $0?.title }
-        
-        plantTitle
-            .assign(to: \.text, on: plantNameLabel)
-            .store(in: &cancelBag)
-        
-        let plantTitleNotSelected = plantTitle
-            .map { $0 == nil }
-        
-        Publishers
-            .CombineLatest(plantTitleNotSelected, photoNotSelected)
-            .map { $0 || $1 }
-            .assign(to: \.isHidden, on: plantNameLabel)
-            .store(in: &cancelBag)
     }
 }

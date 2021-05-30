@@ -14,5 +14,5 @@ struct PlantRecognitionServiceProxyResult {
 }
 
 protocol PlantRecognitionServiceProxyProtocol: AnyObject {
-    func recognize(image: UIImage) -> AnyPublisher<PlantRecognitionServiceProxyResult, Error>
+    func recognize(image: UIImage, completion: @escaping (Result<PlantRecognitionServiceProxyResult, Error>) -> Void)
 }

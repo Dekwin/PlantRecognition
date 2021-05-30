@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import Combine
 
 class PlantIdService: PlantIdServiceProtocol {
-    private let baseService: BaseRequestReactiveServiceProtocol
+    private let baseService: BaseRequestServiceProtocol
     private let baseUrl: URL = URL(string: "https://api.plant.id/v2")!
     
-    init(baseService: BaseRequestReactiveServiceProtocol) {
+    init(baseService: BaseRequestServiceProtocol) {
         self.baseService = baseService
     }
     
-    func identify(request: PlantIdIdentifyRequest) -> AnyPublisher<PlantIdSuggestions, Error> {
+    func identify(request: PlantIdIdentifyRequest, completion: @escaping (Result<PlantIdSuggestions, Error>) -> Void) {
         let headers = [
             "Api-Key": "eydsbcoFqucrfO9Em9olhdc4SjBMmQsi6JRP9uYnGhQjkKNKh8",
             "Content-Type": "application/json"
@@ -39,7 +38,8 @@ class PlantIdService: PlantIdServiceProtocol {
                     method: .post,
                     headers: headers,
                     parameters: params
-                )
+                ),
+                completionHandler: completion
             )
     }
 }
