@@ -8,7 +8,12 @@
 import Foundation
 import UIKit
 
-struct PlantIdIdentifyRequest {
-    let images: [UIImage]
+struct PlantIdIdentifyRequest: Encodable {
+    let imagesBase64: [String]
     let plantDetails: [String]
+    
+    private enum CodingKeys : String, CodingKey {
+        case imagesBase64 = "images"
+        case plantDetails = "plant_details"
+    }
 }

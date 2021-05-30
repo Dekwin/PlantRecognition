@@ -6,69 +6,78 @@
 //
 
 import Foundation
+import Alamofire
 
 class PlantIdService: PlantIdServiceProtocol {
-    private let baseService: BaseRequestServiceProtocol
+    private let session: Session = Session.default
     private let baseUrl: URL = URL(string: "https://api.plant.id/v2")!
     
-    init(baseService: BaseRequestServiceProtocol) {
-        self.baseService = baseService
+    init() {
     }
     
     func identify(request: PlantIdIdentifyRequest, completion: @escaping (Result<PlantIdSuggestions, Error>) -> Void) {
-        let headers = [
-            "Api-Key": "eydsbcoFqucrfO9Em9olhdc4SjBMmQsi6JRP9uYnGhQjkKNKh8",
-            "Content-Type": "application/json"
-        ]
-        
-        
-        let images = request.images.map { $0.toBase64String() }
-        
-        let params: [String: Any] = [
-            "images": [images],
-            "modifiers": [],
-            "plant_details": request.plantDetails
-        ]
-        
-        return baseService
-            .requestDecodable(
-                RequestConvertibleObject(
-                    baseURL: baseUrl,
-                    path: "/identify",
-                    method: .post,
-                    headers: headers,
-                    parameters: params
-                ),
-                completionHandler: completion
+        session
+            .request(
+                Router.identify(request: request)
             )
+            .validate()
+            .responseDecodable {
+                completion($0.toResult())
+            }
     }
 }
 
 private extension PlantIdService {
-    struct RequestConvertibleObject: RequestConvertible {
-        let baseURL: URL
-        let path: String
-        let method: RequestConvertibleHTTPMethod
-        let headers: [String: String]
-        let parameters: [String: Any]
+    enum Router: URLRequestConvertible {
+        case identify(request: PlantIdIdentifyRequest)
+        
+        var baseURL: URL {
+            return URL(string: "https://api.plant.id/v2")!
+        }
+        
+        var authHeaders: HTTPHeaders {
+            [
+                "Api-Key": "eydsbcoFqucrfO9Em9olhdc4SjBMmQsi6JRP9uYnGhQjkKNKh8",
+                "Content-Type": "application/json"
+            ]
+        }
+        
+        var method: HTTPMethod {
+            switch self {
+            case .identify(_): return .post
+            }
+        }
+        
+        var path: String {
+            switch self {
+            case .identify(_): return "identify"
+            }
+        }
         
         func asURLRequest() throws -> URLRequest {
             let url = baseURL.appendingPathComponent(path)
             var request = URLRequest(url: url)
-            request.httpMethod = method.rawValue
+            request.method = method
+            request.headers = authHeaders
             
-            for (key, value) in headers {
-                request.setValue(value, forHTTPHeaderField: key)
-            }
-            
-            switch method {
-            case .get:
-                break
-            case .post:
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
+            switch self {
+            case let .identify(req):
+                request = try JSONParameterEncoder().encode(req, into: request)
             }
             
             return request
+        }
+    }
+}
+
+private extension DataResponse {
+    func toResult() -> Result<Success, Error> {
+        if let error = self.error {
+            return .failure(error)
+        } else if let value = self.value {
+            return .success(value)
+        } else {
+            return .failure(NetworkError.noDecodedResult)
         }
     }
 }

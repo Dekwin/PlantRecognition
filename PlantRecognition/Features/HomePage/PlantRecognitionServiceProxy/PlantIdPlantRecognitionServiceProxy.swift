@@ -22,7 +22,7 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
     ){        
         plantIdService.identify(
             request: .init(
-                images: [image],
+                imagesBase64: [image].compactMap { $0.toBase64String() },
                 plantDetails: ["common_names", "url", "wiki_description", "taxonomy"]
             ),
             completion: { result in
