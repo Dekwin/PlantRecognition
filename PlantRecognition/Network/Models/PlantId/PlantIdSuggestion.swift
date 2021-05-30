@@ -10,7 +10,7 @@ import Foundation
 struct PlantIdSuggestion: Equatable, Decodable {
     let plantName: String
     let probability: Double?
-    let plantDetails: PlantIdSuggestionDetails
+    let plantDetails: PlantIdSuggestionDetails?
     
     private enum CodingKeys : String, CodingKey {
         case plantName = "plant_name"

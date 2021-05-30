@@ -21,8 +21,8 @@ class PlantIdService: PlantIdServiceProtocol {
                 Router.identify(request: request)
             )
             .validate()
-            .responseDecodable {
-                completion($0.toResult())
+            .responseDecodable { result in
+                completion(result.toResult())
             }
     }
 }

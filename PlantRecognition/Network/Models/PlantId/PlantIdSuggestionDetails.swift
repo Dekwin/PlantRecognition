@@ -8,7 +8,7 @@
 import Foundation
 
 struct PlantIdSuggestionDetails: Equatable, Decodable {
-    let commonNames: [String]
+    let commonNames: [String]?
     
     private enum CodingKeys : String, CodingKey {
         case commonNames = "common_names"

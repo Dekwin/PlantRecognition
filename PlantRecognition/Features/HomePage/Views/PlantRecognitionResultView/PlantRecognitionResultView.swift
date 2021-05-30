@@ -35,7 +35,7 @@ final class PlantRecognitionResultView: UIView {
         let stack = UIStackView(
             arrangedSubviews: []
         )
-        stack.spacing = 5
+        stack.spacing = 0
         stack.axis = .vertical
         return stack
     }()
@@ -50,15 +50,21 @@ final class PlantRecognitionResultView: UIView {
     }
     
     private func buildViewForDescription(_ plantDescription: PlantDescription) -> UIView {
-        let label = UILabel(frame: .zero)
+        buildTextViewForDescription(plantDescription)
+    }
+    
+    private func buildTextViewForDescription(_ plantDescription: PlantDescription) -> UIView {
+        let label = UITextView(frame: .zero)
         label.font = .systemFont(ofSize: 14)
         var descr = "Name: \"\(plantDescription.name)\""
         if let prob = plantDescription.probability {
             descr.append(", probability: \(prob.rounded(toPlaces: 3))")
         }
         label.text = descr
-        label.numberOfLines = 0
         label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.isEditable = false
+        label.bounces = false
+        label.isScrollEnabled = false
         return label
     }
     
