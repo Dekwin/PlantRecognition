@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol HomePageViewControllerProtocol: AlertPresentable {
+protocol HomePageViewControllerProtocol: AlertLoaderPresentable {
     func update(model: HomePageView.Model)
 }
 

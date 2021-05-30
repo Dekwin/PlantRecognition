@@ -50,7 +50,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     
     func openCamera(){
         alert.dismiss(animated: true, completion: nil)
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+        if UIImagePickerController .isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
             self.viewController?.present(picker, animated: true, completion: nil)
         } else {

@@ -6,12 +6,7 @@
 //
 
 import Foundation
-import Combine
 import UIKit
-
-struct PlantRecognitionServiceProxyResult {
-    let scientificName: String?
-}
 
 protocol PlantRecognitionServiceProxyProtocol: AnyObject {
     func recognize(image: UIImage, completion: @escaping (Result<PlantRecognitionServiceProxyResult, Error>) -> Void)

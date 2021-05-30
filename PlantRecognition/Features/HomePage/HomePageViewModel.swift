@@ -37,14 +37,12 @@ private extension HomePageViewModel {
                 actions: .init(
                     selectPhotoButtonTouched: { [weak self] in
                         self?.deps.imagePickerManager.pickImage({ image in
-                            self?.selectedPlantImage = image
-                            self?.updateView()
+                            self?.resetSelectedImage(to: image)
                         })
                     },
                     resetPhotoButtonTouched: { [weak self] in
                         guard let self = self else { return }
-                        self.selectedPlantImage = nil
-                        self.updateView()
+                        self.resetSelectedImage(to: nil)
                     },
                     recognizePhotoButtonTouched: { [weak self] in
                         guard
@@ -52,11 +50,13 @@ private extension HomePageViewModel {
                             let image = self.selectedPlantImage
                         else { return }
                         
+                        self.view?.setLoading(true)
                         self.deps.plantRecognitionServiceProxy.recognize(
                             image: image
                         ) { [weak self] result in
                             guard let self = self else { return }
                             
+                            self.view?.setLoading(false)
                             switch result {
                             case .success(let proxyResult):
                                 self.recognizeResult = proxyResult
@@ -69,18 +69,29 @@ private extension HomePageViewModel {
                     }
                 ),
                 selectedImage: selectedPlantImage,
-                plantDescription: mapProxyResultToPlantDescription(recognizeResult)
+                recognitionResult: mapProxyResult(recognizeResult)
             )
         )
     }
     
-    private func mapProxyResultToPlantDescription(_ recognizeResult: PlantRecognitionServiceProxyResult?) -> HomePageView.PlantDescription? {
+    private func resetSelectedImage(to image: UIImage?) {
+        selectedPlantImage = image
+        recognizeResult = nil
+        updateView()
+    }
+    
+    private func mapProxyResult(_ recognizeResult: PlantRecognitionServiceProxyResult?) -> PlantRecognitionResultView.Model? {
         guard let recognizeResult = recognizeResult else {
             return nil
         }
+        let descriptions = recognizeResult
+            .suggestions
+            .map { PlantRecognitionResultView.PlantDescription(name: $0.name, probability: $0.probability) }
         
-        return HomePageView.PlantDescription(
-            title: "Plant name: \(recognizeResult.scientificName ?? "-")"
+        return .init(
+            recognitionResultType: .many(
+                descriptions: descriptions
+            )
         )
     }
 }

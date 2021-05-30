@@ -23,13 +23,19 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
         plantIdService.identify(
             request: .init(
                 imagesBase64: [image].compactMap { $0.toBase64String() },
-                plantDetails: ["common_names", "url", "wiki_description", "taxonomy"]
+                plantDetails: ["common_names", "url", "probability"]
             ),
             completion: { result in
                 switch result {
                 case .success(let suggestions):
+                    let mappedSuggestions = suggestions
+                        .suggestions
+                        .map { PlantRecognitionServiceProxyResult.PlantSuggestion(name: $0.plantName, probability: $0.probability) }
+                    
                     completion(
-                        .success( PlantRecognitionServiceProxyResult(scientificName: suggestions.suggestions.first?.plantName))
+                        .success(
+                            .init(suggestions: mappedSuggestions)
+                        )
                     )
                 case .failure(let error):
                     completion(.failure(error))

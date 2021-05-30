@@ -10,6 +10,13 @@ import UIKit
 
 final class PlantRecognitionDemoServiceProxy: PlantRecognitionServiceProxyProtocol {
     func recognize(image: UIImage, completion: (Result<PlantRecognitionServiceProxyResult, Error>) -> Void) {
-        completion(.success(.init(scientificName: "morale tg")))
+        completion(.success(
+            .init(
+                suggestions: [
+                    .init(name: "Morale1 gh hjjgjhghjgjhjghghjgh gjh gj jghjgh", probability: 0.9),
+                    .init(name: "Morale4", probability: 0.3)
+                ]
+            )
+        ))
     }
 }

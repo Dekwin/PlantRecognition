@@ -22,6 +22,9 @@
 		7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */; };
 		7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */; };
 		7849E1C0266395B5003DBD19 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BF266395B5003DBD19 /* Action.swift */; };
+		7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C32663A6F8003DBD19 /* PlantRecognitionResultView.swift */; };
+		7849E1C62663AAB6003DBD19 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C52663AAB6003DBD19 /* UIStackView+Extensions.swift */; };
+		7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C72663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift */; };
 		786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */; };
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
@@ -29,6 +32,11 @@
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
+		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
+		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
+		78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */; };
+		78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C725A02663B626005AA717 /* AlertLoaderPresentable.swift */; };
+		78C725A32663B6CB005AA717 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C725A22663B6CB005AA717 /* Double+Round.swift */; };
 		78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CB265A990200D5815F /* HomePageViewController.swift */; };
 		78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CD265A991300D5815F /* HomePageFactory.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
@@ -80,6 +88,9 @@
 		7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Base64.swift"; sourceTree = "<group>"; };
 		7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdPlantRecognitionServiceProxy.swift; sourceTree = "<group>"; };
 		7849E1BF266395B5003DBD19 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		7849E1C32663A6F8003DBD19 /* PlantRecognitionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionResultView.swift; sourceTree = "<group>"; };
+		7849E1C52663AAB6003DBD19 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		7849E1C72663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyResult.swift; sourceTree = "<group>"; };
 		786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestions.swift; sourceTree = "<group>"; };
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
@@ -87,6 +98,11 @@
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
+		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
+		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
+		78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentable.swift; sourceTree = "<group>"; };
+		78C725A02663B626005AA717 /* AlertLoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLoaderPresentable.swift; sourceTree = "<group>"; };
+		78C725A22663B6CB005AA717 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		78CF13CB265A990200D5815F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		78CF13CD265A991300D5815F /* HomePageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageFactory.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				7891EE7C265D82EF005BEAE1 /* UI */,
+				78C725A22663B6CB005AA717 /* Double+Round.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				7849E1A62662674C003DBD19 /* AlertPresentable.swift */,
+				78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */,
+				78C725A02663B626005AA717 /* AlertLoaderPresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -181,6 +200,24 @@
 				782DD973265AA7F900FDE44B /* ImagePickerManager.swift */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		7849E1C12663A685003DBD19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1C22663A695003DBD19 /* PlantRecognitionResultView */,
+				78CF13CB265A990200D5815F /* HomePageViewController.swift */,
+				782DD96B265A9FE700FDE44B /* HomePageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7849E1C22663A695003DBD19 /* PlantRecognitionResultView */ = {
+			isa = PBXGroup;
+			children = (
+				7849E1C32663A6F8003DBD19 /* PlantRecognitionResultView.swift */,
+			);
+			path = PlantRecognitionResultView;
 			sourceTree = "<group>";
 		};
 		786F5715265D9806004E45EF /* Network */ = {
@@ -244,6 +281,8 @@
 				782DD96E265AA15900FDE44B /* UIView+Extensions.swift */,
 				7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */,
 				7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */,
+				7849E1C52663AAB6003DBD19 /* UIStackView+Extensions.swift */,
+				78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -254,6 +293,8 @@
 				78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */,
 				78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */,
 				7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */,
+				7849E1C72663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift */,
+				78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */,
 			);
 			path = PlantRecognitionServiceProxy;
 			sourceTree = "<group>";
@@ -261,11 +302,10 @@
 		78CF13CA265A98F200D5815F /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				7849E1C12663A685003DBD19 /* Views */,
 				7849E1AA26626859003DBD19 /* ImagePicker */,
 				78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */,
-				78CF13CB265A990200D5815F /* HomePageViewController.swift */,
 				78CF13CD265A991300D5815F /* HomePageFactory.swift */,
-				782DD96B265A9FE700FDE44B /* HomePageView.swift */,
 				782D0633265C23CA001DE889 /* HomePageViewModel.swift */,
 				782D0638265C2CDD001DE889 /* HomePageRouter.swift */,
 			);
@@ -618,24 +658,32 @@
 			files = (
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
 				7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */,
+				78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
+				78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
+				78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */,
 				7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */,
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
+				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
+				7849E1C62663AAB6003DBD19 /* UIStackView+Extensions.swift in Sources */,
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
+				78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */,
+				7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */,
 				782DD96F265AA15900FDE44B /* UIView+Extensions.swift in Sources */,
+				78C725A32663B6CB005AA717 /* Double+Round.swift in Sources */,
 				7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */,
 				7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */,
 				7849E1C0266395B5003DBD19 /* Action.swift in Sources */,

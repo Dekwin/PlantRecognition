@@ -14,8 +14,8 @@ final class HomePageFactory {
         
         let manager = ImagePickerManager()
         let router = HomePageRouter(transitionable: transitionable)
-        let recognitionProxy = PlantIdPlantRecognitionServiceProxy(
-            plantIdService: PlantIdService()
+        let recognitionProxy = PlantRecognitionServiceProxyFactory().create(
+            isDemo: false
         )
         let viewModel = HomePageViewModel(
             deps: .init(

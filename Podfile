@@ -25,6 +25,8 @@ target 'PlantRecognition' do
   # pod 'RxSwift'
   # pod 'RxCocoa'
 
+  pod 'MBProgressHUD'
+
   # Pods for PlantRecognition
 
   target 'PlantRecognitionTests' do

@@ -49,12 +49,7 @@ final class HomePageView: UIView {
         return button
     }()
     
-    private lazy var plantNameLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.isHidden = true
-        label.font = .boldSystemFont(ofSize: 20)
-        return label
-    }()
+    private lazy var plantRecognitionResultView = PlantRecognitionResultView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,9 +69,12 @@ final class HomePageView: UIView {
         resetPhotoButton.isHidden = plantImageNotSelected
         recognizePlantButton.isHidden = plantImageNotSelected
         
-        let plantTitleNotSelected = model.plantDescription?.title == nil
-        plantNameLabel.text = model.plantDescription?.title
-        plantNameLabel.isHidden = plantImageNotSelected || plantTitleNotSelected
+        if let recognitionResult = model.recognitionResult {
+            plantRecognitionResultView.update(model: recognitionResult)
+            plantRecognitionResultView.isHidden = false
+        } else {
+            plantRecognitionResultView.isHidden = true
+        }
     }
     
     @objc
@@ -99,7 +97,7 @@ extension HomePageView {
     struct Model {
         let actions: Actions
         let selectedImage: UIImage?
-        let plantDescription: PlantDescription?
+        let recognitionResult: PlantRecognitionResultView.Model?
     }
     
     struct Actions {
@@ -108,9 +106,7 @@ extension HomePageView {
         let recognizePhotoButtonTouched: Action
     }
     
-    struct PlantDescription {
-        let title: String?
-    }
+  
 }
 
 // MARK: - Private methods
@@ -127,7 +123,7 @@ private extension HomePageView {
             selectedImageView,
             photoButtonsStackView,
             recognizePlantButton,
-            plantNameLabel
+            plantRecognitionResultView
         )
         selectedImageView.contentMode = .scaleAspectFit
     }
@@ -142,9 +138,10 @@ private extension HomePageView {
             make.top.equalTo(photoButtonsStackView.snp.bottom)
         }
         
-        plantNameLabel.snp.makeConstraints { make in
+        plantRecognitionResultView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(recognizePlantButton.snp.bottom)
+            make.top.equalTo(recognizePlantButton.snp.bottom).inset(-10)
+            make.width.lessThanOrEqualToSuperview().inset(5)
         }
         
         selectedImageView.snp.makeConstraints { make in
