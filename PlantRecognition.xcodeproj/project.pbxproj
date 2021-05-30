@@ -19,10 +19,6 @@
 		7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */; };
 		7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1AB26626A49003DBD19 /* PlantIdSuggestionDetails.swift */; };
 		7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1AD26626C72003DBD19 /* PlantIdService.swift */; };
-		7849E1B126627456003DBD19 /* RequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B026627456003DBD19 /* RequestConvertible.swift */; };
-		7849E1B326627559003DBD19 /* BaseRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B226627559003DBD19 /* BaseRequestService.swift */; };
-		7849E1B526627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */; };
-		7849E1B826627971003DBD19 /* BaseRequestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */; };
 		7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */; };
 		7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */; };
 		7849E1C0266395B5003DBD19 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1BF266395B5003DBD19 /* Action.swift */; };
@@ -81,10 +77,6 @@
 		7849E1A8266267D6003DBD19 /* UIViewController+AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertPresentable.swift"; sourceTree = "<group>"; };
 		7849E1AB26626A49003DBD19 /* PlantIdSuggestionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestionDetails.swift; sourceTree = "<group>"; };
 		7849E1AD26626C72003DBD19 /* PlantIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdService.swift; sourceTree = "<group>"; };
-		7849E1B026627456003DBD19 /* RequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConvertible.swift; sourceTree = "<group>"; };
-		7849E1B226627559003DBD19 /* BaseRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestService.swift; sourceTree = "<group>"; };
-		7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
-		7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestServiceProtocol.swift; sourceTree = "<group>"; };
 		7849E1BB266293F1003DBD19 /* UIImage+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Base64.swift"; sourceTree = "<group>"; };
 		7849E1BD266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdPlantRecognitionServiceProxy.swift; sourceTree = "<group>"; };
 		7849E1BF266395B5003DBD19 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -191,29 +183,9 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
-		7849E1AF26627413003DBD19 /* BaseRequestService */ = {
-			isa = PBXGroup;
-			children = (
-				7849E1B626627960003DBD19 /* Alamofire */,
-				7849E1B026627456003DBD19 /* RequestConvertible.swift */,
-				7849E1B726627971003DBD19 /* BaseRequestServiceProtocol.swift */,
-			);
-			path = BaseRequestService;
-			sourceTree = "<group>";
-		};
-		7849E1B626627960003DBD19 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				7849E1B226627559003DBD19 /* BaseRequestService.swift */,
-				7849E1B426627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
 		786F5715265D9806004E45EF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7849E1AF26627413003DBD19 /* BaseRequestService */,
 				7849E1A126626257003DBD19 /* Errors */,
 				786F5717265D9815004E45EF /* Models */,
 				786F5716265D980F004E45EF /* Services */,
@@ -644,8 +616,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7849E1B826627971003DBD19 /* BaseRequestServiceProtocol.swift in Sources */,
-				7849E1B326627559003DBD19 /* BaseRequestService.swift in Sources */,
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
 				7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
@@ -661,7 +631,6 @@
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
-				7849E1B526627954003DBD19 /* RequestConvertible+URLRequestConvertible.swift in Sources */,
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
@@ -670,7 +639,6 @@
 				7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */,
 				7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */,
 				7849E1C0266395B5003DBD19 /* Action.swift in Sources */,
-				7849E1B126627456003DBD19 /* RequestConvertible.swift in Sources */,
 				7849E1A326626265003DBD19 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
