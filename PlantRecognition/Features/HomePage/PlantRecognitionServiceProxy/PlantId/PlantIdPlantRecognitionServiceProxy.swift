@@ -9,20 +9,24 @@ import Foundation
 import UIKit
 import Combine
 
-class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol {
+class PlantIdPlantRecognitionServiceProxy {
     private let plantIdService: PlantIdServiceProtocol
     
     init(plantIdService: PlantIdServiceProtocol) {
         self.plantIdService = plantIdService
     }
-    
+}
+
+extension PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol {
     func recognize(
         image: UIImage,
         completion: @escaping (Result<PlantRecognitionServiceProxyResult, Error>) -> Void
-    ){        
+    ){
+        let preparedImage = prepareImageForUploading(image)
+        
         plantIdService.identify(
             request: .init(
-                imagesBase64: [image].compactMap { $0.toBase64String() },
+                imagesBase64: [preparedImage].compactMap { $0.toBase64String() },
                 plantDetails: ["common_names", "url", "probability"]
             ),
             completion: { result in
@@ -42,5 +46,18 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
                 }
             }
         )
+    }
+    
+    private func prepareImageForUploading(_ image: UIImage) -> UIImage {
+        guard
+            let size = image.getSizeIn(.megabyte),
+            size > 2.0
+        else {
+            return image
+        }
+        
+        let resizedImage = image.resized(toWidth: 1024) ?? image
+                
+        return resizedImage
     }
 }

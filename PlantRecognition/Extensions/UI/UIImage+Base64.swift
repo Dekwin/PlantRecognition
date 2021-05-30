@@ -10,6 +10,6 @@ import UIKit
 
 extension UIImage {
     func toBase64String () -> String? {
-        return self.jpegData(compressionQuality: 1)?.base64EncodedString()
+        return self.pngData()?.base64EncodedString()
     }
 }
