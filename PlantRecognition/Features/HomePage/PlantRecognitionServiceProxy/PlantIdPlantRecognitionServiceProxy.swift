@@ -19,16 +19,7 @@ class PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol 
     func recognize(
         image: UIImage,
         completion: @escaping (Result<PlantRecognitionServiceProxyResult, Error>) -> Void
-    ){
-        
-//       return Future { promise in
-//            promise(.success(
-//                PlantRecognitionServiceProxyResult(
-//                    scientificName: "suggestions.suggestions.first?.plantName"
-//                )
-//            ))
-        //       }.eraseToAnyPublisher()
-        
+    ){        
         plantIdService.identify(
             request: .init(
                 images: [image],

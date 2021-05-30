@@ -26,7 +26,6 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     }
     
     func viewLoaded() {
-//        setupBindings()
         updateView()
     }
 }
@@ -76,8 +75,12 @@ private extension HomePageViewModel {
     }
     
     private func mapProxyResultToPlantDescription(_ recognizeResult: PlantRecognitionServiceProxyResult?) -> HomePageView.PlantDescription? {
-        HomePageView.PlantDescription(
-            title: "Plant name: \(recognizeResult?.scientificName ?? "-")"
+        guard let recognizeResult = recognizeResult else {
+            return nil
+        }
+        
+        return HomePageView.PlantDescription(
+            title: "Plant name: \(recognizeResult.scientificName ?? "-")"
         )
     }
 }

@@ -8,16 +8,15 @@
 import Foundation
 import UIKit
 import SnapKit
-import CombineCocoa
-import Combine
 
 final class HomePageView: UIView {
-    
+    private var actions: Actions?
     private lazy var selectedImageView: UIImageView = UIImageView()
     
     private lazy var selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Select plant photo to recognize", for: .normal)
+        button.addTarget(self, action: #selector(selectPhotoTouched), for: .touchUpInside)
         return button
     }()
     
@@ -25,6 +24,7 @@ final class HomePageView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Reset photo", for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
+        button.addTarget(self, action: #selector(resetPhotoTouched), for: .touchUpInside)
         return button
     }()
     
@@ -45,6 +45,7 @@ final class HomePageView: UIView {
         button.setTitle("Recognize plant!", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 20)
         button.setTitleColor(.systemGreen, for: .normal)
+        button.addTarget(self, action: #selector(recognizePhotoTouched), for: .touchUpInside)
         return button
     }()
     
@@ -65,6 +66,8 @@ final class HomePageView: UIView {
     }
     
     func update(model: Model) {
+        actions = model.actions
+        
         let plantImageNotSelected = model.selectedImage == nil
         selectedImageView.image = model.selectedImage
         selectedImageView.isHidden = plantImageNotSelected
@@ -74,6 +77,21 @@ final class HomePageView: UIView {
         let plantTitleNotSelected = model.plantDescription?.title == nil
         plantNameLabel.text = model.plantDescription?.title
         plantNameLabel.isHidden = plantImageNotSelected || plantTitleNotSelected
+    }
+    
+    @objc
+    private func selectPhotoTouched() {
+        actions?.selectPhotoButtonTouched()
+    }
+    
+    @objc
+    private func resetPhotoTouched() {
+        actions?.resetPhotoButtonTouched()
+    }
+    
+    @objc
+    private func recognizePhotoTouched() {
+        actions?.recognizePhotoButtonTouched()
     }
 }
 

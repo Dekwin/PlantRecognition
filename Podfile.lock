@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (5.4.3)
-  - CombineCocoa (0.2.2)
-  - CombineExt (1.3.0)
   - Firebase/Analytics (8.0.0):
     - Firebase/Core
   - Firebase/Core (8.0.0):
@@ -106,8 +104,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - CombineCocoa
-  - CombineExt
   - Firebase/Analytics
   - Firebase/Crashlytics
   - SnapKit
@@ -116,8 +112,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CombineCocoa
-    - CombineExt
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -134,8 +128,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  CombineCocoa: 66c79441761907c096ecbd0021cefd8566acaf06
-  CombineExt: 542a01bb7485a13ff891ac3e7a0b86ed7fa05939
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
   FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
   FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
@@ -150,6 +142,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
 
-PODFILE CHECKSUM: ec118e3309b2e8df72e088ef66008d7c18caf9a5
+PODFILE CHECKSUM: 11e5ca971f98b9fcc0134ca4324d42e1b491bcf0
 
 COCOAPODS: 1.10.1
