@@ -35,13 +35,29 @@ final class MyPlantsTabViewController: UIViewController {
 // MARK: - MyPlantsTabViewProtocol
 extension MyPlantsTabViewController: MyPlantsTabViewProtocol {
     func update(with model: Model) {
+        setupTabBarItem(model.tabBarItem)
+        
         customView.update(with: .init())
+    }
+    
+    private func setupTabBarItem(_ item: TabBarItem) {
+        tabBarItem = .init(
+            title: item.title,
+            image: item.image,
+            selectedImage: item.selectedImage
+        )
     }
 }
 
 // MARK: Model
 extension MyPlantsTabViewController {
     struct Model {
-        
+        let tabBarItem: TabBarItem
+    }
+    
+    struct TabBarItem {
+        let title: String?
+        let image: UIImage?
+        let selectedImage: UIImage?
     }
 }

@@ -20,6 +20,10 @@ final class MyPlantsTabViewModel {
 // MARK:  MyPlantsTabViewModelProtocol
 extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
     func viewLoaded() {
-        view?.update(with: .init())
+        view?.update(
+            with: .init(
+                tabBarItem: .init(title: L10n.MainTabBar.Tabs.myPlants, image: Asset.Iconly.leaf.image, selectedImage: nil)
+            )
+        )
     }
 }
