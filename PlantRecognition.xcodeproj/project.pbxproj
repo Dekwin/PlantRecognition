@@ -59,6 +59,8 @@
 		78DED1C5267E64AA00A7BC84 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */; };
 		78DED1C6267E64AA00A7BC84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */; };
 		78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */; };
+		78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */; };
+		78DED1CD267E7DA900A7BC84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78DED1CF267E7DA900A7BC84 /* Localizable.strings */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */; };
 		78FB929E265A915A00986DA5 /* PlantRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB929D265A915A00986DA5 /* PlantRecognitionTests.swift */; };
@@ -145,6 +147,9 @@
 		78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
 		78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarTabs.swift; sourceTree = "<group>"; };
+		78DED1CE267E7DA900A7BC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78DED1D1267E7DEB00A7BC84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FB9292265A915A00986DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		782DD970265AA2B100FDE44B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78DED1D2267E7E8300A7BC84 /* Localizations */,
 				782DD971265AA2EA00FDE44B /* Images.xcassets */,
 			);
 			path = Resources;
@@ -368,6 +374,7 @@
 				78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */,
 				78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */,
 				78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */,
+				78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -416,6 +423,14 @@
 				78DED1B8267E641100A7BC84 /* SettingsTabViewModel.swift */,
 			);
 			path = SettingsTab;
+			sourceTree = "<group>";
+		};
+		78DED1D2267E7E8300A7BC84 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1CF267E7DA900A7BC84 /* Localizable.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		78FB927A265A915800986DA5 = {
@@ -520,6 +535,7 @@
 				78FB9281265A915800986DA5 /* Resources */,
 				FFBEE291259CDE8BDBB46CB4 /* [CP] Embed Pods Frameworks */,
 				7849E1A42662646C003DBD19 /* Firebase */,
+				78DED1D3267E7FC400A7BC84 /* Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -598,6 +614,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 78FB927A265A915800986DA5;
 			productRefGroup = 78FB9284265A915800986DA5 /* Products */;
@@ -617,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */,
+				78DED1CD267E7DA900A7BC84 /* Localizable.strings in Resources */,
 				782DD972265AA2EA00FDE44B /* Images.xcassets in Resources */,
 				78146A58266160A100CDDFDA /* GoogleService-Info.plist in Resources */,
 			);
@@ -673,6 +691,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/PlantRecognition/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
+		};
+		78DED1D3267E7FC400A7BC84 /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" …\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		A975AA3D4A6D2A22F58BFA3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -772,6 +808,7 @@
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
 				78DED1C4267E64AA00A7BC84 /* MainTabBarFactory.swift in Sources */,
 				78DED1A9267E639500A7BC84 /* MyPlantsTabViewModel.swift in Sources */,
+				78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */,
 				78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
@@ -851,6 +888,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		78DED1CF267E7DA900A7BC84 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78DED1CE267E7DA900A7BC84 /* en */,
+				78DED1D1267E7DEB00A7BC84 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -866,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -927,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

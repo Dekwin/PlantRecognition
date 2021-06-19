@@ -1,5 +1,5 @@
 strings:
-  inputs: Resources/Base.lproj
+  inputs: Resources/Localizations/Base.lproj
   outputs:
     - templateName: structured-swift5
       output: Generated/Strings.swift
