@@ -10,7 +10,7 @@ import UIKit
 
 final class AppEntryPointFactory {
     func create() -> UIViewController {
-        let controller = HomePageFactory().create()
+        let controller = MainTabBarFactory().create() //HomePageFactory().create()
         return controller
     }
 }

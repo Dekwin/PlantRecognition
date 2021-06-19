@@ -40,6 +40,25 @@
 		78C725A52663B9AD005AA717 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C725A42663B9AD005AA717 /* UIImage+Resize.swift */; };
 		78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CB265A990200D5815F /* HomePageViewController.swift */; };
 		78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF13CD265A991300D5815F /* HomePageFactory.swift */; };
+		78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1A0267E639500A7BC84 /* MyPlantsTabFactory.swift */; };
+		78DED1A6267E639500A7BC84 /* MyPlantsTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1A1267E639500A7BC84 /* MyPlantsTabRouter.swift */; };
+		78DED1A7267E639500A7BC84 /* MyPlantsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */; };
+		78DED1A8267E639500A7BC84 /* MyPlantsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */; };
+		78DED1A9267E639500A7BC84 /* MyPlantsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1A4267E639500A7BC84 /* MyPlantsTabViewModel.swift */; };
+		78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1AA267E640400A7BC84 /* SearchTabFactory.swift */; };
+		78DED1B0267E640400A7BC84 /* SearchTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1AB267E640400A7BC84 /* SearchTabRouter.swift */; };
+		78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1AC267E640400A7BC84 /* SearchTabViewController.swift */; };
+		78DED1B2267E640400A7BC84 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1AD267E640400A7BC84 /* SearchTabView.swift */; };
+		78DED1B3267E640400A7BC84 /* SearchTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1AE267E640400A7BC84 /* SearchTabViewModel.swift */; };
+		78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1B4267E641100A7BC84 /* SettingsTabFactory.swift */; };
+		78DED1BA267E641100A7BC84 /* SettingsTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1B5267E641100A7BC84 /* SettingsTabRouter.swift */; };
+		78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1B6267E641100A7BC84 /* SettingsTabViewController.swift */; };
+		78DED1BC267E641100A7BC84 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1B7267E641100A7BC84 /* SettingsTabView.swift */; };
+		78DED1BD267E641100A7BC84 /* SettingsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1B8267E641100A7BC84 /* SettingsTabViewModel.swift */; };
+		78DED1C4267E64AA00A7BC84 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1BF267E64AA00A7BC84 /* MainTabBarFactory.swift */; };
+		78DED1C5267E64AA00A7BC84 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */; };
+		78DED1C6267E64AA00A7BC84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */; };
+		78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */; };
 		78FB929E265A915A00986DA5 /* PlantRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB929D265A915A00986DA5 /* PlantRecognitionTests.swift */; };
@@ -107,6 +126,25 @@
 		78C725A42663B9AD005AA717 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		78CF13CB265A990200D5815F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		78CF13CD265A991300D5815F /* HomePageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageFactory.swift; sourceTree = "<group>"; };
+		78DED1A0267E639500A7BC84 /* MyPlantsTabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabFactory.swift; sourceTree = "<group>"; };
+		78DED1A1267E639500A7BC84 /* MyPlantsTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabRouter.swift; sourceTree = "<group>"; };
+		78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabViewController.swift; sourceTree = "<group>"; };
+		78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabView.swift; sourceTree = "<group>"; };
+		78DED1A4267E639500A7BC84 /* MyPlantsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabViewModel.swift; sourceTree = "<group>"; };
+		78DED1AA267E640400A7BC84 /* SearchTabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabFactory.swift; sourceTree = "<group>"; };
+		78DED1AB267E640400A7BC84 /* SearchTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabRouter.swift; sourceTree = "<group>"; };
+		78DED1AC267E640400A7BC84 /* SearchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewController.swift; sourceTree = "<group>"; };
+		78DED1AD267E640400A7BC84 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		78DED1AE267E640400A7BC84 /* SearchTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewModel.swift; sourceTree = "<group>"; };
+		78DED1B4267E641100A7BC84 /* SettingsTabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabFactory.swift; sourceTree = "<group>"; };
+		78DED1B5267E641100A7BC84 /* SettingsTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRouter.swift; sourceTree = "<group>"; };
+		78DED1B6267E641100A7BC84 /* SettingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewController.swift; sourceTree = "<group>"; };
+		78DED1B7267E641100A7BC84 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
+		78DED1B8267E641100A7BC84 /* SettingsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewModel.swift; sourceTree = "<group>"; };
+		78DED1BF267E64AA00A7BC84 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
+		78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
+		78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FB9292265A915A00986DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -323,6 +361,63 @@
 			path = HomePage;
 			sourceTree = "<group>";
 		};
+		78DED195267E5F5100A7BC84 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1BF267E64AA00A7BC84 /* MainTabBarFactory.swift */,
+				78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */,
+				78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */,
+				78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		78DED19C267E62E800A7BC84 /* MyPlantsTab */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1A0267E639500A7BC84 /* MyPlantsTabFactory.swift */,
+				78DED1A1267E639500A7BC84 /* MyPlantsTabRouter.swift */,
+				78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */,
+				78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */,
+				78DED1A4267E639500A7BC84 /* MyPlantsTabViewModel.swift */,
+			);
+			path = MyPlantsTab;
+			sourceTree = "<group>";
+		};
+		78DED19D267E632A00A7BC84 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				78DED19C267E62E800A7BC84 /* MyPlantsTab */,
+				78DED19E267E634400A7BC84 /* SearchTab */,
+				78DED19F267E634B00A7BC84 /* SettingsTab */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		78DED19E267E634400A7BC84 /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1AA267E640400A7BC84 /* SearchTabFactory.swift */,
+				78DED1AB267E640400A7BC84 /* SearchTabRouter.swift */,
+				78DED1AC267E640400A7BC84 /* SearchTabViewController.swift */,
+				78DED1AD267E640400A7BC84 /* SearchTabView.swift */,
+				78DED1AE267E640400A7BC84 /* SearchTabViewModel.swift */,
+			);
+			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		78DED19F267E634B00A7BC84 /* SettingsTab */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1B4267E641100A7BC84 /* SettingsTabFactory.swift */,
+				78DED1B5267E641100A7BC84 /* SettingsTabRouter.swift */,
+				78DED1B6267E641100A7BC84 /* SettingsTabViewController.swift */,
+				78DED1B7267E641100A7BC84 /* SettingsTabView.swift */,
+				78DED1B8267E641100A7BC84 /* SettingsTabViewModel.swift */,
+			);
+			path = SettingsTab;
+			sourceTree = "<group>";
+		};
 		78FB927A265A915800986DA5 = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +478,8 @@
 		78FB92B6265A92C100986DA5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				78DED195267E5F5100A7BC84 /* MainTabBar */,
+				78DED19D267E632A00A7BC84 /* Tabs */,
 				78CF13CA265A98F200D5815F /* HomePage */,
 				78FB92B7265A938A00986DA5 /* AppEntryPoint */,
 			);
@@ -669,31 +766,50 @@
 			files = (
 				78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */,
 				7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */,
+				78DED1A8267E639500A7BC84 /* MyPlantsTabView.swift in Sources */,
+				78DED1C6267E64AA00A7BC84 /* MainTabBarViewController.swift in Sources */,
 				78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
+				78DED1C4267E64AA00A7BC84 /* MainTabBarFactory.swift in Sources */,
+				78DED1A9267E639500A7BC84 /* MyPlantsTabViewModel.swift in Sources */,
+				78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
+				78DED1BA267E641100A7BC84 /* SettingsTabRouter.swift in Sources */,
 				78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
+				78DED1A6267E639500A7BC84 /* MyPlantsTabRouter.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
 				78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */,
 				7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */,
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
+				78DED1BC267E641100A7BC84 /* SettingsTabView.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
+				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
+				78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
+				78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */,
+				78DED1B3267E640400A7BC84 /* SearchTabViewModel.swift in Sources */,
+				78DED1BD267E641100A7BC84 /* SettingsTabViewModel.swift in Sources */,
+				78DED1B2267E640400A7BC84 /* SearchTabView.swift in Sources */,
+				78DED1A7267E639500A7BC84 /* MyPlantsTabViewController.swift in Sources */,
 				7849E1C62663AAB6003DBD19 /* UIStackView+Extensions.swift in Sources */,
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
+				78DED1B0267E640400A7BC84 /* SearchTabRouter.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
 				78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */,
+				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
+				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,
 				786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */,
 				7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */,
 				78C725A52663B9AD005AA717 /* UIImage+Resize.swift in Sources */,
+				78DED1C5267E64AA00A7BC84 /* MainTabBarRouter.swift in Sources */,
 				782DD96F265AA15900FDE44B /* UIView+Extensions.swift in Sources */,
 				78C725A32663B6CB005AA717 /* Double+Round.swift in Sources */,
 				7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */,

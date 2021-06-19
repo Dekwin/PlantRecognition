@@ -5,6 +5,8 @@ target 'PlantRecognition' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  # Pods for PlantRecognition
+  
   # Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
@@ -17,17 +19,10 @@ target 'PlantRecognition' do
 
   # Code generation
   pod 'SwiftGen'
-  
-  # Reactive
-  # pod 'CombineCocoa'
-  # pod 'CombineExt'
 
-  # pod 'RxSwift'
-  # pod 'RxCocoa'
-
+  # UI helpers
   pod 'MBProgressHUD'
-
-  # Pods for PlantRecognition
+  pod 'FittedSheets'
 
   target 'PlantRecognitionTests' do
     inherit! :search_paths
