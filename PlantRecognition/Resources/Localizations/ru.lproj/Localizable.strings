@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  PlantRecognition
+
+  Created by Igor Kasyanenko on 19.06.2021.
+  
+*/
+
+"MainTabBar.Tabs.myPlants" = "Mои растения";

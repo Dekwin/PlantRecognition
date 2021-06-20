@@ -1,0 +1,19 @@
+strings:
+  inputs:
+    - PlantRecognition/Resources/Localizations/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: PlantRecognition/Generated/LocalizationStrings.swift
+      params:
+        publicAccess: true
+        enumName: L10n
+xcassets:
+  inputs:
+    - PlantRecognition/Resources/Images.xcassets
+  outputs:
+    - templateName: swift5
+      output: PlantRecognition/Generated/ImageAssets.swift
+      params:
+        publicAccess: true
+        forceProvidesNamespaces: true
+        enumName: Asset
