@@ -71,7 +71,7 @@ private extension MyPlantsTabViewController {
     }
     
     struct TabBarItemAppearance {
-        let titlePositionAdjustment: UIOffset = .init(horizontal: 0, vertical: -12)
+        let titlePositionAdjustment: UIOffset = .init(horizontal: 20, vertical: -12)
         let imageInsets: UIEdgeInsets = .init(top: -2, left: 0, bottom: 2, right: 0)
         let itemTextAttributes: [NSAttributedString.Key : Any] = [
             .font: TextStyle.tabsText.styleAttributes.font,
