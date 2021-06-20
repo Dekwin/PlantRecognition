@@ -15,6 +15,10 @@ public enum L10n {
     public enum Tabs {
       /// My plants
       public static let myPlants = L10n.tr("Localizable", "MainTabBar.Tabs.myPlants")
+      /// Search
+      public static let search = L10n.tr("Localizable", "MainTabBar.Tabs.search")
+      /// Settings
+      public static let settings = L10n.tr("Localizable", "MainTabBar.Tabs.settings")
     }
   }
 }

@@ -20,7 +20,15 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
   public enum Iconly {
-    public static let leaf = ImageAsset(name: "Leaf")
+    public static let notSelectedLeaf = ImageAsset(name: "NotSelectedLeaf")
+    public static let notSelectedSearch = ImageAsset(name: "NotSelectedSearch")
+    public static let notSelectedSetting = ImageAsset(name: "NotSelectedSetting")
+    public static let selectedLeaf = ImageAsset(name: "SelectedLeaf")
+    public static let selectedSearch = ImageAsset(name: "SelectedSearch")
+    public static let selectedSetting = ImageAsset(name: "SelectedSetting")
+  }
+  public enum TabBar {
+    public static let tabBarBg = ImageAsset(name: "TabBarBg")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

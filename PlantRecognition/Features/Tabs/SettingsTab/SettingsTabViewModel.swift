@@ -3,6 +3,7 @@
 //
 
 protocol SettingsTabViewModelProtocol: AnyObject {
+    var tabBarItem: SettingsTabViewController.TabBarItem { get }
     func viewLoaded()
 }
 
@@ -19,6 +20,14 @@ final class SettingsTabViewModel {
 
 // MARK:  SettingsTabViewModelProtocol
 extension SettingsTabViewModel: SettingsTabViewModelProtocol {
+    var tabBarItem: SettingsTabViewController.TabBarItem {
+        .init(
+            title: L10n.MainTabBar.Tabs.settings,
+            image: Asset.Iconly.notSelectedSetting.image,
+            selectedImage: Asset.Iconly.selectedSetting.image
+        )
+    }
+    
     func viewLoaded() {
         view?.update(with: .init())
     }

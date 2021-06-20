@@ -7,3 +7,5 @@
 */
 
 "MainTabBar.Tabs.myPlants" = "Mои растения";
+"MainTabBar.Tabs.search" = "Поиск";
+"MainTabBar.Tabs.settings" = "Настройки";

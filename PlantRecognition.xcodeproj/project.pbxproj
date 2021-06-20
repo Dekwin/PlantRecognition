@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78146A58266160A100CDDFDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78146A57266160A100CDDFDA /* GoogleService-Info.plist */; };
+		781B39F1267F51C300A90EC2 /* MainTabBarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B39F0267F51C300A90EC2 /* MainTabBarTabView.swift */; };
 		782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D0633265C23CA001DE889 /* HomePageViewModel.swift */; };
 		782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D0638265C2CDD001DE889 /* HomePageRouter.swift */; };
 		782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782DD96B265A9FE700FDE44B /* HomePageView.swift */; };
@@ -98,6 +99,7 @@
 		662C506A0B6D00A6516932FD /* Pods_PlantRecognition_PlantRecognitionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantRecognition_PlantRecognitionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD2E0704627A14ADC7966F7 /* Pods-PlantRecognitionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantRecognitionTests.release.xcconfig"; path = "Target Support Files/Pods-PlantRecognitionTests/Pods-PlantRecognitionTests.release.xcconfig"; sourceTree = "<group>"; };
 		78146A57266160A100CDDFDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		781B39F0267F51C300A90EC2 /* MainTabBarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarTabView.swift; sourceTree = "<group>"; };
 		782D0633265C23CA001DE889 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		782D0638265C2CDD001DE889 /* HomePageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageRouter.swift; sourceTree = "<group>"; };
 		782DD96B265A9FE700FDE44B /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,15 @@
 				58AFD0E82AE01CE70AE772B3 /* Pods_PlantRecognitionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		781B39EF267F519C00A90EC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */,
+				781B39F0267F51C300A90EC2 /* MainTabBarTabView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		782DD96D265AA13500FDE44B /* Extensions */ = {
@@ -374,9 +385,9 @@
 		78DED195267E5F5100A7BC84 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				781B39EF267F519C00A90EC2 /* View */,
 				78DED1BF267E64AA00A7BC84 /* MainTabBarFactory.swift */,
 				78DED1C0267E64AA00A7BC84 /* MainTabBarRouter.swift */,
-				78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */,
 				78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */,
 				78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */,
 			);
@@ -544,12 +555,12 @@
 			buildConfigurationList = 78FB92AD265A915A00986DA5 /* Build configuration list for PBXNativeTarget "PlantRecognition" */;
 			buildPhases = (
 				B176B44D47FB0FABAB727FFC /* [CP] Check Pods Manifest.lock */,
+				78DED1D3267E7FC400A7BC84 /* Swiftgen */,
 				78FB927F265A915800986DA5 /* Sources */,
 				78FB9280265A915800986DA5 /* Frameworks */,
 				78FB9281265A915800986DA5 /* Resources */,
 				FFBEE291259CDE8BDBB46CB4 /* [CP] Embed Pods Frameworks */,
 				7849E1A42662646C003DBD19 /* Firebase */,
-				78DED1D3267E7FC400A7BC84 /* Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -859,6 +870,7 @@
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,
+				781B39F1267F51C300A90EC2 /* MainTabBarTabView.swift in Sources */,
 				786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */,
 				7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */,
 				78C725A52663B9AD005AA717 /* UIImage+Resize.swift in Sources */,

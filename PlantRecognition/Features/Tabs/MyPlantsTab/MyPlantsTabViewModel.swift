@@ -3,6 +3,7 @@
 //
 
 protocol MyPlantsTabViewModelProtocol: AnyObject {
+    var tabBarItem: MyPlantsTabViewController.TabBarItem { get }
     func viewLoaded()
 }
 
@@ -19,11 +20,17 @@ final class MyPlantsTabViewModel {
 
 // MARK:  MyPlantsTabViewModelProtocol
 extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
+    var tabBarItem: MyPlantsTabViewController.TabBarItem {
+        .init(
+            title: L10n.MainTabBar.Tabs.myPlants,
+            image: Asset.Iconly.notSelectedLeaf.image,
+            selectedImage: Asset.Iconly.selectedLeaf.image
+        )
+    }
+    
     func viewLoaded() {
         view?.update(
-            with: .init(
-                tabBarItem: .init(title: L10n.MainTabBar.Tabs.myPlants, image: Asset.Iconly.leaf.image, selectedImage: nil)
-            )
+            with: .init()
         )
     }
 }

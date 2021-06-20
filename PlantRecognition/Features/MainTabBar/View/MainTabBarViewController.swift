@@ -15,6 +15,12 @@ protocol MainTabBarViewProtocol: AlertLoaderPresentable {
 final class MainTabBarViewController: UITabBarController {
     private let viewModel: MainTabBarViewModelProtocol
     private var isViewAppearedEarlier: Bool = false
+    private let tabBarHeight: CGFloat = 70.0
+    
+    private lazy var customTabBar: UITabBar = {
+        let tabBar = MainTabBarTabView(frame: .zero)
+        return tabBar
+    }()
     
     init(viewModel: MainTabBarViewModelProtocol) {
         self.viewModel = viewModel
@@ -32,6 +38,11 @@ final class MainTabBarViewController: UITabBarController {
             viewModel.viewLoaded()
         }
         isViewAppearedEarlier = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setValue(customTabBar, forKey: "tabBar")
     }
 }
 

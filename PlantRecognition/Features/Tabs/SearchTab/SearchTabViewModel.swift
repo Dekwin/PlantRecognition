@@ -3,6 +3,7 @@
 //
 
 protocol SearchTabViewModelProtocol: AnyObject {
+    var tabBarItem: SearchTabViewController.TabBarItem { get }
     func viewLoaded()
 }
 
@@ -19,6 +20,14 @@ final class SearchTabViewModel {
 
 // MARK:  SearchTabViewModelProtocol
 extension SearchTabViewModel: SearchTabViewModelProtocol {
+    var tabBarItem: SearchTabViewController.TabBarItem {
+        .init(
+            title: L10n.MainTabBar.Tabs.search,
+            image: Asset.Iconly.notSelectedSearch.image,
+            selectedImage: Asset.Iconly.selectedSearch.image
+        )
+    }
+    
     func viewLoaded() {
         view?.update(with: .init())
     }

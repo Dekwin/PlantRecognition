@@ -11,11 +11,13 @@ protocol MyPlantsTabViewProtocol: AlertLoaderPresentable {
 
 final class MyPlantsTabViewController: UIViewController {
     private let viewModel: MyPlantsTabViewModelProtocol
+    private let appearance = Appearance()
     private lazy var customView = MyPlantsTabView()
     
     init(viewModel: MyPlantsTabViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        setupTabBarItem(viewModel.tabBarItem)
     }
     
     required init?(coder _: NSCoder) {
@@ -30,15 +32,6 @@ final class MyPlantsTabViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewLoaded()
     }
-}
-
-// MARK: - MyPlantsTabViewProtocol
-extension MyPlantsTabViewController: MyPlantsTabViewProtocol {
-    func update(with model: Model) {
-        setupTabBarItem(model.tabBarItem)
-        
-        customView.update(with: .init())
-    }
     
     private func setupTabBarItem(_ item: TabBarItem) {
         tabBarItem = .init(
@@ -46,13 +39,21 @@ extension MyPlantsTabViewController: MyPlantsTabViewProtocol {
             image: item.image,
             selectedImage: item.selectedImage
         )
+        tabBarItem.titlePositionAdjustment = appearance.tabBarItemAppearance.titlePositionAdjustment
+        tabBarItem.imageInsets = appearance.tabBarItemAppearance.imageInsets
+    }
+}
+
+// MARK: - MyPlantsTabViewProtocol
+extension MyPlantsTabViewController: MyPlantsTabViewProtocol {
+    func update(with model: Model) {
+        customView.update(with: .init())
     }
 }
 
 // MARK: Model
 extension MyPlantsTabViewController {
     struct Model {
-        let tabBarItem: TabBarItem
     }
     
     struct TabBarItem {
@@ -61,3 +62,16 @@ extension MyPlantsTabViewController {
         let selectedImage: UIImage?
     }
 }
+
+private extension MyPlantsTabViewController {
+    struct Appearance {
+        let tabBarItemAppearance: TabBarItemAppearance = .init()
+    }
+    
+    struct TabBarItemAppearance {
+        let titlePositionAdjustment: UIOffset = .init(horizontal: 0, vertical: -12)
+        let imageInsets: UIEdgeInsets = .init(top: -2, left: 0, bottom: 2, right: 0)
+    }
+}
+
+
