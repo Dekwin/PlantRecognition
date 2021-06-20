@@ -6,6 +6,7 @@ import UIKit
 
 final class MyPlantsTabView: UIView {
     private let appearance = Appearance()
+    private lazy var label = UILabel(frame: .zero)
     
     init() {
         super.init(frame: .zero)
@@ -27,14 +28,19 @@ private extension MyPlantsTabView {
         backgroundColor = .white
         setupSubviews()
         setupConstraints()
+        
+        label.set(text: "My plants", with: .headerL)
     }
     
     func setupSubviews() {
-        
+        addSubview(label)
     }
     
     func setupConstraints() {
-        
+        label.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).inset(28)
+            make.left.equalTo(safeAreaLayoutGuide).inset(24)
+        }
     }
 }
 

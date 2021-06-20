@@ -31,17 +31,17 @@ class TextStyle {
             textAttributes.removeValue(forKey: .foregroundColor)
         }
         
-        if var attributes = styleAttributes.attributes.value {
-            textAttributes.forEach { key, value in
-                attributes.updateValue(value, forKey: key)
-            }
-            styleAttributes.attributes = .defined(value: attributes)
-            
-            mutableAttributedText.addAttributes(
-                attributes,
-                range: NSMakeRange(0, mutableAttributedText.length)
-            )
+        var attributes = styleAttributes.attributes.value ?? [:]
+        
+        textAttributes.forEach { key, value in
+            attributes.updateValue(value, forKey: key)
         }
+        styleAttributes.attributes = .defined(value: attributes)
+        
+        mutableAttributedText.addAttributes(
+            attributes,
+            range: NSMakeRange(0, mutableAttributedText.length)
+        )
         
         return mutableAttributedText
     }

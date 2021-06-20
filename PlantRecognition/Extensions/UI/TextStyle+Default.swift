@@ -13,7 +13,11 @@ extension TextStyle {
     /// 32
     class var headerL: TextStyle {
         .init(
-            styleAttributes: .init(font: Fonts.FiraSans.semiBold.font(size: 32), lineHeight: .defined(value: 34), alignment: .defined(value: .left))
+            styleAttributes: .init(
+                font: Fonts.FiraSans.semiBold.font(size: 32),
+                lineHeight: .defined(value: 34),
+                alignment: .defined(value: .left)
+            )
         )
     }
 
@@ -60,7 +64,11 @@ extension TextStyle {
     /// .11
     class var tabsText: TextStyle {
         .init(
-            styleAttributes: .init(font: Fonts.FiraSans.regular.font(size: 11), lineHeight: .defined(value: 13), alignment: .defined(value: .center))
+            styleAttributes: .init(
+                font: Fonts.FiraSans.regular.font(size: 11),
+                lineHeight: .defined(value: 13),
+                alignment: .defined(value: .center)
+            )
         )
     }
 }
