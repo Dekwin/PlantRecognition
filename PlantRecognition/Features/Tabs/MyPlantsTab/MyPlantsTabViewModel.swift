@@ -23,8 +23,8 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
     var tabBarItem: MyPlantsTabViewController.TabBarItem {
         .init(
             title: L10n.MainTabBar.Tabs.myPlants,
-            image: Asset.Iconly.notSelectedLeaf.image,
-            selectedImage: Asset.Iconly.selectedLeaf.image
+            image: Asset.Images.Iconly.notSelectedLeaf.image,
+            selectedImage: Asset.Images.Iconly.selectedLeaf.image
         )
     }
     

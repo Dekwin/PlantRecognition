@@ -15,7 +15,6 @@ protocol MainTabBarViewProtocol: AlertLoaderPresentable {
 final class MainTabBarViewController: UITabBarController {
     private let viewModel: MainTabBarViewModelProtocol
     private var isViewAppearedEarlier: Bool = false
-    private let tabBarHeight: CGFloat = 70.0
     
     private lazy var customTabBar: UITabBar = {
         let tabBar = MainTabBarTabView(frame: .zero)

@@ -23,8 +23,8 @@ extension SettingsTabViewModel: SettingsTabViewModelProtocol {
     var tabBarItem: SettingsTabViewController.TabBarItem {
         .init(
             title: L10n.MainTabBar.Tabs.settings,
-            image: Asset.Iconly.notSelectedSetting.image,
-            selectedImage: Asset.Iconly.selectedSetting.image
+            image: Asset.Images.Iconly.notSelectedSetting.image,
+            selectedImage: Asset.Images.Iconly.selectedSetting.image
         )
     }
     

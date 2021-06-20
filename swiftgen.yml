@@ -1,3 +1,11 @@
+fonts:
+  inputs: PlantRecognition/Resources/Fonts
+  outputs:
+    - templateName: swift5
+      output: PlantRecognition/Generated/Fonts.swift
+      params:
+        publicAccess: true
+        enumName: Fonts
 strings:
   inputs:
     - PlantRecognition/Resources/Localizations/en.lproj
@@ -10,6 +18,7 @@ strings:
 xcassets:
   inputs:
     - PlantRecognition/Resources/Images.xcassets
+    - PlantRecognition/Resources/Colors.xcassets
   outputs:
     - templateName: swift5
       output: PlantRecognition/Generated/ImageAssets.swift

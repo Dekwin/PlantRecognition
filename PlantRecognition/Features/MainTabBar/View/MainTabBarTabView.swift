@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class MainTabBarTabView: UITabBar {
-    private let tabBarHeight: CGFloat = 70.0
+    private let appearance = Appearance()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,24 +23,33 @@ class MainTabBarTabView: UITabBar {
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = tabBarHeight
+        sizeThatFits.height = appearance.tabBarHeight
         return sizeThatFits
     }
     
     private func setupTabBar() {
         clipsToBounds = false
         
-        let bgView = UIImageView(image: Asset.TabBar.tabBarBg.image)
+        let bgView = UIImageView(image: Asset.Images.TabBar.tabBarBg.image)
         addSubview(bgView)
         sendSubviewToBack(bgView)
         bgView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: -26, left: 0, bottom: 0, right: 0))
+            make.edges.equalToSuperview().inset(appearance.bgImageInsets)
         }
 
         shadowImage = UIImage()
         backgroundImage = UIImage()
         
-        tintColor = UIColor(red: 65/255.0, green: 109/255.0, blue: 80/255.0, alpha: 1)
-        unselectedItemTintColor = UIColor(red: 169/255.0, green: 177/255.0, blue: 170/255.0, alpha: 1)
+        tintColor = appearance.tintColor
+        unselectedItemTintColor = appearance.unselectedItemTintColor
+    }
+}
+
+private extension MainTabBarTabView {
+    struct Appearance {
+        let tintColor: UIColor = Asset.Colors.mainGreen.color
+        let unselectedItemTintColor: UIColor = Asset.Colors.grey.color
+        let tabBarHeight: CGFloat = 70.0
+        let bgImageInsets: UIEdgeInsets = UIEdgeInsets(top: -26, left: 0, bottom: 0, right: 0)
     }
 }

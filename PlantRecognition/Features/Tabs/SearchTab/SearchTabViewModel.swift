@@ -23,8 +23,8 @@ extension SearchTabViewModel: SearchTabViewModelProtocol {
     var tabBarItem: SearchTabViewController.TabBarItem {
         .init(
             title: L10n.MainTabBar.Tabs.search,
-            image: Asset.Iconly.notSelectedSearch.image,
-            selectedImage: Asset.Iconly.selectedSearch.image
+            image: Asset.Images.Iconly.notSelectedSearch.image,
+            selectedImage: Asset.Images.Iconly.selectedSearch.image
         )
     }
     
