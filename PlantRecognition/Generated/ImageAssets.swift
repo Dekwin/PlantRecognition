@@ -38,10 +38,19 @@ public enum Asset {
     public static let white = ColorAsset(name: "White")
   }
   public enum Images {
-    public enum Buttons {
-      public static let addPlant = ImageAsset(name: "AddPlant")
+    public enum Components {
+      public enum Buttons {
+        public static let addPlant = ImageAsset(name: "AddPlant")
+      }
+      public enum Cards {
+        public static let cardBg = ImageAsset(name: "CardBg")
+      }
+    }
+    public enum DemoImages {
+      public static let demoPlant = ImageAsset(name: "DemoPlant")
     }
     public enum Iconly {
+      public static let more = ImageAsset(name: "More")
       public static let notSelectedLeaf = ImageAsset(name: "NotSelectedLeaf")
       public static let notSelectedSearch = ImageAsset(name: "NotSelectedSearch")
       public static let notSelectedSetting = ImageAsset(name: "NotSelectedSetting")

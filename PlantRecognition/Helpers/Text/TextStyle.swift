@@ -4,11 +4,15 @@
 import Foundation
 import UIKit
 
-class TextStyle {
+class TextStyle: Copyable {
     private(set) var styleAttributes: StyleAttributes
     
     init(styleAttributes: StyleAttributes) {
         self.styleAttributes = styleAttributes
+    }
+    
+    required init(instance: TextStyle) {
+        self.styleAttributes = instance.styleAttributes
     }
     
     func createAttributedText(from text: String) -> NSMutableAttributedString {
@@ -62,6 +66,13 @@ class TextStyle {
             paragraphStyle.lineSpacing = value
         }
         return paragraphStyle
+    }
+}
+
+extension TextStyle {
+    func set(color: UIColor) -> TextStyle {
+        styleAttributes.color = .defined(value: color)
+        return self.copy()
     }
 }
 

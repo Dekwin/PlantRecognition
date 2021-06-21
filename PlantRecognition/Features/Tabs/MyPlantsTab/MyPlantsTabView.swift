@@ -29,7 +29,17 @@ private extension MyPlantsTabView {
         setupSubviews()
         setupConstraints()
         
-        label.set(text: "My plants", with: .headerL)
+        label.set(text: "My plants", with: .title32SB)
+        
+        let card = PlantCardView(frame: .zero)
+        card.update(
+            with: .init(image: Asset.Images.DemoImages.demoPlant.image, title: "Plantaer hjkh", notificationImages: [Asset.Images.Iconly.selectedLeaf.image, Asset.Images.Iconly.selectedSearch.image])
+        )
+        addSubview(card)
+        card.snp.makeConstraints { make in
+            make.top.equalTo(label.snp.bottom)
+            make.leading.equalTo(label.snp.leading)
+        }
     }
     
     func setupSubviews() {

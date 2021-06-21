@@ -9,21 +9,27 @@ import Foundation
 import UIKit
 
 extension TextStyle {
-
-    /// 32
-    class var headerL: TextStyle {
+    
+    class var title32SB: TextStyle {
         .init(
             styleAttributes: .init(
                 font: Fonts.FiraSans.semiBold.font(size: 32),
-                lineHeight: .defined(value: 34),
-                alignment: .defined(value: .left)
+                lineHeight: .defined(value: 38),
+                alignment: .defined(value: .left),
+                color: .defined(value: Asset.Colors.black.color)
             )
         )
     }
-
-    /// .bold27
-    class var headerM: TextStyle {
-        .init(styleAttributes: .init(font: Fonts.FiraSans.semiBold.font(size: 27)))
+    
+    class var subtitle18M: TextStyle {
+        .init(
+            styleAttributes: .init(
+                font: Fonts.FiraSans.medium.font(size: 18),
+                lineHeight: .defined(value: 22),
+                alignment: .defined(value: .left),
+                color: .defined(value: Asset.Colors.black.color)
+            )
+        )
     }
 
 //    /// .bold22

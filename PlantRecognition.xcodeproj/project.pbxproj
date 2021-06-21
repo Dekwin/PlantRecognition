@@ -56,6 +56,7 @@
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
+		78B33435268132A200D31353 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33434268132A200D31353 /* Copyable.swift */; };
 		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
 		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
 		78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */; };
@@ -87,6 +88,8 @@
 		78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D5267E846100A7BC84 /* ImageAssets.swift */; };
 		78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */; };
 		78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78DED1DD267E862700A7BC84 /* Localizable.strings */; };
+		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
+		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */; };
 		78FB929E265A915A00986DA5 /* PlantRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB929D265A915A00986DA5 /* PlantRecognitionTests.swift */; };
@@ -170,6 +173,7 @@
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
+		78B33434268132A200D31353 /* Copyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
 		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
 		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
 		78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentable.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
 		78DED1DC267E862700A7BC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78DED1DE267E865E00A7BC84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FB9292265A915A00986DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -340,6 +346,7 @@
 				7849E1A62662674C003DBD19 /* AlertPresentable.swift */,
 				78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */,
 				78C725A02663B626005AA717 /* AlertLoaderPresentable.swift */,
+				78B33434268132A200D31353 /* Copyable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -437,6 +444,7 @@
 				78C725A42663B9AD005AA717 /* UIImage+Resize.swift */,
 				7843D536267FB77800768083 /* UILabel+StyledText.swift */,
 				7843D53A267FB91200768083 /* TextStyle+Default.swift */,
+				78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -550,6 +558,22 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				78E8E1FD268110D2000695A9 /* Card */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		78E8E1FD268110D2000695A9 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				78E8E1FE26811177000695A9 /* PlantCardView.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		78FB927A265A915800986DA5 = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +599,7 @@
 		78FB9285265A915800986DA5 /* PlantRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				78E8E1FC268110B2000695A9 /* ViewComponents */,
 				78DED1D4267E81DC00A7BC84 /* Generated */,
 				7849E1A526626731003DBD19 /* Protocols */,
 				78FB92B6265A92C100986DA5 /* Features */,
@@ -959,6 +984,7 @@
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
+				78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */,
 				78DED1A6267E639500A7BC84 /* MyPlantsTabRouter.swift in Sources */,
 				78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
@@ -982,6 +1008,7 @@
 				78DED1B0267E640400A7BC84 /* SearchTabRouter.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
 				78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */,
+				78B33435268132A200D31353 /* Copyable.swift in Sources */,
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,
@@ -997,6 +1024,7 @@
 				7849E1AE26626C72003DBD19 /* PlantIdService.swift in Sources */,
 				7849E1C0266395B5003DBD19 /* Action.swift in Sources */,
 				7849E1A326626265003DBD19 /* NetworkError.swift in Sources */,
+				78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
