@@ -88,6 +88,9 @@
 		78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D5267E846100A7BC84 /* ImageAssets.swift */; };
 		78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */; };
 		78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78DED1DD267E862700A7BC84 /* Localizable.strings */; };
+		78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7AE2682687800A491AD /* InfoCardView.swift */; };
+		78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7B526826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift */; };
+		78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7BA26827CAB00A491AD /* DefaultButton.swift */; };
 		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
 		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
@@ -206,6 +209,9 @@
 		78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
 		78DED1DC267E862700A7BC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78DED1DE267E865E00A7BC84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78E1B7AE2682687800A491AD /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
+		78E1B7B526826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabNoPlantsYetView.swift; sourceTree = "<group>"; };
+		78E1B7BA26827CAB00A491AD /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -497,10 +503,9 @@
 		78DED19C267E62E800A7BC84 /* MyPlantsTab */ = {
 			isa = PBXGroup;
 			children = (
+				78E1B7B426826F6700A491AD /* View */,
 				78DED1A0267E639500A7BC84 /* MyPlantsTabFactory.swift */,
 				78DED1A1267E639500A7BC84 /* MyPlantsTabRouter.swift */,
-				78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */,
-				78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */,
 				78DED1A4267E639500A7BC84 /* MyPlantsTabViewModel.swift */,
 			);
 			path = MyPlantsTab;
@@ -558,9 +563,36 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		78E1B7B426826F6700A491AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78E1B7B726826F9D00A491AD /* NoPlantsYet */,
+				78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */,
+				78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78E1B7B726826F9D00A491AD /* NoPlantsYet */ = {
+			isa = PBXGroup;
+			children = (
+				78E1B7B526826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift */,
+			);
+			path = NoPlantsYet;
+			sourceTree = "<group>";
+		};
+		78E1B7B926827C8300A491AD /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				78E1B7BA26827CAB00A491AD /* DefaultButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				78E1B7B926827C8300A491AD /* Button */,
 				78E8E1FD268110D2000695A9 /* Card */,
 			);
 			path = ViewComponents;
@@ -570,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				78E8E1FE26811177000695A9 /* PlantCardView.swift */,
+				78E1B7AE2682687800A491AD /* InfoCardView.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -981,6 +1014,7 @@
 				7843D563267FBBE300768083 /* Fonts.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
+				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
@@ -992,6 +1026,8 @@
 				7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */,
 				786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */,
 				78DED1BC267E641100A7BC84 /* SettingsTabView.swift in Sources */,
+				78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */,
+				78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
 				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,

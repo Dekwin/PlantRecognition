@@ -14,6 +14,7 @@ extension TextStyle {
         .init(
             styleAttributes: .init(
                 font: Fonts.FiraSans.semiBold.font(size: 32),
+                kern: .defined(value: 0.96),
                 lineHeight: .defined(value: 38),
                 alignment: .defined(value: .left),
                 color: .defined(value: Asset.Colors.black.color)
@@ -25,7 +26,20 @@ extension TextStyle {
         .init(
             styleAttributes: .init(
                 font: Fonts.FiraSans.medium.font(size: 18),
+                kern: .defined(value: 0.54),
                 lineHeight: .defined(value: 22),
+                alignment: .defined(value: .left),
+                color: .defined(value: Asset.Colors.black.color)
+            )
+        )
+    }
+    
+    class var subtitle16M: TextStyle {
+        .init(
+            styleAttributes: .init(
+                font: Fonts.FiraSans.medium.font(size: 16),
+                kern: .defined(value: 0.48),
+                lineHeight: .defined(value: 19),
                 alignment: .defined(value: .left),
                 color: .defined(value: Asset.Colors.black.color)
             )

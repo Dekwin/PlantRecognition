@@ -43,7 +43,8 @@ final class MyPlantsTabView: UIView {
         let stackView = UIStackView(
             arrangedSubviews: [
                 headerStackView,
-                bodyStackView
+                bodyStackView,
+                UIView()
             ]
         )
         stackView.axis = .vertical
@@ -66,8 +67,10 @@ final class MyPlantsTabView: UIView {
     
     private func update(body: Body) {
         switch body {
-        case .noPlantsYet:
-            break
+        case .noPlantsYet(let model):
+            let view = MyPlantsTabNoPlantsYetView(frame: .zero)
+            view.update(with: model)
+            bodyStackView.replaceArrangedSubviews([view])
         case .plants:
             break
         }
@@ -114,14 +117,10 @@ extension MyPlantsTabView {
     }
     
     enum Body {
-        case noPlantsYet(NoPlantsYetModel)
+        case noPlantsYet(MyPlantsTabNoPlantsYetView.Model)
         case plants(PlantsModel)
     }
-    
-    struct NoPlantsYetModel {
-        
-    }
-    
+
     struct PlantsModel {
         
     }

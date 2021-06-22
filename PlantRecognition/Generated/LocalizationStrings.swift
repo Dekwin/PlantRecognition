@@ -25,6 +25,10 @@ public enum L10n {
   public enum MyPlantsTab {
     /// My plants
     public static let title = L10n.tr("Localizable", "MyPlantsTab.title")
+    public enum NoPlantsYet {
+      /// Add your first plant
+      public static let addYourFirstPlantButton = L10n.tr("Localizable", "MyPlantsTab.NoPlantsYet.AddYourFirstPlantButton")
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

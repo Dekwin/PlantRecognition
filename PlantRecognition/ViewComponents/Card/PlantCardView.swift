@@ -76,6 +76,8 @@ private extension PlantCardView {
             notificationsStackView
         )
         
+        titleLabel.numberOfLines = appearance.titleNumberOfLines
+        
         settingButton.setImage(Asset.Images.Iconly.more.image, for: .normal)
         settingButton.imageView?.contentMode = .center
         
@@ -141,5 +143,6 @@ private extension PlantCardView {
         let titleStyle: TextStyle = .subtitle18M
         let settingsButtonSize: CGSize = .init(width: 24, height: 24)
         let radius: CGFloat = 20
+        let titleNumberOfLines: Int = 0
     }
 }

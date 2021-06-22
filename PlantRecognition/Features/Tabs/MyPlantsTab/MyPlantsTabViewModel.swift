@@ -2,6 +2,8 @@
 //  Created by Igor Kasyanenko on 19.06.2021.
 //
 
+import Foundation
+
 protocol MyPlantsTabViewModelProtocol: AnyObject {
     var tabBarItem: MyPlantsTabViewController.TabBarItem { get }
     func viewLoaded()
@@ -41,7 +43,29 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
                         self?.addPlantTouched()
                     }
                 ),
-                body: .noPlantsYet(.init())
+                body: buildBodyModel()
+            )
+        )
+    }
+    
+    private func buildBodyModel() -> MyPlantsTabView.Body {
+        return .noPlantsYet(
+            buildNoPlantsYetModel()
+        )
+    }
+    
+    private func buildNoPlantsYetModel() -> MyPlantsTabNoPlantsYetView.Model {
+        let questionCardText: NSAttributedString = .init(string: "What will be your first plant?\nSearch it now")
+        return .init(
+            questionCardModel: .init(
+                image: Asset.Images.Tabs.MyPlants.question.image,
+                title: .attributed(questionCardText)
+            ),
+            addPlantButtonModel: .init(
+                title: L10n.MyPlantsTab.NoPlantsYet.addYourFirstPlantButton,
+                action: { [weak self] in
+                    self?.addPlantTouched()
+                }
             )
         )
     }

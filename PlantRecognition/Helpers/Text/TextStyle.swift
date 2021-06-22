@@ -74,6 +74,11 @@ extension TextStyle {
         styleAttributes.color = color
         return self.copy()
     }
+    
+    func set(alignment: StyleAttributes.AttributeValue<NSTextAlignment>) -> TextStyle {
+        styleAttributes.alignment = alignment
+        return self.copy()
+    }
 }
 
 extension TextStyle {

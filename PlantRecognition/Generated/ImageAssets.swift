@@ -41,6 +41,7 @@ public enum Asset {
     public enum Components {
       public enum Buttons {
         public static let addPlant = ImageAsset(name: "AddPlant")
+        public static let defaultButtonBg = ImageAsset(name: "DefaultButtonBg")
       }
       public enum Cards {
         public static let cardBg = ImageAsset(name: "CardBg")

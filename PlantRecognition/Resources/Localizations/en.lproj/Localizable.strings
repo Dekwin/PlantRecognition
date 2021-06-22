@@ -15,3 +15,4 @@
 // MARK: - MyPlants
 
 "MyPlantsTab.title" = "My plants";
+"MyPlantsTab.NoPlantsYet.AddYourFirstPlantButton" = "Add your first plant";
