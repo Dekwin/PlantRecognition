@@ -49,14 +49,13 @@ final class MyPlantsTabViewController: UIViewController {
 // MARK: - MyPlantsTabViewProtocol
 extension MyPlantsTabViewController: MyPlantsTabViewProtocol {
     func update(with model: Model) {
-        customView.update(with: .init())
+        customView.update(with: model)
     }
 }
 
 // MARK: Model
 extension MyPlantsTabViewController {
-    struct Model {
-    }
+    typealias Model = MyPlantsTabView.Model
     
     struct TabBarItem {
         let title: String?

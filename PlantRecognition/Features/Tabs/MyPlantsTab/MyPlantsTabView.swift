@@ -6,10 +6,52 @@ import UIKit
 
 final class MyPlantsTabView: UIView {
     private let appearance = Appearance()
-    private lazy var label = UILabel(frame: .zero)
     
-    init() {
-        super.init(frame: .zero)
+    private lazy var titleLabel: UILabel = .init()
+    private lazy var addPlantButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(Asset.Images.Components.Buttons.addPlant.image, for: .normal)
+        button.addTarget(self, action: #selector(addPlant), for: .touchUpInside)
+        return button
+    }()
+    
+    private var addPlantButtonAction: Action?
+    
+    private lazy var headerStackView: UIStackView = {
+        let stackView = UIStackView(
+            arrangedSubviews: [
+                titleLabel,
+                UIView(),
+                addPlantButton
+            ]
+        )
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    private lazy var bodyStackView: UIStackView = {
+        let stackView = UIStackView(
+            arrangedSubviews: [
+                
+            ]
+        )
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    private lazy var contentStackView: UIStackView = {
+        let stackView = UIStackView(
+            arrangedSubviews: [
+                headerStackView,
+                bodyStackView
+            ]
+        )
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         commonInit()
     }
     
@@ -18,7 +60,27 @@ final class MyPlantsTabView: UIView {
     }
     
     func update(with model: Model) {
-        
+        update(header: model.header)
+        update(body: model.body)
+    }
+    
+    private func update(body: Body) {
+        switch body {
+        case .noPlantsYet:
+            break
+        case .plants:
+            break
+        }
+    }
+    
+    private func update(header: Header) {
+        titleLabel.set(text: header.title, with: appearance.headerTitleStyle)
+        addPlantButtonAction = header.addPlantButtonAction
+    }
+    
+    @objc
+    private func addPlant() {
+        addPlantButtonAction?()
     }
 }
 
@@ -28,43 +90,54 @@ private extension MyPlantsTabView {
         backgroundColor = .white
         setupSubviews()
         setupConstraints()
-        
-        label.set(text: "My plants", with: .title32SB)
-        
-        let card = PlantCardView(frame: .zero)
-        card.update(
-            with: .init(image: Asset.Images.DemoImages.demoPlant.image, title: "Nephrolepis", notificationImages: [Asset.Images.Iconly.greenDroplet.image, Asset.Images.Iconly.greenFertilizer.image, Asset.Images.Iconly.greenPots.image])
-        )
-        addSubview(card)
-        card.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom)
-            make.leading.equalTo(label.snp.leading)
-        }
     }
     
     func setupSubviews() {
-        addSubview(label)
+        addSubviews(
+            contentStackView
+        )
     }
     
     func setupConstraints() {
-        label.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(28)
-            make.left.equalTo(safeAreaLayoutGuide).inset(24)
+        contentStackView.snp.makeConstraints { make in
+            make.edges.equalTo(safeAreaLayoutGuide).inset(appearance.contentInsets)
         }
+        contentStackView.setCustomSpacing(appearance.headerBottomInset, after: headerStackView)
     }
 }
 
 // MARK: - Model
 extension MyPlantsTabView {
     struct Model {
+        let header: Header
+        let body: Body
+    }
+    
+    enum Body {
+        case noPlantsYet(NoPlantsYetModel)
+        case plants(PlantsModel)
+    }
+    
+    struct NoPlantsYetModel {
         
+    }
+    
+    struct PlantsModel {
+        
+    }
+    
+    struct Header {
+        let title: String
+        let addPlantButtonAction: Action
     }
 }
 
 // MARK: - Appearance
 private extension MyPlantsTabView {
     struct Appearance {
-        
+        let headerTitleStyle: TextStyle = .title32SB
+        let contentInsets: UIEdgeInsets = .init(top: .gapXL, left: .gapXL, bottom: .gapXL, right: .gapXL)
+        let headerBottomInset: CGFloat = .gapXL
     }
 }
 

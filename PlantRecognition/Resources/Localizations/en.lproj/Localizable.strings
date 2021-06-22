@@ -6,6 +6,12 @@
   
 */
 
+// MARK: - Tabs
+
 "MainTabBar.Tabs.myPlants" = "My plants";
 "MainTabBar.Tabs.search" = "Search";
 "MainTabBar.Tabs.settings" = "Settings";
+
+// MARK: - MyPlants
+
+"MyPlantsTab.title" = "My plants";

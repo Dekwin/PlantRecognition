@@ -70,8 +70,8 @@ class TextStyle: Copyable {
 }
 
 extension TextStyle {
-    func set(color: UIColor) -> TextStyle {
-        styleAttributes.color = .defined(value: color)
+    func set(color: StyleAttributes.AttributeValue<UIColor>) -> TextStyle {
+        styleAttributes.color = color
         return self.copy()
     }
 }

@@ -29,8 +29,24 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
     }
     
     func viewLoaded() {
+        updateView()
+    }
+    
+    private func updateView() {
         view?.update(
-            with: .init()
+            with: .init(
+                header: .init(
+                    title: L10n.MyPlantsTab.title,
+                    addPlantButtonAction: { [weak self] in
+                        self?.addPlantTouched()
+                    }
+                ),
+                body: .noPlantsYet(.init())
+            )
         )
+    }
+    
+    private func addPlantTouched() {
+        
     }
 }
