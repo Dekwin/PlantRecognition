@@ -50,6 +50,9 @@ public enum Asset {
       public static let demoPlant = ImageAsset(name: "DemoPlant")
     }
     public enum Iconly {
+      public static let greenDroplet = ImageAsset(name: "GreenDroplet")
+      public static let greenFertilizer = ImageAsset(name: "GreenFertilizer")
+      public static let greenPots = ImageAsset(name: "GreenPots")
       public static let more = ImageAsset(name: "More")
       public static let notSelectedLeaf = ImageAsset(name: "NotSelectedLeaf")
       public static let notSelectedSearch = ImageAsset(name: "NotSelectedSearch")

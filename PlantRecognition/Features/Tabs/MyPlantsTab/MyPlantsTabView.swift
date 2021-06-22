@@ -33,7 +33,7 @@ private extension MyPlantsTabView {
         
         let card = PlantCardView(frame: .zero)
         card.update(
-            with: .init(image: Asset.Images.DemoImages.demoPlant.image, title: "Plantaer hjkh", notificationImages: [Asset.Images.Iconly.selectedLeaf.image, Asset.Images.Iconly.selectedSearch.image])
+            with: .init(image: Asset.Images.DemoImages.demoPlant.image, title: "Nephrolepis", notificationImages: [Asset.Images.Iconly.greenDroplet.image, Asset.Images.Iconly.greenFertilizer.image, Asset.Images.Iconly.greenPots.image])
         )
         addSubview(card)
         card.snp.makeConstraints { make in
