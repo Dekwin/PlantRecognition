@@ -16,3 +16,6 @@
 
 "MyPlantsTab.title" = "My plants";
 "MyPlantsTab.NoPlantsYet.AddYourFirstPlantButton" = "Add your first plant";
+
+"MyPlantsTab.NoPlantsYet.QuestionCard.Title.part1" = "What will be your first plant?";
+"MyPlantsTab.NoPlantsYet.QuestionCard.Title.part2" = "Search it now";

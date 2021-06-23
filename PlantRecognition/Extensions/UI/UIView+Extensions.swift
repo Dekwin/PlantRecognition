@@ -13,3 +13,12 @@ extension UIView {
         subviews.forEach { addSubview($0) }
     }
 }
+
+extension UIView {
+    func setupGradient(colors: [UIColor]) {
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = colors.map { $0.cgColor }
+        layer.insertSublayer(gradient, at: 0)
+    }
+}

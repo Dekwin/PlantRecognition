@@ -48,6 +48,9 @@
 		7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C32663A6F8003DBD19 /* PlantRecognitionResultView.swift */; };
 		7849E1C62663AAB6003DBD19 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C52663AAB6003DBD19 /* UIStackView+Extensions.swift */; };
 		7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849E1C72663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift */; };
+		784AA7CA2683AAC8006EBC06 /* UIVewController+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA7C92683AAC8006EBC06 /* UIVewController+Background.swift */; };
+		784AA7CD2683AEE9006EBC06 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA7CC2683AEE9006EBC06 /* GradientView.swift */; };
+		784AA7D02683B3C0006EBC06 /* MyPlantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA7CF2683B3C0006EBC06 /* MyPlantsListView.swift */; };
 		785C7DB6267FA108002267E4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785C7DB5267FA108002267E4 /* Colors.xcassets */; };
 		786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */; };
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
@@ -168,6 +171,9 @@
 		7849E1C32663A6F8003DBD19 /* PlantRecognitionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionResultView.swift; sourceTree = "<group>"; };
 		7849E1C52663AAB6003DBD19 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		7849E1C72663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyResult.swift; sourceTree = "<group>"; };
+		784AA7C92683AAC8006EBC06 /* UIVewController+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVewController+Background.swift"; sourceTree = "<group>"; };
+		784AA7CC2683AEE9006EBC06 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		784AA7CF2683B3C0006EBC06 /* MyPlantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsListView.swift; sourceTree = "<group>"; };
 		785C7DB5267FA108002267E4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestions.swift; sourceTree = "<group>"; };
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
@@ -383,6 +389,22 @@
 			path = PlantRecognitionResultView;
 			sourceTree = "<group>";
 		};
+		784AA7CB2683AEDE006EBC06 /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				784AA7CC2683AEE9006EBC06 /* GradientView.swift */,
+			);
+			path = GradientView;
+			sourceTree = "<group>";
+		};
+		784AA7CE2683B35E006EBC06 /* MyPlantsList */ = {
+			isa = PBXGroup;
+			children = (
+				784AA7CF2683B3C0006EBC06 /* MyPlantsListView.swift */,
+			);
+			path = MyPlantsList;
+			sourceTree = "<group>";
+		};
 		786F5715265D9806004E45EF /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +473,7 @@
 				7843D536267FB77800768083 /* UILabel+StyledText.swift */,
 				7843D53A267FB91200768083 /* TextStyle+Default.swift */,
 				78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */,
+				784AA7C92683AAC8006EBC06 /* UIVewController+Background.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -566,6 +589,7 @@
 		78E1B7B426826F6700A491AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				784AA7CE2683B35E006EBC06 /* MyPlantsList */,
 				78E1B7B726826F9D00A491AD /* NoPlantsYet */,
 				78DED1A2267E639500A7BC84 /* MyPlantsTabViewController.swift */,
 				78DED1A3267E639500A7BC84 /* MyPlantsTabView.swift */,
@@ -592,6 +616,7 @@
 		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				784AA7CB2683AEDE006EBC06 /* GradientView */,
 				78E1B7B926827C8300A491AD /* Button */,
 				78E8E1FD268110D2000695A9 /* Card */,
 			);
@@ -1017,9 +1042,11 @@
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */,
+				784AA7CD2683AEE9006EBC06 /* GradientView.swift in Sources */,
 				782DD974265AA7F900FDE44B /* ImagePickerManager.swift in Sources */,
 				78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */,
 				78DED1A6267E639500A7BC84 /* MyPlantsTabRouter.swift in Sources */,
+				784AA7CA2683AAC8006EBC06 /* UIVewController+Background.swift in Sources */,
 				78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
 				78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */,
@@ -1029,6 +1056,7 @@
 				78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */,
 				78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
+				784AA7D02683B3C0006EBC06 /* MyPlantsListView.swift in Sources */,
 				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */,

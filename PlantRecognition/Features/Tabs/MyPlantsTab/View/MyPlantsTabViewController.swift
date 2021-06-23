@@ -30,6 +30,7 @@ final class MyPlantsTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDefaultBackgroundView()
         viewModel.viewLoaded()
     }
     

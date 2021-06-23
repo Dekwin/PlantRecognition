@@ -28,6 +28,14 @@ public enum L10n {
     public enum NoPlantsYet {
       /// Add your first plant
       public static let addYourFirstPlantButton = L10n.tr("Localizable", "MyPlantsTab.NoPlantsYet.AddYourFirstPlantButton")
+      public enum QuestionCard {
+        public enum Title {
+          /// What will be your first plant?
+          public static let part1 = L10n.tr("Localizable", "MyPlantsTab.NoPlantsYet.QuestionCard.Title.part1")
+          /// Search it now
+          public static let part2 = L10n.tr("Localizable", "MyPlantsTab.NoPlantsYet.QuestionCard.Title.part2")
+        }
+      }
     }
   }
 }

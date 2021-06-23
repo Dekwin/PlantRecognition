@@ -13,6 +13,7 @@ final class InfoCardView: UIView {
     private lazy var bgImageView: UIImageView = .init(image: Asset.Images.Components.Cards.cardBg.image)
     private lazy var leftImageView: UIImageView = .init(image: nil)
     private lazy var titleLabel: UILabel = .init()
+    private var tapAction: Action?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,8 @@ final class InfoCardView: UIView {
         case .attributed(let attributed):
             titleLabel.attributedText = attributed
         }
+        
+        tapAction = model.tapAction
     }
 }
 
@@ -40,6 +43,7 @@ private extension InfoCardView {
     func commonInit() {
         setupSubviews()
         setupConstraints()
+        addTapGesture()
     }
     
     func setupSubviews() {
@@ -76,6 +80,16 @@ private extension InfoCardView {
             make.centerY.equalToSuperview()
         }
     }
+    
+    func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
+        addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func cardTapped() {
+        tapAction?()
+    }
 }
 
 // MARK: - Model
@@ -83,6 +97,7 @@ extension InfoCardView {
     struct Model {
         let image: UIImage
         let title: TextValue
+        let tapAction: Action
     }
     
     enum TextValue: Equatable {

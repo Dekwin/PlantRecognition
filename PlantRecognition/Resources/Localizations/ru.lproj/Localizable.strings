@@ -16,3 +16,6 @@
 
 "MyPlantsTab.title" = "Мои растения";
 "MyPlantsTab.NoPlantsYet.AddYourFirstPlantButton" = "Добавьте свое первое растение";
+
+"MyPlantsTab.NoPlantsYet.QuestionCard.Title.part1" = "Каким будет ваше первое растение?";
+"MyPlantsTab.NoPlantsYet.QuestionCard.Title.part2" = "Давайте искать";

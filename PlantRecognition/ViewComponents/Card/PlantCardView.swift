@@ -20,6 +20,7 @@ final class PlantCardView: UIView {
         notificationsStackView.spacing = appearance.notificationsSpacing
         return notificationsStackView
     }()
+    private var tapAction: Action?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +36,8 @@ final class PlantCardView: UIView {
         titleLabel.set(text: model.title, with: appearance.titleStyle)
         
         setupNotifications(model.notificationImages)
+        
+        tapAction = model.tapAction
     }
     
     private func setupNotifications(_ notificationImages: [UIImage]) {
@@ -65,6 +68,7 @@ private extension PlantCardView {
     func commonInit() {
         setupSubviews()
         setupConstraints()
+        addTapGesture()
     }
     
     func setupSubviews() {
@@ -88,6 +92,16 @@ private extension PlantCardView {
         leftImageView.layer.masksToBounds = true
         
         leftImageView.contentMode = .scaleAspectFill
+    }
+    
+    func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
+        addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func cardTapped() {
+        tapAction?()
     }
     
     func setupConstraints() {
@@ -125,6 +139,7 @@ extension PlantCardView {
         let image: UIImage
         let title: String
         let notificationImages: [UIImage]
+        let tapAction: Action
     }
 }
 
