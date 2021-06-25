@@ -15,7 +15,12 @@ final class MyPlantsTabFactory: MyPlantsTabFactoryProtocol {
         let router = MyPlantsTabRouter(transitionHandler: transitionHandler)
         
         let viewModel = MyPlantsTabViewModel(
-            router: router
+            deps: .init(
+                router: router,
+                plantsDataService: PlantsDataServiceFactory().create(
+                    isDemo: DemoHelper.shared.isDemoMode
+                )
+            )
         )
         
         let controller = MyPlantsTabViewController(viewModel: viewModel)

@@ -6,30 +6,25 @@ import Foundation
 import UIKit
 
 class TableViewPaginatedDataSource<
-    ItemsProvider: PaginatedItemsProvider,
-    ItemsMapper: PaginatedItemsMapper
-> where ItemsMapper.InputItemType == ItemsProvider.ItemType
+    ItemsProvider: PaginatedItemsProvider
+>
 {
-    let itemsProvider: ItemsProvider
-    let itemsMapper: ItemsMapper
+    private let itemsProvider: ItemsProvider
     
     private let constants = PaginatorConstants()
     private lazy var resultsPerPageCount: Int = constants.resultsPerPage
     private var currentPage: Int = 1
-    
     private var lastResponseElementsCount: Int?
-    
     private var isFetching: Bool = false
     
-    init(itemsProvider: ItemsProvider, itemsMapper: ItemsMapper) {
+    init(itemsProvider: ItemsProvider) {
         self.itemsProvider = itemsProvider
-        self.itemsMapper = itemsMapper
     }
     
     /// Paginate from start
     func loadInitialItems(
         request: ItemsProvider.RequestType,
-        completion: @escaping (Result<[ItemsMapper.OutputItemType], Error>) -> Void
+        completion: @escaping (Result<[ItemsProvider.ItemType], DataSourceError>) -> Void
     ) {
         getItems(
             page: currentPage,
@@ -43,7 +38,7 @@ class TableViewPaginatedDataSource<
     /// Load next pages (if exists)
     func loadNextItems(
         request: ItemsProvider.RequestType,
-        completion: @escaping (Result<[ItemsMapper.OutputItemType], Error>) -> Void
+        completion: @escaping (Result<[ItemsProvider.ItemType], DataSourceError>) -> Void
     ) {
         getItems(
             page: currentPage + 1,
@@ -63,16 +58,17 @@ private extension TableViewPaginatedDataSource {
         perPageResults: Int,
         request: ItemsProvider.RequestType,
         fetchNewPage: Bool,
-        completion: @escaping (Result<[ItemsMapper.OutputItemType], Error>) -> Void
+        completion: @escaping (Result<[ItemsProvider.ItemType], DataSourceError>) -> Void
     ) {
         let dontHaveNextItems = (lastResponseElementsCount ?? 0) < resultsPerPageCount
         if !fetchNewPage && dontHaveNextItems  /*, currentPage > (totalPagesCount ?? .max)*/ {
+            completion(.failure(.dontHaveNextItems))
             return
         }
         
-
         // чтобы отсекать повторные запросы
         if isFetching {
+            completion(.failure(.dataIsLoading))
             return
         } else {
             isFetching = true
@@ -96,8 +92,8 @@ private extension TableViewPaginatedDataSource {
     func parseResult(
         page: Int,
         fetchNewPage: Bool,
-        result: Result<PaginatedItemsProviderResult<ItemsMapper.InputItemType>, ItemsProvider.ErrorType>,
-        completion: @escaping (Result<[ItemsMapper.OutputItemType], Error>) -> Void
+        result: Result<PaginatedItemsProviderResult<ItemsProvider.ItemType>, ItemsProvider.ErrorType>,
+        completion: @escaping (Result<[ItemsProvider.ItemType], DataSourceError>) -> Void
     ) {
         switch result {
         case let .success(response):
@@ -107,17 +103,10 @@ private extension TableViewPaginatedDataSource {
                 currentPage = page
             }
             
-            
-            completion(.success(mapResponse(response)))
+            completion(.success(response.items))
         case let .failure(error):
-            completion(.failure(error))
+            completion(.failure(.networkError(error: error)))
         }
-    }
-    
-    private func mapResponse(
-        _ result: PaginatedItemsProviderResult<ItemsProvider.ItemType>
-    ) -> [ItemsMapper.OutputItemType] {
-        return itemsMapper.mapItems(result.items)
     }
 }
 
@@ -125,6 +114,14 @@ private extension TableViewPaginatedDataSource {
     struct PaginatorConstants {
         let resultsPerPage: Int = 10
         let startingPage: Int = 1
+    }
+}
+
+extension TableViewPaginatedDataSource {
+    enum DataSourceError: Error {
+        case dataIsLoading
+        case dontHaveNextItems
+        case networkError(error: ItemsProvider.ErrorType)
     }
 }
 
@@ -178,10 +175,10 @@ struct PaginatedItemsProviderResult<ItemType> {
     let items: [ItemType]
 }
 
-protocol PaginatedItemsMapper: AnyObject {
-    associatedtype InputItemType
-    associatedtype OutputItemType
-    
-    func mapItems(_ items: [InputItemType]) -> [OutputItemType]
-    
-}
+//protocol PaginatedItemsMapper: AnyObject {
+//    associatedtype InputItemType
+//    associatedtype OutputItemType
+//
+//    func mapItems(_ items: [InputItemType]) -> [OutputItemType]
+//
+//}

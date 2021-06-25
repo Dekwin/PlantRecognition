@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MyPlantsTabViewModelProtocol: AnyObject {
     var tabBarItem: MyPlantsTabViewController.TabBarItem { get }
@@ -10,13 +11,15 @@ protocol MyPlantsTabViewModelProtocol: AnyObject {
 }
 
 final class MyPlantsTabViewModel {
-    private let router: MyPlantsTabRouterProtocol
     weak var view: MyPlantsTabViewProtocol?
     
+    private let deps: Deps
+    private var myPlants: [PlantDetailsInfo] = []
+    
     init(
-        router: MyPlantsTabRouterProtocol
+        deps: Deps
     ) {
-        self.router = router
+        self.deps = deps
     }
 }
 
@@ -32,44 +35,105 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
     }
     
     func viewLoaded() {
-        updateView()
+        reloadMyPlants()
     }
     
     private func updateView() {
         view?.update(
             with: .init(
-                header: .init(
-                    title: L10n.MyPlantsTab.title,
-                    addPlantButtonAction: { [weak self] in
-                        self?.addPlantTouched()
-                    }
-                ),
-                body: buildBodyModel()
+                header: buildHeaderModel(),
+                body: buildBodyModel(from: myPlants)
             )
         )
     }
     
-    private func buildBodyModel() -> MyPlantsTabView.Body {
-        return .noPlantsYet(
-            buildNoPlantsYetModel()
+    private func buildHeaderModel() -> MyPlantsTabView.Header {
+        .init(
+            title: L10n.MyPlantsTab.title,
+            addPlantButtonAction: { [weak self] in
+                self?.addPlantTouched()
+            }
         )
+    }
+    
+    private func buildBodyModel(from plants: [PlantDetailsInfo]) -> MyPlantsTabView.Body {
+        if plants.isEmpty {
+            return .noPlantsYet(
+                buildNoPlantsYetModel()
+            )
+        } else {
+            return .plants(
+                buildMyPlantsModel(from: plants)
+            )
+        }
     }
   
     private func addPlantTouched() {
         print("add plant")
+    }
+    
+    private func openPlantDetails(_ plantInfo: PlantDetailsInfo) {
+        print("open plant \(plantInfo)")
+    }
+}
+
+extension MyPlantsTabViewModel {
+    struct Deps {
+        let router: MyPlantsTabRouterProtocol
+        let plantsDataService: PlantsDataServiceProtocol
     }
 }
 
 // MARK: - Plants exists logic
 
 private extension MyPlantsTabViewModel {
+    func reloadMyPlants(reloadCompletedAction: @escaping Action = {}) {
+        view?.setLoading(true)
+        deps.plantsDataService.getAllMyPlants { [weak self] result in
+            self?.view?.setLoading(false)
+            self?.handleMyPlantsLoaded(result: result)
+            reloadCompletedAction()
+        }
+    }
     
+    func handleMyPlantsLoaded(result: Result<[PlantDetailsInfo], Error>) {
+        switch result {
+        case.success(let plants):
+            myPlants = plants
+            updateView()
+        case .failure(let error):
+            view?.presentAlert(error: error)
+        }
+    }
+    
+    func buildMyPlantsModel(from plants: [PlantDetailsInfo]) -> MyPlantsListView.Model {
+        let plantModels: [PlantCardView.Model] = plants.map { plantInfo in
+            return .init(
+                image: plantInfo.image,
+                title: plantInfo.name,
+                notificationImages: plantInfo.notifications.map { $0.type.image },
+                tapAction: { [weak self] in
+                    self?.openPlantDetails(plantInfo)
+                }
+            )
+        }
+        
+        return .init(
+            refreshAction: { [weak self] endRefreshingAction in
+                self?.reloadMyPlants(
+                    reloadCompletedAction: {
+                        endRefreshingAction()
+                    }
+                )
+            },
+            plantItems: plantModels
+        )
+    }
 }
 
 // MARK: - No plants logic
 
 private extension MyPlantsTabViewModel {
-    
     func buildNoPlantsYetModel() -> MyPlantsTabNoPlantsYetView.Model {
         let questionCardText = buildQuestionCardText()
         return .init(
@@ -100,5 +164,4 @@ private extension MyPlantsTabViewModel {
         
         return questionCardText
     }
-    
 }
