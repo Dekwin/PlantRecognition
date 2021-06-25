@@ -11,8 +11,8 @@ import UIKit
 final class MyPlantsListView: UIView {
     private let appearance = Appearance()
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         commonInit()
     }
     
@@ -28,7 +28,6 @@ final class MyPlantsListView: UIView {
 // MARK: - Private methods
 private extension MyPlantsListView {
     func commonInit() {
-        backgroundColor = .white
         setupSubviews()
         setupConstraints()
     }

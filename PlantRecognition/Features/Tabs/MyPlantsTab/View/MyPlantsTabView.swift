@@ -71,8 +71,10 @@ final class MyPlantsTabView: UIView {
             let view = MyPlantsTabNoPlantsYetView(frame: .zero)
             view.update(with: model)
             bodyStackView.replaceArrangedSubviews([view])
-        case .plants:
-            break
+        case .plants(let model):
+            let view = MyPlantsListView(frame: .zero)
+            view.update(with: model)
+            bodyStackView.replaceArrangedSubviews([view])
         }
     }
     
@@ -118,11 +120,7 @@ extension MyPlantsTabView {
     
     enum Body {
         case noPlantsYet(MyPlantsTabNoPlantsYetView.Model)
-        case plants(PlantsModel)
-    }
-
-    struct PlantsModel {
-        
+        case plants(MyPlantsListView.Model)
     }
     
     struct Header {
