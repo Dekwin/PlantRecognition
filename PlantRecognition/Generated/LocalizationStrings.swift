@@ -38,6 +38,11 @@ public enum L10n {
       }
     }
   }
+
+  public enum SearchTab {
+    /// Plants search
+    public static let title = L10n.tr("Localizable", "SearchTab.title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

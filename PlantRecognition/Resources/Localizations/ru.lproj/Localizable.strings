@@ -19,3 +19,7 @@
 
 "MyPlantsTab.NoPlantsYet.QuestionCard.Title.part1" = "Каким будет ваше первое растение?";
 "MyPlantsTab.NoPlantsYet.QuestionCard.Title.part2" = "Давайте искать";
+
+// MARK: - Search
+
+"SearchTab.title" = "Поиск растений";

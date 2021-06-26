@@ -42,6 +42,7 @@ public enum Asset {
       public enum Buttons {
         public static let addPlant = ImageAsset(name: "AddPlant")
         public static let defaultButtonBg = ImageAsset(name: "DefaultButtonBg")
+        public static let takePhoto = ImageAsset(name: "TakePhoto")
       }
       public enum Cards {
         public static let cardBg = ImageAsset(name: "CardBg")
@@ -68,6 +69,9 @@ public enum Asset {
     public enum Tabs {
       public enum MyPlants {
         public static let question = ImageAsset(name: "Question")
+      }
+      public enum Search {
+        public static let manWithPlant = ImageAsset(name: "ManWithPlant")
       }
     }
   }

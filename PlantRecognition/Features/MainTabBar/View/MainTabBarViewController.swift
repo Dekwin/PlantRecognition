@@ -42,6 +42,7 @@ final class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setValue(customTabBar, forKey: "tabBar")
+        
     }
 }
 

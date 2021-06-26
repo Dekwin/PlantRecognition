@@ -49,14 +49,13 @@ final class SearchTabViewController: UIViewController {
 // MARK: - SearchTabViewProtocol
 extension SearchTabViewController: SearchTabViewProtocol {
     func update(with model: Model) {
-        customView.update(with: .init())
+        customView.update(with: model)
     }
 }
 
 // MARK: Model
 extension SearchTabViewController {
-    struct Model {
-    }
+    typealias Model = SearchTabView.Model
     
     struct TabBarItem {
         let title: String?

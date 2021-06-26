@@ -65,6 +65,7 @@
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
+		7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */; };
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
@@ -197,6 +198,7 @@
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
+		7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBgGradientView.swift; sourceTree = "<group>"; };
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
@@ -561,6 +563,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		7897B2CE26878DBE005FF62C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78DED1AC267E640400A7BC84 /* SearchTabViewController.swift */,
+				78DED1AD267E640400A7BC84 /* SearchTabView.swift */,
+				7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,10 +642,9 @@
 		78DED19E267E634400A7BC84 /* SearchTab */ = {
 			isa = PBXGroup;
 			children = (
+				7897B2CE26878DBE005FF62C /* View */,
 				78DED1AA267E640400A7BC84 /* SearchTabFactory.swift */,
 				78DED1AB267E640400A7BC84 /* SearchTabRouter.swift */,
-				78DED1AC267E640400A7BC84 /* SearchTabViewController.swift */,
-				78DED1AD267E640400A7BC84 /* SearchTabView.swift */,
 				78DED1AE267E640400A7BC84 /* SearchTabViewModel.swift */,
 			);
 			path = SearchTab;
@@ -745,9 +756,9 @@
 				7849E1A526626731003DBD19 /* Protocols */,
 				78FB92B6265A92C100986DA5 /* Features */,
 				7891EE77265D7D54005BEAE1 /* Helpers */,
-				782DD970265AA2B100FDE44B /* Resources */,
 				782DD96D265AA13500FDE44B /* Extensions */,
 				783B6DE72686553C0024C040 /* DataLayer */,
+				782DD970265AA2B100FDE44B /* Resources */,
 				78FB9286265A915800986DA5 /* AppDelegate.swift */,
 				78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */,
 				78146A57266160A100CDDFDA /* GoogleService-Info.plist */,
@@ -1149,6 +1160,7 @@
 				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */,
+				7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
 				78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */,
 				78DED1B3267E640400A7BC84 /* SearchTabViewModel.swift in Sources */,

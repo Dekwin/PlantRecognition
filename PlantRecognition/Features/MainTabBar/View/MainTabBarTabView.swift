@@ -22,9 +22,20 @@ class MainTabBarTabView: UITabBar {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
+        super.sizeThatFits(size)
+        guard let window = UIApplication.shared.keyWindow else {
+            return super.sizeThatFits(size)
+        }
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = appearance.tabBarHeight
+        sizeThatFits.height = window.safeAreaInsets.bottom + appearance.tabBarHeight
         return sizeThatFits
+    }
+    
+    override open var traitCollection: UITraitCollection {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return UITraitCollection(horizontalSizeClass: .compact)
+        }
+        return super.traitCollection
     }
     
     private func setupTabBar() {

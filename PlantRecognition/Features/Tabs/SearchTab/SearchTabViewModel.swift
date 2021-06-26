@@ -29,6 +29,23 @@ extension SearchTabViewModel: SearchTabViewModelProtocol {
     }
     
     func viewLoaded() {
-        view?.update(with: .init())
+        updateView()
+    }
+}
+
+private extension SearchTabViewModel {
+    func updateView() {
+        view?.update(
+            with: .init(
+                headerTitle: L10n.SearchTab.title,
+                takePhotoAction: { [weak self] in
+                    self?.takePlantPhoto()
+                }
+            )
+        )
+    }
+    
+    func takePlantPhoto() {
+        
     }
 }

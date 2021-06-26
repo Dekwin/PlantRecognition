@@ -13,7 +13,7 @@ import UIKit
  */
 class GradientView: UIView {
 
-    let gradient : CAGradientLayer
+    let gradient: CAGradientLayer
 
     init(gradient: CAGradientLayer) {
         self.gradient = gradient
