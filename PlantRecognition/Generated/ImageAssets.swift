@@ -38,6 +38,9 @@ public enum Asset {
     public static let white = ColorAsset(name: "White")
   }
   public enum Images {
+    public enum CapturePhoto {
+      public static let capturePhotoOverlay = ImageAsset(name: "CapturePhotoOverlay")
+    }
     public enum Components {
       public enum Buttons {
         public static let addPlant = ImageAsset(name: "AddPlant")
@@ -52,6 +55,7 @@ public enum Asset {
       public static let demoPlant = ImageAsset(name: "DemoPlant")
     }
     public enum Iconly {
+      public static let arrowLeftWhite = ImageAsset(name: "ArrowLeftWhite")
       public static let greenDroplet = ImageAsset(name: "GreenDroplet")
       public static let greenFertilizer = ImageAsset(name: "GreenFertilizer")
       public static let greenPots = ImageAsset(name: "GreenPots")

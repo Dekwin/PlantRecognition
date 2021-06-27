@@ -46,6 +46,6 @@ private extension SearchTabViewModel {
     }
     
     func takePlantPhoto() {
-        
+        router.openCapturePlantModule()
     }
 }

@@ -42,7 +42,12 @@ final class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setValue(customTabBar, forKey: "tabBar")
-        
+    }
+}
+
+extension MainTabBarViewController: CustomNavigationControllerProtocol {
+    var customNavBarConfig: CustomNavigationController.CustomNavBarConfig {
+        .init(isNavigationBarHidden: true, style: .light)
     }
 }
 

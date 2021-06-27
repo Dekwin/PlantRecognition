@@ -21,7 +21,7 @@ final class MainTabBarFactory: MainTabBarFactoryProtocol {
         let controller = MainTabBarViewController(viewModel: viewModel)
         viewModel.view = controller
         transitionHandler.wrapped = controller
-        
-        return controller
+        let navController = CustomNavigationController(rootViewController: controller)
+        return navController
     }
 }

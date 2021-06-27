@@ -72,10 +72,6 @@ private extension SearchTabBgGradientView {
         // a CGPath before it can be used on a layer.
         shapeLayer.path = createBezierPath().cgPath
         
-        // apply other properties related to the path
-        shapeLayer.strokeColor = UIColor.blue.cgColor
-        shapeLayer.fillColor = UIColor.green.cgColor
-        shapeLayer.lineWidth = 1.0
     }
     
     func createBezierPath() -> UIBezierPath {

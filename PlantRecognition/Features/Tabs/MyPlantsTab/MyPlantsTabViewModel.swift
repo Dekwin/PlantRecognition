@@ -69,7 +69,7 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
     }
   
     private func addPlantTouched() {
-        print("add plant")
+        deps.router.openCapturePlantModule()
     }
     
     private func openPlantDetails(_ plantInfo: PlantDetailsInfo) {

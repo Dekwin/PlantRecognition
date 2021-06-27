@@ -66,6 +66,12 @@
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
 		7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */; };
+		7897B2D526888557005FF62C /* CapturePlantPhotoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */; };
+		7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */; };
+		7897B2D726888557005FF62C /* CapturePlantPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */; };
+		7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */; };
+		7897B2D926888557005FF62C /* CapturePlantPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */; };
+		7897B2DC2688A0B1005FF62C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2DB2688A0B1005FF62C /* CustomNavigationController.swift */; };
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
@@ -199,6 +205,12 @@
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 		7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBgGradientView.swift; sourceTree = "<group>"; };
+		7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoFactory.swift; sourceTree = "<group>"; };
+		7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoRouter.swift; sourceTree = "<group>"; };
+		7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoViewController.swift; sourceTree = "<group>"; };
+		7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoView.swift; sourceTree = "<group>"; };
+		7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoViewModel.swift; sourceTree = "<group>"; };
+		7897B2DB2688A0B1005FF62C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
@@ -573,6 +585,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7897B2CF268884A2005FF62C /* CapturePlantPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */,
+				7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */,
+				7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */,
+				7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */,
+				7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */,
+			);
+			path = CapturePlantPhoto;
+			sourceTree = "<group>";
+		};
+		7897B2DA2688A078005FF62C /* NavController */ = {
+			isa = PBXGroup;
+			children = (
+				7897B2DB2688A0B1005FF62C /* CustomNavigationController.swift */,
+			);
+			path = NavController;
+			sourceTree = "<group>";
+		};
 		78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +742,7 @@
 		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				7897B2DA2688A078005FF62C /* NavController */,
 				784AA7CB2683AEDE006EBC06 /* GradientView */,
 				78E1B7B926827C8300A491AD /* Button */,
 				78E8E1FD268110D2000695A9 /* Card */,
@@ -788,6 +821,7 @@
 		78FB92B6265A92C100986DA5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7897B2CF268884A2005FF62C /* CapturePlantPhoto */,
 				78DED195267E5F5100A7BC84 /* MainTabBar */,
 				78DED19D267E632A00A7BC84 /* Tabs */,
 				78CF13CA265A98F200D5815F /* HomePage */,
@@ -1131,9 +1165,11 @@
 				783B6DE626864E2F0024C040 /* PlantCardTableViewCell.swift in Sources */,
 				78DED1BA267E641100A7BC84 /* SettingsTabRouter.swift in Sources */,
 				78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */,
+				7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				783B6DEF268656B80024C040 /* PlantsDataDemoService.swift in Sources */,
 				7843D563267FBBE300768083 /* Fonts.swift in Sources */,
+				7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
@@ -1156,6 +1192,7 @@
 				78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
 				784AA7D02683B3C0006EBC06 /* MyPlantsListView.swift in Sources */,
+				7897B2D926888557005FF62C /* CapturePlantPhotoViewModel.swift in Sources */,
 				783B6DF2268657F40024C040 /* PlantDetailsInfo.swift in Sources */,
 				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
@@ -1173,9 +1210,11 @@
 				7843D535267FA74100768083 /* TextStyle.swift in Sources */,
 				78DED1B0267E640400A7BC84 /* SearchTabRouter.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
+				7897B2D726888557005FF62C /* CapturePlantPhotoViewController.swift in Sources */,
 				78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */,
 				78B33435268132A200D31353 /* Copyable.swift in Sources */,
 				783B6DEC268656680024C040 /* PlantsDataService.swift in Sources */,
+				7897B2DC2688A0B1005FF62C /* CustomNavigationController.swift in Sources */,
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,
@@ -1192,6 +1231,7 @@
 				7849E1C0266395B5003DBD19 /* Action.swift in Sources */,
 				7849E1A326626265003DBD19 /* NetworkError.swift in Sources */,
 				783B6DF626865AD20024C040 /* PlantsDataServiceFactory.swift in Sources */,
+				7897B2D526888557005FF62C /* CapturePlantPhotoFactory.swift in Sources */,
 				78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1373,7 +1413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
@@ -1396,7 +1436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
