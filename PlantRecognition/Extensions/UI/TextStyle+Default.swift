@@ -45,6 +45,18 @@ extension TextStyle {
             )
         )
     }
+    
+    class var text16R: TextStyle {
+        .init(
+            styleAttributes: .init(
+                font: Fonts.FiraSans.regular.font(size: 16),
+                kern: .defined(value: 0.48),
+                lineHeight: .defined(value: 19),
+                alignment: .defined(value: .center),
+                color: .defined(value: Asset.Colors.black.color)
+            )
+        )
+    }
 
 //    /// .bold22
 //    class var headerS: TextStyle {

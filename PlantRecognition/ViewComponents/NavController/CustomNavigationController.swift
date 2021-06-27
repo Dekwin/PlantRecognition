@@ -13,6 +13,16 @@ protocol CustomNavigationControllerProtocol {
 }
 
 class CustomNavigationController: UINavigationController {
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        if let modalNavigationController = presentedViewController as? CustomNavigationController {
+            return modalNavigationController.preferredStatusBarStyle
+        }
+        
+        return (topViewController as? CustomNavigationControllerProtocol)?
+            .customNavBarConfig
+            .style
+            .preferredStatusBarStyle ?? .lightContent
+    }
     
     // Добавляет возможность свайпа назад на экранах с кастомной кнопкой назад
     // https://stackoverflow.com/a/43433530/1178039
@@ -92,12 +102,23 @@ extension CustomNavigationController {
     }
 }
 
+extension CustomNavigationController.CustomNavBarConfig.NavBarStyle {
+    var preferredStatusBarStyle: UIStatusBarStyle {
+        switch self {
+        case .light:
+            return .lightContent
+        case .dark:
+            return .default
+        }
+    }
+}
+
 private extension CustomNavigationController {
     func setupNavController() {
         let backImage = Asset.Images.Iconly.arrowLeftWhite.image
         navigationBar.backIndicatorImage = backImage
         navigationBar.backIndicatorTransitionMaskImage = backImage
-        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
     }
 }

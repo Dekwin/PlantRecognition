@@ -42,6 +42,16 @@ final class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setValue(customTabBar, forKey: "tabBar")
+        setupSubviews()
+    }
+    
+    private func setupSubviews() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "", style: .plain, target: nil, action: nil
+        )
+        if #available(iOS 14.0, *) {
+            navigationItem.backButtonTitle = ""
+        }
     }
 }
 

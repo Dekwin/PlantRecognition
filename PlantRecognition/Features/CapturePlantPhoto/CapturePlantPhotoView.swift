@@ -8,7 +8,8 @@ final class CapturePlantPhotoView: UIView {
     private let appearance = Appearance()
     
     private lazy var navigationGradientView = GradientView(
-        colors: appearance.navigationGradientColors
+        colors: appearance.navigationGradientColors,
+        locations: [0, 1]
     )
     
     private lazy var photoTintView = UIImageView(
@@ -50,6 +51,7 @@ private extension CapturePlantPhotoView {
     func setupConstraints() {
         navigationGradientView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.top).inset(appearance.navigationGradientBottonInset)
         }
         photoTintView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -70,7 +72,11 @@ extension CapturePlantPhotoView {
 // MARK: - Appearance
 private extension CapturePlantPhotoView {
     struct Appearance {
-        let navigationGradientColors: [UIColor] = []
+        let navigationGradientBottonInset: CGFloat = .gapL
+        let navigationGradientColors: [UIColor] = [
+            Asset.Colors.mainGreen.color.withAlphaComponent(0.6),
+            Asset.Colors.mainGreen.color.withAlphaComponent(0)
+        ]
     }
 }
 

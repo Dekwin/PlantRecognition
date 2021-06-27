@@ -72,6 +72,7 @@
 		7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */; };
 		7897B2D926888557005FF62C /* CapturePlantPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */; };
 		7897B2DC2688A0B1005FF62C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2DB2688A0B1005FF62C /* CustomNavigationController.swift */; };
+		7897B2DF268909E6005FF62C /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2DE268909E6005FF62C /* TipView.swift */; };
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
@@ -211,6 +212,7 @@
 		7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoView.swift; sourceTree = "<group>"; };
 		7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoViewModel.swift; sourceTree = "<group>"; };
 		7897B2DB2688A0B1005FF62C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		7897B2DE268909E6005FF62C /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
@@ -605,6 +607,21 @@
 			path = NavController;
 			sourceTree = "<group>";
 		};
+		7897B2DD268909D1005FF62C /* TipView */ = {
+			isa = PBXGroup;
+			children = (
+				7897B2DE268909E6005FF62C /* TipView.swift */,
+			);
+			path = TipView;
+			sourceTree = "<group>";
+		};
+		7897B2E026891551005FF62C /* CapturePlantPhotoTips */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CapturePlantPhotoTips;
+			sourceTree = "<group>";
+		};
 		78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +759,7 @@
 		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				7897B2DD268909D1005FF62C /* TipView */,
 				7897B2DA2688A078005FF62C /* NavController */,
 				784AA7CB2683AEDE006EBC06 /* GradientView */,
 				78E1B7B926827C8300A491AD /* Button */,
@@ -821,6 +839,7 @@
 		78FB92B6265A92C100986DA5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7897B2E026891551005FF62C /* CapturePlantPhotoTips */,
 				7897B2CF268884A2005FF62C /* CapturePlantPhoto */,
 				78DED195267E5F5100A7BC84 /* MainTabBar */,
 				78DED19D267E632A00A7BC84 /* Tabs */,
@@ -1168,6 +1187,7 @@
 				7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				783B6DEF268656B80024C040 /* PlantsDataDemoService.swift in Sources */,
+				7897B2DF268909E6005FF62C /* TipView.swift in Sources */,
 				7843D563267FBBE300768083 /* Fonts.swift in Sources */,
 				7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,

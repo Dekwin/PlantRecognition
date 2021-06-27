@@ -28,12 +28,19 @@ final class CapturePlantPhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubviews()
+        setupNavigation()
         viewModel.viewLoaded()
     }
     
-    private func setupSubviews() {
-        
+    private func setupNavigation() {
+        navigationItem.rightBarButtonItems = [
+            .init(
+                image: Asset.Images.Iconly.infoSquare.image,
+                style: .plain,
+                target: nil,
+                action: nil
+            )
+        ]
     }
 }
 
