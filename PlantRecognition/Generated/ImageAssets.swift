@@ -40,6 +40,7 @@ public enum Asset {
   public enum Images {
     public enum CapturePhoto {
       public static let capturePhotoOverlay = ImageAsset(name: "CapturePhotoOverlay")
+      public static let centerFrame = ImageAsset(name: "CenterFrame")
     }
     public enum Components {
       public enum Buttons {
@@ -53,6 +54,7 @@ public enum Asset {
     }
     public enum DemoImages {
       public static let demoPlant = ImageAsset(name: "DemoPlant")
+      public static let cactus1 = ImageAsset(name: "cactus1")
     }
     public enum Iconly {
       public static let arrowLeftWhite = ImageAsset(name: "ArrowLeftWhite")

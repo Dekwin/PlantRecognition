@@ -113,6 +113,7 @@
 		78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7BA26827CAB00A491AD /* DefaultButton.swift */; };
 		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
 		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
+		78F12CD6268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */; };
 		78FB929E265A915A00986DA5 /* PlantRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB929D265A915A00986DA5 /* PlantRecognitionTests.swift */; };
@@ -254,6 +255,7 @@
 		78E1B7BA26827CAB00A491AD /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
+		78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoFocusTintView.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FB9292265A915A00986DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -590,10 +592,9 @@
 		7897B2CF268884A2005FF62C /* CapturePlantPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				78F12CD4268BB1AE008A1EBE /* View */,
 				7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */,
 				7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */,
-				7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */,
-				7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */,
 				7897B2D426888557005FF62C /* CapturePlantPhotoViewModel.swift */,
 			);
 			path = CapturePlantPhoto;
@@ -775,6 +776,16 @@
 				78E1B7AE2682687800A491AD /* InfoCardView.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		78F12CD4268BB1AE008A1EBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */,
+				7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */,
+				78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		78FB927A265A915800986DA5 = {
@@ -1233,6 +1244,7 @@
 				7897B2D726888557005FF62C /* CapturePlantPhotoViewController.swift in Sources */,
 				78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */,
 				78B33435268132A200D31353 /* Copyable.swift in Sources */,
+				78F12CD6268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift in Sources */,
 				783B6DEC268656680024C040 /* PlantsDataService.swift in Sources */,
 				7897B2DC2688A0B1005FF62C /* CustomNavigationController.swift in Sources */,
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,

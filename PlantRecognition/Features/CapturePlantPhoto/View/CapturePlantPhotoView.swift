@@ -12,11 +12,13 @@ final class CapturePlantPhotoView: UIView {
         locations: [0, 1]
     )
     
-    private lazy var photoTintView = UIImageView(
-        image: Asset.Images.CapturePhoto.capturePhotoOverlay.image
-    )
+    private lazy var photoTintView = CapturePlantPhotoFocusTintView()
     
-    private lazy var videoCaptureView = UIView()
+    private lazy var videoCaptureView: UIView = {
+        let view = UIImageView(image: Asset.Images.DemoImages.cactus1.image)
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
