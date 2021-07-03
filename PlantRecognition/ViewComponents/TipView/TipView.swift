@@ -11,7 +11,7 @@ import UIKit
 final class TipView: UIView {
     private let appearance = Appearance()
     private lazy var bgBlurView: UIView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.alpha = 0.7
         return blurEffectView
@@ -55,7 +55,7 @@ private extension TipView {
         layer.masksToBounds = true
         
         titleLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(appearance.titleInsets)
         }
     }
 }

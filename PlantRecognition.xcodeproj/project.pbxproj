@@ -113,6 +113,7 @@
 		78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7BA26827CAB00A491AD /* DefaultButton.swift */; };
 		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
 		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
+		78EACB9C268D037200592B0F /* CapturePlantBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */; };
 		78F12CD6268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */; };
 		78FB9287265A915800986DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9286265A915800986DA5 /* AppDelegate.swift */; };
 		78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FB9291265A915A00986DA5 /* LaunchScreen.storyboard */; };
@@ -255,6 +256,7 @@
 		78E1B7BA26827CAB00A491AD /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
+		78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantBottomPanelView.swift; sourceTree = "<group>"; };
 		78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoFocusTintView.swift; sourceTree = "<group>"; };
 		78FB9283265A915800986DA5 /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB9286265A915800986DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -778,9 +780,18 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		78EACB9A268D035000592B0F /* BottomPanel */ = {
+			isa = PBXGroup;
+			children = (
+				78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */,
+			);
+			path = BottomPanel;
+			sourceTree = "<group>";
+		};
 		78F12CD4268BB1AE008A1EBE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78EACB9A268D035000592B0F /* BottomPanel */,
 				7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */,
 				7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */,
 				78F12CD5268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift */,
@@ -1247,6 +1258,7 @@
 				78F12CD6268BB1D6008A1EBE /* CapturePlantPhotoFocusTintView.swift in Sources */,
 				783B6DEC268656680024C040 /* PlantsDataService.swift in Sources */,
 				7897B2DC2688A0B1005FF62C /* CustomNavigationController.swift in Sources */,
+				78EACB9C268D037200592B0F /* CapturePlantBottomPanelView.swift in Sources */,
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,

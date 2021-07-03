@@ -14,6 +14,13 @@ final class CapturePlantPhotoView: UIView {
     
     private lazy var photoTintView = CapturePlantPhotoFocusTintView()
     
+    private lazy var bottomPanelView = CapturePlantBottomPanelView()
+    private lazy var safeAreaBottomPanelView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     private lazy var videoCaptureView: UIView = {
         let view = UIImageView(image: Asset.Images.DemoImages.cactus1.image)
         view.contentMode = .scaleAspectFill
@@ -30,7 +37,7 @@ final class CapturePlantPhotoView: UIView {
     }
     
     func update(with model: Model) {
-        
+        photoTintView.update(with: model.photoFocusTintModel)
     }
 }
 
@@ -46,8 +53,11 @@ private extension CapturePlantPhotoView {
         addSubviews(
             videoCaptureView,
             photoTintView,
-            navigationGradientView
+            navigationGradientView,
+            safeAreaBottomPanelView,
+            bottomPanelView
         )
+        videoCaptureView.clipsToBounds = true
     }
     
     func setupConstraints() {
@@ -61,13 +71,22 @@ private extension CapturePlantPhotoView {
         videoCaptureView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        bottomPanelView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(appearance.bottomPanelViewHeight)
+            make.bottom.equalTo(safeAreaBottomPanelView.snp.top)
+        }
+        safeAreaBottomPanelView.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
     }
 }
 
 // MARK: - Model
 extension CapturePlantPhotoView {
     struct Model {
-        
+        let photoFocusTintModel: CapturePlantPhotoFocusTintView.Model
     }
 }
 
@@ -79,6 +98,7 @@ private extension CapturePlantPhotoView {
             Asset.Colors.mainGreen.color.withAlphaComponent(0.6),
             Asset.Colors.mainGreen.color.withAlphaComponent(0)
         ]
+        let bottomPanelViewHeight: CGFloat = 144.0
     }
 }
 

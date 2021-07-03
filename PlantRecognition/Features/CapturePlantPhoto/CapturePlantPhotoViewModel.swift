@@ -20,6 +20,16 @@ final class CapturePlantPhotoViewModel {
 // MARK:  CapturePlantPhotoViewModelProtocol
 extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
     func viewLoaded() {
-        view?.update(with: .init())
+       updateView()
+    }
+    
+    private func updateView() {
+        view?.update(
+            with: .init(
+                photoFrameModel: .init(
+                    photoFocusTintModel: .init(tip: .init(title: "scanning"), state: .default)
+                )
+            )
+        )
     }
 }

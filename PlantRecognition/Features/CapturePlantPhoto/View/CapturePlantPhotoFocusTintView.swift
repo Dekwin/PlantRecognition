@@ -19,6 +19,8 @@ final class CapturePlantPhotoFocusTintView: UIView {
     private lazy var topOffsetBgView = buildBgView()
     private lazy var bottomOffsetBgView = buildBgView()
     
+    private lazy var tipView = TipView()
+    
     private lazy var horizontalStackView: UIStackView = {
         let horizontalStackView = UIStackView(
             arrangedSubviews: [
@@ -55,7 +57,12 @@ final class CapturePlantPhotoFocusTintView: UIView {
     }
     
     func update(with model: Model) {
-        
+        if let tip = model.tip {
+            tipView.update(with: tip)
+            tipView.isHidden = false
+        } else {
+            tipView.isHidden = true
+        }
     }
 }
 
@@ -67,7 +74,10 @@ private extension CapturePlantPhotoFocusTintView {
     }
     
     func setupSubviews() {
-        addSubviews(verticalStackView)
+        addSubviews(
+            verticalStackView,
+            tipView
+        )
     }
     
     func setupConstraints() {
@@ -85,14 +95,30 @@ private extension CapturePlantPhotoFocusTintView {
         //            make.height.equalTo(appearance.photoCenterFrameViewInsets.top)
         //        }
         
-        photoCenterFrameView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(appearance.photoCenterFrameViewInsets.top)
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(appearance.photoCenterFrameViewInsets.bottom)
-        }
+//        photoCenterFrameView.snp.makeConstraints { make in
+//            make.top.equalTo(safeAreaLayoutGuide).inset(appearance.photoCenterFrameViewInsets.top)
+//            make.bottom.equalTo(safeAreaLayoutGuide).inset(appearance.photoCenterFrameViewInsets.bottom)
+//        }
         
         //        bottomOffsetBgView.snp.makeConstraints { make in
         //            make.height.equalTo(appearance.photoCenterFrameViewInsets.bottom)
         //        }
+        
+        bottomOffsetBgView.snp.makeConstraints { make in
+            make.height.equalTo(topOffsetBgView.snp.height)
+        }
+        
+        
+        photoCenterFrameView.snp.makeConstraints { make in
+            make.width.equalTo(photoCenterFrameView.snp.height).multipliedBy(appearance.photoCenterFrameAspectRatio)
+        }
+        
+    
+        tipView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).inset(appearance.tipViewTopOffset).priority(.high)
+            make.bottom.lessThanOrEqualTo(photoCenterFrameView.snp.top).inset(-appearance.tipViewMinBottomTopOffset)
+            make.centerX.equalToSuperview()
+        }
     }
     
     func buildBgView() -> UIView {
@@ -105,7 +131,13 @@ private extension CapturePlantPhotoFocusTintView {
 // MARK: - Model
 extension CapturePlantPhotoFocusTintView {
     struct Model {
-        
+        let tip: TipView.Model?
+        let state: State
+    }
+    
+    enum State {
+        case `default`
+        case scanning
     }
 }
 
@@ -113,7 +145,10 @@ extension CapturePlantPhotoFocusTintView {
 private extension CapturePlantPhotoFocusTintView {
     struct Appearance {
         let bgColor: UIColor = Asset.Colors.mainGreen.color.withAlphaComponent(0.2)
-        let photoCenterFrameViewInsets: UIEdgeInsets = .init(top: .gap4XL, left: .gap4XL, bottom: .gap4XL, right: .gap4XL)
+        let photoCenterFrameViewInsets: UIEdgeInsets = .init(top: 80, left: .gap4XL, bottom: .gap4XL, right: .gap4XL)
+        let photoCenterFrameAspectRatio: CGFloat = 0.82
+        let tipViewTopOffset: CGFloat = .gapL
+        let tipViewMinBottomTopOffset: CGFloat = .gapM
     }
 }
 

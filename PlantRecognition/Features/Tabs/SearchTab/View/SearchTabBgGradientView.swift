@@ -65,27 +65,22 @@ private extension SearchTabBgGradientView {
 
 // MARK: - Drawing
 private extension SearchTabBgGradientView {
-    
     func setupDrawing() {
-        
-        // The Bezier path that we made needs to be converted to
-        // a CGPath before it can be used on a layer.
         shapeLayer.path = createBezierPath().cgPath
-        
     }
     
     func createBezierPath() -> UIBezierPath {
-        // create a new path
         let path = UIBezierPath()
         
         let size = layer.bounds.size
         
-        path.move(to: .init(x: 0, y: size.width))
+        path.move(to: .init(x: 0, y: size.height))
         path.addLine(to: .init(x: 0, y: 0))
         path.addLine(to: .init(x: size.width, y: 0))
         path.addLine(to: .init(x: size.width, y: size.height))
         
-        let radius = 1.28266666667 * size.width
+        let radiusWidthMultiplier: CGFloat = 1.28266666667
+        let radius = radiusWidthMultiplier * size.width
         let x = layer.bounds.midX
         let y = size.height - radius
         path.addArc(withCenter: .init(x: x, y: y), radius: radius, startAngle: 0, endAngle: .pi, clockwise: true)
