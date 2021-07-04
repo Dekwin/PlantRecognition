@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PlantsDataServiceProtocol: AnyObject {
-    func getAllMyPlants(callback: @escaping (Result<[PlantDetailsInfo], Error>) -> Void)
+    func getAllMyPlants(callback: @escaping (Result<[PlantDetailsUserInfo], Error>) -> Void)
 }

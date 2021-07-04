@@ -53,6 +53,8 @@ private extension CapturePlantPhotoScanningView {
         
         layer.insertSublayer(scannerLayer, at: 0)
         
+        scannerLayer.anchorPoint = .init(x: 0, y: 0)
+        
         // Mirror vertically
         layer.transform = CATransform3DMakeScale(1, -1, 1)
     }
@@ -63,7 +65,6 @@ private extension CapturePlantPhotoScanningView {
     
     func updateScanner(with state: State) {
         scannerLayer.frame = bounds
-        
         switch state {
         case .startScanning:
             addAnimation(to: scannerLayer)
@@ -76,8 +77,6 @@ private extension CapturePlantPhotoScanningView {
         // Prepare the animation from the old size to the new size
         let oldBounds = CGRect(x: 0, y: 0, width: layer.bounds.width, height: 0)
         let newBounds = layer.bounds
-        
-        layer.anchorPoint = .init(x: 0, y: 0)
         
         let animation = CABasicAnimation(keyPath: animationKeyPath)
         animation.fromValue = NSValue(cgRect: oldBounds)

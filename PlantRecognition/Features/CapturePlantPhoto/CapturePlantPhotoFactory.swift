@@ -13,9 +13,14 @@ final class CapturePlantPhotoFactory: CapturePlantPhotoFactoryProtocol {
         let transitionHandler = TransitionableProxy()
         
         let router = CapturePlantPhotoRouter(transitionHandler: transitionHandler)
-        
+        let recognitionProxy = PlantRecognitionServiceProxyFactory().create(
+            isDemo: DemoHelper.shared.isDemoMode
+        )
         let viewModel = CapturePlantPhotoViewModel(
-            router: router
+            deps: .init(
+                router: router,
+                plantRecognitionServiceProxy: recognitionProxy
+            )
         )
         
         let controller = CapturePlantPhotoViewController(viewModel: viewModel)

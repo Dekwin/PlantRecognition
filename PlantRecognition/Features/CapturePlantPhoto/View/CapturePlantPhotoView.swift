@@ -79,6 +79,9 @@ final class CapturePlantPhotoView: UIView {
             
             takePhotoBottomPanelView.isHidden = true
             plantRecognizedBottomPanelView.isHidden = false
+        case .plantRecognitionError:
+            // TODO: Implement
+        break
         }
     }
 }
@@ -156,6 +159,7 @@ extension CapturePlantPhotoView {
     enum BottomPanelState {
         case takePhoto(CapturePlantBottomPanelView.Model)
         case plantRecognized(CapturePlantRecognizedBottomPanelView.Model)
+        case plantRecognitionError
     }
 }
 

@@ -14,7 +14,7 @@ final class MyPlantsTabViewModel {
     weak var view: MyPlantsTabViewProtocol?
     
     private let deps: Deps
-    private var myPlants: [PlantDetailsInfo] = []
+    private var myPlants: [PlantDetailsUserInfo] = []
     
     init(
         deps: Deps
@@ -56,7 +56,7 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
         )
     }
     
-    private func buildBodyModel(from plants: [PlantDetailsInfo]) -> MyPlantsTabView.Body {
+    private func buildBodyModel(from plants: [PlantDetailsUserInfo]) -> MyPlantsTabView.Body {
         if plants.isEmpty {
             return .noPlantsYet(
                 buildNoPlantsYetModel()
@@ -72,7 +72,7 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
         deps.router.openCapturePlantModule()
     }
     
-    private func openPlantDetails(_ plantInfo: PlantDetailsInfo) {
+    private func openPlantDetails(_ plantInfo: PlantDetailsUserInfo) {
         print("open plant \(plantInfo)")
     }
 }
@@ -96,7 +96,7 @@ private extension MyPlantsTabViewModel {
         }
     }
     
-    func handleMyPlantsLoaded(result: Result<[PlantDetailsInfo], Error>) {
+    func handleMyPlantsLoaded(result: Result<[PlantDetailsUserInfo], Error>) {
         switch result {
         case.success(let plants):
             myPlants = plants
@@ -106,11 +106,11 @@ private extension MyPlantsTabViewModel {
         }
     }
     
-    func buildMyPlantsModel(from plants: [PlantDetailsInfo]) -> MyPlantsListView.Model {
+    func buildMyPlantsModel(from plants: [PlantDetailsUserInfo]) -> MyPlantsListView.Model {
         let plantModels: [PlantCardView.Model] = plants.map { plantInfo in
             return .init(
-                image: plantInfo.image,
-                title: plantInfo.name,
+                image: plantInfo.plantIdentity.image,
+                title: plantInfo.plantIdentity.name,
                 notificationImages: plantInfo.notifications.map { $0.type.image },
                 tapAction: { [weak self] in
                     self?.openPlantDetails(plantInfo)
