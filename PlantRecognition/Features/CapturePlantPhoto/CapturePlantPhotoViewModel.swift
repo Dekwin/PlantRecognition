@@ -9,13 +9,13 @@ protocol CapturePlantPhotoViewModelProtocol: AnyObject {
 }
 
 final class CapturePlantPhotoViewModel {
-    private let router: CapturePlantPhotoRouterProtocol
+    private let deps: Deps
     weak var view: CapturePlantPhotoViewProtocol?
     
     init(
-        router: CapturePlantPhotoRouterProtocol
+        deps: Deps
     ) {
-        self.router = router
+        self.deps = deps
     }
 }
 
@@ -25,7 +25,6 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
        updateView()
     }
 }
-
 
 // MARK:  Helpers
 private extension CapturePlantPhotoViewModel {
@@ -105,5 +104,11 @@ private extension CapturePlantPhotoViewModel {
             style: .fullAccess
         )
     }
-    
+}
+
+// MARK: Deps
+extension CapturePlantPhotoViewModel {
+    struct Deps {
+        let router: CapturePlantPhotoRouterProtocol
+    }
 }
