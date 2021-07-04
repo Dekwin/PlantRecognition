@@ -39,9 +39,23 @@ public enum L10n {
     }
   }
 
+  public enum PhotoAttemptsVip {
+    /// full access
+    public static let fullAccess = L10n.tr("Localizable", "PhotoAttemptsVip.fullAccess")
+  }
+
   public enum SearchTab {
     /// Plants search
     public static let title = L10n.tr("Localizable", "SearchTab.title")
+  }
+
+  public enum TakePhoto {
+    public enum TopHint {
+      /// Place the plant in the frame
+      public static let placePlantInFrame = L10n.tr("Localizable", "TakePhoto.TopHint.placePlantInFrame")
+      /// Wait, scanning ...
+      public static let scanning = L10n.tr("Localizable", "TakePhoto.TopHint.scanning")
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

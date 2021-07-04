@@ -11,6 +11,11 @@ import UIKit
 final class CapturePlantBottomPanelView: UIView {
     private let appearance = Appearance()
     private let circleShapeLayer: CAShapeLayer = CAShapeLayer()
+    private lazy var takePhotoButton: UIButton = .init()
+    private lazy var selectImageFromGalleryView = SelectImageFromGalleryView()
+    private lazy var photoAttemptsVipView = PhotoAttemptsVipView()
+    
+    private var takePhotoButtonAction: Action?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,12 +27,26 @@ final class CapturePlantBottomPanelView: UIView {
     }
     
     func update(with model: Model) {
+        takePhotoButtonAction = model.takePhotoButtonAction
         
+        if let model = model.selectImageFromGalleryModel {
+            selectImageFromGalleryView.update(with: model)
+            selectImageFromGalleryView.isHidden = false
+        } else {
+            selectImageFromGalleryView.isHidden = true
+        }
+        
+        if let model = model.photoAttemptsVipModel {
+            photoAttemptsVipView.update(with: model)
+            photoAttemptsVipView.isHidden = false
+        } else {
+            photoAttemptsVipView.isHidden = true
+        }
     }
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
-        circleShapeLayer.frame = self.bounds
+        circleShapeLayer.frame = bounds
         setupDrawing()
     }
 }
@@ -42,30 +61,79 @@ private extension CapturePlantBottomPanelView {
     func setupSubviews() {
         clipsToBounds = true
         layer.addSublayer(circleShapeLayer)
+        addSubviews(
+            selectImageFromGalleryView,
+            takePhotoButton,
+            photoAttemptsVipView
+        )
+        
+        takePhotoButton.setImage(Asset.Images.CapturePhoto.takePhoto.image, for: .normal)
+        takePhotoButton.addTarget(self, action: #selector(takePhotoTouched), for: .touchUpInside)
+        
+        selectImageFromGalleryView.isHidden = true
+        photoAttemptsVipView.isHidden = true
     }
     
     func setupConstraints() {
+        takePhotoButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
         
+       
+        
+        let leftLayoutGuide = UILayoutGuide()
+        addLayoutGuide(leftLayoutGuide)
+        
+        let rightLayoutGuide = UILayoutGuide()
+        addLayoutGuide(rightLayoutGuide)
+        
+        leftLayoutGuide.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalTo(takePhotoButton.snp.left)
+        }
+        
+        rightLayoutGuide.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview()
+            make.left.equalTo(takePhotoButton.snp.right)
+        }
+        
+        selectImageFromGalleryView.snp.makeConstraints { make in
+            make.size.equalTo(appearance.selectImageFromGalleryViewSize)
+            make.center.equalTo(leftLayoutGuide.snp.center)
+        }
+        
+        photoAttemptsVipView.snp.makeConstraints { make in
+            make.center.equalTo(rightLayoutGuide.snp.center)
+        }
+    }
+    
+    @objc
+    func takePhotoTouched() {
+        takePhotoButtonAction?()
     }
 }
 
 // MARK: - Model
 extension CapturePlantBottomPanelView {
     struct Model {
-        
+        let takePhotoButtonAction: Action
+        let selectImageFromGalleryModel: SelectImageFromGalleryView.Model?
+        let photoAttemptsVipModel: PhotoAttemptsVipView.Model?
     }
 }
 
 // MARK: - Appearance
 private extension CapturePlantBottomPanelView {
     struct Appearance {
-        
+        let selectImageFromGalleryViewSize: CGSize = .init(width: 48, height: 48)
     }
 }
 
 // MARK: - Drawing
 private extension CapturePlantBottomPanelView {
-    
     func setupDrawing() {
         circleShapeLayer.fillColor = UIColor.white.cgColor
         circleShapeLayer.path = createBezierPath().cgPath

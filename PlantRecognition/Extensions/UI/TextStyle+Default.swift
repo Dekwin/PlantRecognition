@@ -57,6 +57,18 @@ extension TextStyle {
             )
         )
     }
+    
+    class var text9M: TextStyle {
+        .init(
+            styleAttributes: .init(
+                font: Fonts.FiraSans.regular.font(size: 9),
+                kern: .defined(value: 0.27),
+                lineHeight: .defined(value: 11),
+                alignment: .defined(value: .center),
+                color: .defined(value: Asset.Colors.white.color)
+            )
+        )
+    }
 
 //    /// .bold22
 //    class var headerS: TextStyle {

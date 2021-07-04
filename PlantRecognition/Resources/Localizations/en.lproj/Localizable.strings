@@ -23,3 +23,12 @@
 // MARK: - Search
 
 "SearchTab.title" = "Plants search";
+
+// MARK: - Components
+
+// MARK: - Take photo
+
+"PhotoAttemptsVip.fullAccess" = "full access";
+
+"TakePhoto.TopHint.placePlantInFrame" = "Place the plant in the frame";
+"TakePhoto.TopHint.scanning" = "Wait, scanning ...";

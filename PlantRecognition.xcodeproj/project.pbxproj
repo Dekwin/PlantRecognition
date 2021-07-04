@@ -76,7 +76,10 @@
 		78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */; };
 		78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */; };
 		78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */; };
+		78A67E822690C31700B61B42 /* SelectImageFromGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A67E812690C31700B61B42 /* SelectImageFromGalleryView.swift */; };
+		78A67E842690C32400B61B42 /* PhotoAttemptsVipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */; };
 		78B33435268132A200D31353 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33434268132A200D31353 /* Copyable.swift */; };
+		78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */; };
 		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
 		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
 		78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */; };
@@ -218,7 +221,10 @@
 		78989D3B265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdIdentifyRequest.swift; sourceTree = "<group>"; };
 		78989D3F265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyProtocol.swift; sourceTree = "<group>"; };
 		78989D41265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionDemoServiceProxy.swift; sourceTree = "<group>"; };
+		78A67E812690C31700B61B42 /* SelectImageFromGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageFromGalleryView.swift; sourceTree = "<group>"; };
+		78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAttemptsVipView.swift; sourceTree = "<group>"; };
 		78B33434268132A200D31353 /* Copyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoScanningView.swift; sourceTree = "<group>"; };
 		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
 		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
 		78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentable.swift; sourceTree = "<group>"; };
@@ -637,6 +643,14 @@
 			path = PlantRecognitionServiceProxy;
 			sourceTree = "<group>";
 		};
+		78C4DBD72691B7D5009A1E9D /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		78C725A72663BE42005AA717 /* PlantId */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +769,8 @@
 			isa = PBXGroup;
 			children = (
 				78E1B7BA26827CAB00A491AD /* DefaultButton.swift */,
+				78A67E812690C31700B61B42 /* SelectImageFromGalleryView.swift */,
+				78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -791,6 +807,7 @@
 		78F12CD4268BB1AE008A1EBE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78C4DBD72691B7D5009A1E9D /* Scanner */,
 				78EACB9A268D035000592B0F /* BottomPanel */,
 				7897B2D226888557005FF62C /* CapturePlantPhotoViewController.swift */,
 				7897B2D326888557005FF62C /* CapturePlantPhotoView.swift */,
@@ -1210,6 +1227,7 @@
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
 				783B6DEF268656B80024C040 /* PlantsDataDemoService.swift in Sources */,
 				7897B2DF268909E6005FF62C /* TipView.swift in Sources */,
+				78A67E842690C32400B61B42 /* PhotoAttemptsVipView.swift in Sources */,
 				7843D563267FBBE300768083 /* Fonts.swift in Sources */,
 				7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
@@ -1224,6 +1242,7 @@
 				78DED1A6267E639500A7BC84 /* MyPlantsTabRouter.swift in Sources */,
 				784AA7D32683D106006EBC06 /* TableViewPaginatedDataSource.swift in Sources */,
 				784AA7CA2683AAC8006EBC06 /* UIVewController+Background.swift in Sources */,
+				78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */,
 				78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
 				78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */,
@@ -1250,6 +1269,7 @@
 				786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */,
 				783B6DF42686585B0024C040 /* PlantNotificationInfo.swift in Sources */,
 				7843D535267FA74100768083 /* TextStyle.swift in Sources */,
+				78A67E822690C31700B61B42 /* SelectImageFromGalleryView.swift in Sources */,
 				78DED1B0267E640400A7BC84 /* SearchTabRouter.swift in Sources */,
 				782D0639265C2CDD001DE889 /* HomePageRouter.swift in Sources */,
 				7897B2D726888557005FF62C /* CapturePlantPhotoViewController.swift in Sources */,

@@ -13,6 +13,7 @@ final class CapturePlantPhotoFocusTintView: UIView {
     private lazy var photoCenterFrameView = UIImageView(
         image: Asset.Images.CapturePhoto.centerFrame.image
     )
+    private lazy var photoCenterFrameScannerView = CapturePlantPhotoScanningView()
     
     private lazy var leftOffsetBgView = buildBgView()
     private lazy var rightOffsetBgView = buildBgView()
@@ -63,6 +64,15 @@ final class CapturePlantPhotoFocusTintView: UIView {
         } else {
             tipView.isHidden = true
         }
+        
+        switch model.state {
+        case .default:
+            photoCenterFrameScannerView.update(with: .init(state: .stopScanning))
+            photoCenterFrameScannerView.isHidden = true
+        case .scanning:
+            photoCenterFrameScannerView.update(with: .init(state: .startScanning))
+            photoCenterFrameScannerView.isHidden = false
+        }
     }
 }
 
@@ -75,9 +85,11 @@ private extension CapturePlantPhotoFocusTintView {
     
     func setupSubviews() {
         addSubviews(
+            photoCenterFrameScannerView,
             verticalStackView,
             tipView
         )
+        photoCenterFrameScannerView.isHidden = true
     }
     
     func setupConstraints() {
@@ -111,6 +123,10 @@ private extension CapturePlantPhotoFocusTintView {
         
         photoCenterFrameView.snp.makeConstraints { make in
             make.width.equalTo(photoCenterFrameView.snp.height).multipliedBy(appearance.photoCenterFrameAspectRatio)
+        }
+        
+        photoCenterFrameScannerView.snp.makeConstraints { make in
+            make.edges.equalTo(photoCenterFrameView)
         }
         
     

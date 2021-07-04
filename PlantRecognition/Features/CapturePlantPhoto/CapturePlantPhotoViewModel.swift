@@ -22,14 +22,52 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
     func viewLoaded() {
        updateView()
     }
+}
+
+
+// MARK:  Helpers
+private extension CapturePlantPhotoViewModel {
     
-    private func updateView() {
+    func updateView() {
         view?.update(
             with: .init(
                 photoFrameModel: .init(
-                    photoFocusTintModel: .init(tip: .init(title: "scanning"), state: .default)
+                    photoFocusTintModel: buildPhotoFocusTintModel(),
+                    bottomPanelModel: buildBottomPanelModel()
                 )
             )
         )
     }
+    
+    func buildPhotoFocusTintModel() -> CapturePlantPhotoFocusTintView.Model {
+        return .init(
+            tip: .init(title: L10n.TakePhoto.TopHint.placePlantInFrame),
+            state: .default
+        )
+    }
+    
+    func buildBottomPanelModel() -> CapturePlantBottomPanelView.Model {
+        return .init(
+            takePhotoButtonAction: { [weak self] in
+                
+            },
+            selectImageFromGalleryModel: .init(
+                style: .placeholder,
+                tapAction: { [weak self] in
+                    
+                }
+            ),
+            photoAttemptsVipModel: buildPhotoAttemptsVipModel()
+        )
+    }
+    
+    func buildPhotoAttemptsVipModel() -> PhotoAttemptsVipView.Model? {
+        return .init(
+            tapAction: { [weak self] in
+                
+            },
+            style: .fullAccess
+        )
+    }
+    
 }

@@ -38,6 +38,7 @@ final class CapturePlantPhotoView: UIView {
     
     func update(with model: Model) {
         photoTintView.update(with: model.photoFocusTintModel)
+        bottomPanelView.update(with: model.bottomPanelModel)
     }
 }
 
@@ -87,6 +88,7 @@ private extension CapturePlantPhotoView {
 extension CapturePlantPhotoView {
     struct Model {
         let photoFocusTintModel: CapturePlantPhotoFocusTintView.Model
+        let bottomPanelModel: CapturePlantBottomPanelView.Model
     }
 }
 

@@ -41,11 +41,15 @@ public enum Asset {
     public enum CapturePhoto {
       public static let capturePhotoOverlay = ImageAsset(name: "CapturePhotoOverlay")
       public static let centerFrame = ImageAsset(name: "CenterFrame")
+      public static let takePhoto = ImageAsset(name: "TakePhoto")
     }
     public enum Components {
       public enum Buttons {
         public static let addPlant = ImageAsset(name: "AddPlant")
         public static let defaultButtonBg = ImageAsset(name: "DefaultButtonBg")
+        public enum SelectImageFromGallery {
+          public static let placeholderImage = ImageAsset(name: "PlaceholderImage")
+        }
         public static let takePhoto = ImageAsset(name: "TakePhoto")
       }
       public enum Cards {
@@ -66,6 +70,7 @@ public enum Asset {
       public static let notSelectedLeaf = ImageAsset(name: "NotSelectedLeaf")
       public static let notSelectedSearch = ImageAsset(name: "NotSelectedSearch")
       public static let notSelectedSetting = ImageAsset(name: "NotSelectedSetting")
+      public static let password = ImageAsset(name: "Password")
       public static let selectedLeaf = ImageAsset(name: "SelectedLeaf")
       public static let selectedSearch = ImageAsset(name: "SelectedSearch")
       public static let selectedSetting = ImageAsset(name: "SelectedSetting")

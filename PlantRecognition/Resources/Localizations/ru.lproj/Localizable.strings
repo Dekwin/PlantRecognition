@@ -23,3 +23,12 @@
 // MARK: - Search
 
 "SearchTab.title" = "Поиск растений";
+
+// MARK: - Components
+
+// MARK: - Take photo
+
+"PhotoAttemptsVip.fullAccess" = "полный доступ";
+
+"TakePhoto.TopHint.placePlantInFrame" = "Поместите растение в рамку на экране";
+"TakePhoto.TopHint.scanning" = "Подождите, распознаём ...";
