@@ -32,3 +32,5 @@
 
 "TakePhoto.TopHint.placePlantInFrame" = "Place the plant in the frame";
 "TakePhoto.TopHint.scanning" = "Wait, scanning ...";
+
+"TakePhoto.RetryHint.attempts" = "You have %ld attempts left";

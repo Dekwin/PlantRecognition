@@ -82,6 +82,7 @@
 		78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */; };
 		78C4DBDC2691D535009A1E9D /* CapturePlantPhotoRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */; };
 		78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */; };
+		78C4DBE02692169D009A1E9D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 78C4DBDF2692169D009A1E9D /* Localizable.stringsdict */; };
 		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
 		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
 		78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */; };
@@ -229,6 +230,7 @@
 		78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoScanningView.swift; sourceTree = "<group>"; };
 		78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoRetryView.swift; sourceTree = "<group>"; };
 		78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantRecognizedBottomPanelView.swift; sourceTree = "<group>"; };
+		78C4DBDF2692169D009A1E9D /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
 		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
 		78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentable.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				78DED1DD267E862700A7BC84 /* Localizable.strings */,
+				78C4DBDF2692169D009A1E9D /* Localizable.stringsdict */,
 			);
 			path = Localizations;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 				7843D560267FBB0100768083 /* FiraSans-Regular.ttf in Resources */,
 				785C7DB6267FA108002267E4 /* Colors.xcassets in Resources */,
 				7843D55C267FBB0100768083 /* FiraSans-ExtraBold.ttf in Resources */,
+				78C4DBE02692169D009A1E9D /* Localizable.stringsdict in Resources */,
 				78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */,
 				7843D55D267FBB0100768083 /* FiraSans-SemiBold.ttf in Resources */,
 				78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */,

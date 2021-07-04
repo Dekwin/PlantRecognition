@@ -50,6 +50,12 @@ public enum L10n {
   }
 
   public enum TakePhoto {
+    public enum RetryHint {
+      /// You have %ld attempts left
+      public static func attempts(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "TakePhoto.RetryHint.attempts", p1)
+      }
+    }
     public enum TopHint {
       /// Place the plant in the frame
       public static let placePlantInFrame = L10n.tr("Localizable", "TakePhoto.TopHint.placePlantInFrame")

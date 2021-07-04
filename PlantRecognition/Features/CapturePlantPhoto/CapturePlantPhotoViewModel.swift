@@ -46,13 +46,22 @@ private extension CapturePlantPhotoViewModel {
     }
     
     func buildContentState() -> CapturePlantPhotoView.ContentState {
-        return .photoFocusTint(buildPhotoFocusTintModel())
+        return .retry(buildRetryModel()) //.photoFocusTint(buildPhotoFocusTintModel())
+    }
+    
+    func buildRetryModel() -> CapturePlantPhotoRetryView.Model {
+        return .init(
+            tip: .init(title: L10n.TakePhoto.RetryHint.attempts(0)),
+            retryButtonAction: { [weak self] in
+                
+            }
+        )
     }
     
     func buildPhotoFocusTintModel() -> CapturePlantPhotoFocusTintView.Model {
         return .init(
             tip: .init(title: L10n.TakePhoto.TopHint.placePlantInFrame),
-            state: .scanning
+            state: .readyToTakePhoto
         )
     }
     

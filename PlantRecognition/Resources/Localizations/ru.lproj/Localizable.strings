@@ -32,3 +32,5 @@
 
 "TakePhoto.TopHint.placePlantInFrame" = "Поместите растение в рамку на экране";
 "TakePhoto.TopHint.scanning" = "Подождите, распознаём ...";
+
+"TakePhoto.RetryHint.attempts" = "У вас осталось %ld попыток";

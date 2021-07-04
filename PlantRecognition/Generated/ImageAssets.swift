@@ -47,6 +47,7 @@ public enum Asset {
       public enum Buttons {
         public static let addPlant = ImageAsset(name: "AddPlant")
         public static let defaultButtonBg = ImageAsset(name: "DefaultButtonBg")
+        public static let reloadButton = ImageAsset(name: "ReloadButton")
         public enum SelectImageFromGallery {
           public static let placeholderImage = ImageAsset(name: "PlaceholderImage")
         }
