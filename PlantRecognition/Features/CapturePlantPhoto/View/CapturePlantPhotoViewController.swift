@@ -7,6 +7,9 @@ import UIKit
 // sourcery: AutoMockable
 protocol CapturePlantPhotoViewProtocol: AlertLoaderPresentable {
     func update(with model: CapturePlantPhotoViewController.Model)
+    
+    /// Locks interface from user interactions
+    func setInterface(isLocked: Bool)
 }
 
 final class CapturePlantPhotoViewController: UIViewController {
@@ -48,6 +51,10 @@ final class CapturePlantPhotoViewController: UIViewController {
 extension CapturePlantPhotoViewController: CapturePlantPhotoViewProtocol {
     func update(with model: Model) {
         customView.update(with: model.contentModel)
+    }
+    
+    func setInterface(isLocked: Bool) {
+        view.isUserInteractionEnabled = !isLocked
     }
 }
 
