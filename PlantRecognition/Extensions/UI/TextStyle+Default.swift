@@ -46,6 +46,18 @@ extension TextStyle {
         )
     }
     
+    class var text14R: TextStyle {
+        .init(
+            styleAttributes: .init(
+                font: Fonts.FiraSans.regular.font(size: 14),
+                kern: .defined(value: 0.42),
+                lineHeight: .defined(value: 14),
+                alignment: .defined(value: .left),
+                color: .defined(value: Asset.Colors.black.color)
+            )
+        )
+    }
+    
     class var text16R: TextStyle {
         .init(
             styleAttributes: .init(

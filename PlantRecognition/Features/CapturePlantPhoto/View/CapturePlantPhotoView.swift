@@ -168,7 +168,7 @@ private extension CapturePlantPhotoView {
             Asset.Colors.mainGreen.color.withAlphaComponent(0)
         ]
         let takePhotoBottomPanelViewHeight: CGFloat = 144.0
-        let plantRecognizedBottomPanelViewHeight: CGFloat = 140.0
+        let plantRecognizedBottomPanelViewHeight: CGFloat = 170.0
     }
 }
 

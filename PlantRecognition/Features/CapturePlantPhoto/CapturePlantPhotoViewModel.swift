@@ -68,12 +68,14 @@ private extension CapturePlantPhotoViewModel {
     // MARK: - Bottom Panel
     
     func buildBottomPanelState() -> CapturePlantPhotoView.BottomPanelState {
-        return .takePhoto(buildTakePhotoBottomPanelModel()) // .plantRecognized(buildPlantReognizedBottomPanelModel())
+        return
+            //.takePhoto(buildTakePhotoBottomPanelModel())
+            .plantRecognized(buildPlantReognizedBottomPanelModel())
     }
     
     func buildPlantReognizedBottomPanelModel() -> CapturePlantRecognizedBottomPanelView.Model {
         return .init(
-            image: UIImage(),
+            image: Asset.Images.DemoImages.cactus1.image,
             title: "Sansevieria",
             subtitle: "Sansevieria is a genus of stemless evergreen perennial herbaceous plants of the Asparagaceae family.",
             nextButtonAction: {}

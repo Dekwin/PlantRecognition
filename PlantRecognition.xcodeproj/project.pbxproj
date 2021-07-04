@@ -83,6 +83,7 @@
 		78C4DBDC2691D535009A1E9D /* CapturePlantPhotoRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */; };
 		78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */; };
 		78C4DBE126921B9E009A1E9D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 78C4DBE326921B9E009A1E9D /* Localizable.stringsdict */; };
+		78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBE526921EE0009A1E9D /* UIView+Corners.swift */; };
 		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
 		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
 		78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */; };
@@ -232,6 +233,7 @@
 		78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantRecognizedBottomPanelView.swift; sourceTree = "<group>"; };
 		78C4DBE226921B9E009A1E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		78C4DBE426921BA1009A1E9D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		78C4DBE526921EE0009A1E9D /* UIView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
 		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
 		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
 		78C7259E2663B5F4005AA717 /* LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentable.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */,
 				784AA7C92683AAC8006EBC06 /* UIVewController+Background.swift */,
 				783B6DF9268664340024C040 /* UITableView+CellRegistration.swift */,
+				78C4DBE526921EE0009A1E9D /* UIView+Corners.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1252,6 +1255,7 @@
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
+				78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */,
 				784AA7CD2683AEE9006EBC06 /* GradientView.swift in Sources */,
