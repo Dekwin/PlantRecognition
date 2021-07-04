@@ -47,13 +47,13 @@ final class CapturePlantPhotoViewController: UIViewController {
 // MARK: - CapturePlantPhotoViewProtocol
 extension CapturePlantPhotoViewController: CapturePlantPhotoViewProtocol {
     func update(with model: Model) {
-        customView.update(with: model.photoFrameModel)
+        customView.update(with: model.contentModel)
     }
 }
 
 // MARK: Model
 extension CapturePlantPhotoViewController {
     struct Model {
-        let photoFrameModel: CapturePlantPhotoView.Model
+        let contentModel: CapturePlantPhotoView.Model
     }
 }

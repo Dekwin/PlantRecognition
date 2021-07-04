@@ -66,7 +66,7 @@ final class CapturePlantPhotoFocusTintView: UIView {
         }
         
         switch model.state {
-        case .default:
+        case .readyToTakePhoto:
             photoCenterFrameScannerView.update(with: .init(state: .stopScanning))
             photoCenterFrameScannerView.isHidden = true
         case .scanning:
@@ -152,7 +152,7 @@ extension CapturePlantPhotoFocusTintView {
     }
     
     enum State {
-        case `default`
+        case readyToTakePhoto
         case scanning
     }
 }

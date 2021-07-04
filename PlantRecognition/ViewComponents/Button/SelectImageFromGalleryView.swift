@@ -26,7 +26,7 @@ final class SelectImageFromGalleryView: UIView {
         self.action = model.tapAction
         
         switch model.style {
-        case .placeholder:
+        case .placeholderImage:
             imageView.image = appearance.placeholderImage
         case .image(let image):
             imageView.image = image
@@ -72,7 +72,7 @@ extension SelectImageFromGalleryView {
     }
     
     enum Style {
-        case placeholder
+        case placeholderImage
         case image(UIImage)
     }
 }
