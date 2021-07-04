@@ -2,30 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringKey</key>
-	<dict>
-		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@VARIABLE@</string>
-		<key>VARIABLE</key>
-		<dict>
-			<key>NSStringFormatSpecTypeKey</key>
-			<string>NSStringPluralRuleType</string>
-			<key>NSStringFormatValueTypeKey</key>
-			<string></string>
-			<key>zero</key>
-			<string></string>
-			<key>one</key>
-			<string></string>
-			<key>two</key>
-			<string></string>
-			<key>few</key>
-			<string></string>
-			<key>many</key>
-			<string></string>
-			<key>other</key>
-			<string></string>
-		</dict>
-	</dict>
     <key>TakePhoto.RetryHint.attempts</key>
         <dict>
             <key>NSStringLocalizedFormatKey</key>
@@ -37,11 +13,13 @@
                 <key>NSStringFormatValueTypeKey</key>
                 <string>d</string>
                 <key>one</key>
-                <string>You have %d attempt left</string>
+                <string>У вас осталось %d попытка</string>
                 <key>other</key>
-                <string>You have %d attempts left</string>
+                <string>У вас осталось %d попыток</string>
                 <key>zero</key>
-                <string>You have no attempts left</string>
+                <string>У вас осталось %d попыток</string>
+                <key>few</key>
+                <string>У вас осталось %d попытки</string>
             </dict>
         </dict>
 </dict>

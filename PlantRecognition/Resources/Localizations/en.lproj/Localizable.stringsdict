@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>TakePhoto.RetryHint.attempts</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@elements@</string>
+            <key>elements</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>one</key>
+                <string>You have %d attempt left</string>
+                <key>other</key>
+                <string>You have %d attempts left</string>
+                <key>zero</key>
+                <string>You have no attempts left</string>
+            </dict>
+        </dict>
+</dict>
+</plist>

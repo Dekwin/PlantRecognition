@@ -51,7 +51,7 @@ private extension CapturePlantPhotoViewModel {
     
     func buildRetryModel() -> CapturePlantPhotoRetryView.Model {
         return .init(
-            tip: .init(title: L10n.TakePhoto.RetryHint.attempts(0)),
+            tip: .init(title: L10n.TakePhoto.RetryHint.attempts(22)),
             retryButtonAction: { [weak self] in
                 
             }

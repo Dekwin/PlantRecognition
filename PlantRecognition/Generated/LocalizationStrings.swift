@@ -51,7 +51,7 @@ public enum L10n {
 
   public enum TakePhoto {
     public enum RetryHint {
-      /// You have %ld attempts left
+      /// Plural format key: "%#@elements@"
       public static func attempts(_ p1: Int) -> String {
         return L10n.tr("Localizable", "TakePhoto.RetryHint.attempts", p1)
       }
