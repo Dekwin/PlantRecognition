@@ -41,7 +41,7 @@ public enum Asset {
     public enum CapturePhoto {
       public static let capturePhotoOverlay = ImageAsset(name: "CapturePhotoOverlay")
       public static let centerFrame = ImageAsset(name: "CenterFrame")
-      public static let takePhoto = ImageAsset(name: "TakePhoto")
+      public static let scanPhoto = ImageAsset(name: "ScanPhoto")
     }
     public enum Components {
       public enum Buttons {
@@ -53,6 +53,7 @@ public enum Asset {
           public static let placeholderImage = ImageAsset(name: "PlaceholderImage")
         }
         public static let takePhoto = ImageAsset(name: "TakePhoto")
+        public static let takePhotoPressed = ImageAsset(name: "TakePhotoPressed")
       }
       public enum Cards {
         public static let cardBg = ImageAsset(name: "CardBg")

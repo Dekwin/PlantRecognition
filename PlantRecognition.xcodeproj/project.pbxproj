@@ -65,6 +65,7 @@
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
+		7893AB9226935C7000320C99 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893AB9126935C7000320C99 /* ImageAssets.swift */; };
 		7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */; };
 		7897B2D526888557005FF62C /* CapturePlantPhotoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */; };
 		7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */; };
@@ -115,7 +116,6 @@
 		78DED1C6267E64AA00A7BC84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */; };
 		78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */; };
 		78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */; };
-		78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D5267E846100A7BC84 /* ImageAssets.swift */; };
 		78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */; };
 		78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78DED1DD267E862700A7BC84 /* Localizable.strings */; };
 		78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7AE2682687800A491AD /* InfoCardView.swift */; };
@@ -217,6 +217,7 @@
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
+		7893AB9126935C7000320C99 /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBgGradientView.swift; sourceTree = "<group>"; };
 		7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoFactory.swift; sourceTree = "<group>"; };
 		7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoRouter.swift; sourceTree = "<group>"; };
@@ -268,7 +269,6 @@
 		78DED1C1267E64AA00A7BC84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		78DED1C3267E64AA00A7BC84 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		78DED1C9267E688D00A7BC84 /* MainTabBarTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarTabs.swift; sourceTree = "<group>"; };
-		78DED1D5267E846100A7BC84 /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
 		78DED1DC267E862700A7BC84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78DED1DE267E865E00A7BC84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -776,8 +776,8 @@
 		78DED1D4267E81DC00A7BC84 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				7893AB9126935C7000320C99 /* ImageAssets.swift */,
 				7843D562267FBBE300768083 /* Fonts.swift */,
-				78DED1D5267E846100A7BC84 /* ImageAssets.swift */,
 				78DED1D6267E846100A7BC84 /* LocalizationStrings.swift */,
 			);
 			path = Generated;
@@ -1272,6 +1272,7 @@
 				7843D563267FBBE300768083 /* Fonts.swift in Sources */,
 				7897B2D626888557005FF62C /* CapturePlantPhotoRouter.swift in Sources */,
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
+				7893AB9226935C7000320C99 /* ImageAssets.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
 				78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */,
@@ -1285,7 +1286,6 @@
 				784AA7D32683D106006EBC06 /* TableViewPaginatedDataSource.swift in Sources */,
 				784AA7CA2683AAC8006EBC06 /* UIVewController+Background.swift in Sources */,
 				78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */,
-				78DED1D7267E846100A7BC84 /* ImageAssets.swift in Sources */,
 				78989D40265EE8B500D5DAC5 /* PlantRecognitionServiceProxyProtocol.swift in Sources */,
 				78C7259F2663B5F4005AA717 /* LoaderPresentable.swift in Sources */,
 				7849E1AC26626A49003DBD19 /* PlantIdSuggestionDetails.swift in Sources */,
@@ -1531,7 +1531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
@@ -1554,7 +1554,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

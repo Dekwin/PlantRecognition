@@ -28,6 +28,7 @@ final class SearchTabView: UIView {
     private lazy var takePhotoButton: UIButton = {
         let takePhotoButton = UIButton()
         takePhotoButton.setImage(appearance.takePhotoImage, for: .normal)
+        takePhotoButton.setImage(appearance.takePhotoPressedImage, for: .highlighted)
         return takePhotoButton
     }()
     
@@ -62,6 +63,7 @@ private extension SearchTabView {
             takePhotoButton
         )
         centerImageView.contentMode = .scaleAspectFit
+        
         takePhotoButton.addTarget(self, action: #selector(takePhotoTouched), for: .touchUpInside)
     }
     
@@ -107,6 +109,7 @@ private extension SearchTabView {
         let headerBottomInset: CGFloat = .gap6XL
         let centerImageBottomInset: CGFloat = .gap6XL
         let takePhotoImage: UIImage = Asset.Images.Components.Buttons.takePhoto.image
+        let takePhotoPressedImage: UIImage = Asset.Images.Components.Buttons.takePhotoPressed.image
         let takePhotoBottomInset: CGFloat = .gap4XL
     }
 }

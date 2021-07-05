@@ -67,7 +67,8 @@ private extension CapturePlantBottomPanelView {
             photoAttemptsVipView
         )
         
-        takePhotoButton.setImage(Asset.Images.CapturePhoto.takePhoto.image, for: .normal)
+        takePhotoButton.setImage(Asset.Images.CapturePhoto.scanPhoto.image, for: .normal)
+        
         takePhotoButton.addTarget(self, action: #selector(takePhotoTouched), for: .touchUpInside)
         
         selectImageFromGalleryView.isHidden = true
