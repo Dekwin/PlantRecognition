@@ -42,7 +42,12 @@ extension PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProto
                     
                     let result: PlantRecognitionServiceProxyResult.ResultType = foundSuggestion.map { suggestion in
                         .recognized(
-                            plantIdentity: .init(id: "1", image: nil, name: suggestion.plantName, description: ""),
+                            plantIdentity: .init(
+                                id: "1",
+                                image: nil,
+                                name: suggestion.plantName,
+                                description: suggestion.plantDetails?.commonNames?.joined(separator: ", ") ?? ""
+                            ),
                             probability: suggestion.probability
                         )
                     } ?? .notRecognizedError

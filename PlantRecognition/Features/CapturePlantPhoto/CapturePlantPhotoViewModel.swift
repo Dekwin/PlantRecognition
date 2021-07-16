@@ -56,12 +56,16 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
                 self?.deps.capturePlantPhotoLivePreviewWorker.startVideoPreview { [weak self] in
                     guard let self = self else { return }
                     
-                    self.state = self.buildInitialState()
+                    self.setupInitialState()
                 }
             case .failure(let error):
                 self?.view?.presentAlert(error: error)
             }
         }
+    }
+    
+    private func setupInitialState() {
+        state = buildInitialState()
     }
     
     private func buildInitialState() -> State {
@@ -78,13 +82,13 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoLivePreviewWorkerDelegate
         case .success(let image):
             state = .init(content: .recognizing(recognizingImage: image), bottomPanel: .takePhotoButtons)
             self.view?.setInterface(isLocked: true)
-            deps.plantRecognitionServiceProxy.recognize(image: image) { [weak self] result in
+            deps.plantRecognitionRetryWorker.recognize(sourceImage: image) { [weak self] result in
                 guard let self = self else { return }
                 self.view?.setInterface(isLocked: false)
                 switch result {
                 case .success(let recognitionResult):
-                    let retriesLeft = 0
-                    switch recognitionResult.resultType {
+                    let retriesLeft = recognitionResult.recognitionRetriesLeft
+                    switch recognitionResult.recognitionResult.resultType {
                     case .recognized(let plantIdentity, _):
                         self.state = .init(
                             content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
@@ -101,7 +105,6 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoLivePreviewWorkerDelegate
                     self.view?.presentAlert(error: error)
                 }
             }
-            state = .init(content: .recognizing(recognizingImage: image), bottomPanel: .takePhotoButtons)
         case .failure(let error):
             view?.presentAlert(error: error)
         }
@@ -119,7 +122,13 @@ private extension CapturePlantPhotoViewModel {
     }
     
     func retryTouched() {
+        let userCanRetry = deps.plantRecognitionRetryWorker.hasRecognizePlantRetryAttempts
         
+        if userCanRetry {
+            setupInitialState()
+        } else {
+            // Do nothing
+        }
     }
     
     func subscriptionsButtonTouched() {
@@ -260,7 +269,7 @@ extension CapturePlantPhotoViewModel {
     
     struct Deps {
         let router: CapturePlantPhotoRouterProtocol
-        let plantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol
+        let plantRecognitionRetryWorker: PlantRecognitionRetryWorkerProtocol
         let capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorkerProtocol
     }
 }

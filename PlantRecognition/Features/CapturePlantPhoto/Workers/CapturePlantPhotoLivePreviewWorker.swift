@@ -30,17 +30,19 @@ class CapturePlantPhotoLivePreviewWorker: NSObject {
     weak var delegate: CapturePlantPhotoLivePreviewWorkerDelegate?
     
     private lazy var captureSession: AVCaptureSession = {
-       let session = AVCaptureSession()
-        session.sessionPreset = .medium
+        let session = AVCaptureSession()
+        session.sessionPreset = .high
         
         return session
     }()
-    private var stillImageOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
+    private var stillImageOutput: AVCapturePhotoOutput = {
+        let output = AVCapturePhotoOutput()
+        return output
+    }()
     private(set) lazy var videoPreviewLayer: AVCaptureVideoPreviewLayer = {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
         videoPreviewLayer.videoGravity = .resizeAspect
-        videoPreviewLayer.connection?.videoOrientation = .portrait
         
         return videoPreviewLayer
     }()
@@ -121,6 +123,8 @@ extension CapturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorker
             captureSession.addInput(input)
             captureSession.addOutput(stillImageOutput)
         }
+        
+        videoPreviewLayer.connection?.videoOrientation = .portrait
     }
 }
 

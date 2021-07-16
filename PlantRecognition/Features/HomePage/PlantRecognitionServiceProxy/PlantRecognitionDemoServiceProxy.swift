@@ -13,7 +13,7 @@ final class PlantRecognitionDemoServiceProxy: PlantRecognitionServiceProxyProtoc
         completion(
             .success(
                 .init(
-                    resultType: .recognized(plantIdentity: .init(id: "1", image: Asset.Images.DemoImages.cactus1.image, name: "Morale1", description: "Morale1 gh hjjgjhghjgjhjghghjgh gjh gj jghjgh"), probability: nil)
+                    resultType: .recognized(plantIdentity: .init(id: "1", image: Asset.Images.DemoImages.cactus1.image, name: "Morale1", description: "Morale1 gh hjjgjhghjgjhjghghjgh gjh gj jghjgh"), probability: 0.9)
                 )
             )
         )

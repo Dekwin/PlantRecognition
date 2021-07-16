@@ -19,7 +19,7 @@ final class CapturePlantPhotoFactory: CapturePlantPhotoFactoryProtocol {
         let viewModel = CapturePlantPhotoViewModel(
             deps: .init(
                 router: router,
-                plantRecognitionServiceProxy: recognitionProxy,
+                plantRecognitionRetryWorker: PlantRecognitionRetryWorker(plantRecognitionServiceProxy: recognitionProxy),
                 capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorker()
             )
         )
