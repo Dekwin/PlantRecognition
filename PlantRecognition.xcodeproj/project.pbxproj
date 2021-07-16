@@ -85,8 +85,6 @@
 		78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */; };
 		78C4DBE126921B9E009A1E9D /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 78C4DBE326921B9E009A1E9D /* Localizable.stringsdict */; };
 		78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBE526921EE0009A1E9D /* UIView+Corners.swift */; };
-		78C4DBE926924C26009A1E9D /* PlantRecognitionResultWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBE826924C26009A1E9D /* PlantRecognitionResultWorker.swift */; };
-		78C4DBEB26924C59009A1E9D /* PlantRecognitionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBEA26924C59009A1E9D /* PlantRecognitionResult.swift */; };
 		78C4DBED26924ED9009A1E9D /* PlantIdentityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBEC26924ED9009A1E9D /* PlantIdentityInfo.swift */; };
 		78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */; };
 		78C7259D2663B5C2005AA717 /* UIView+LoaderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */; };
@@ -121,6 +119,7 @@
 		78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7AE2682687800A491AD /* InfoCardView.swift */; };
 		78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7B526826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift */; };
 		78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1B7BA26827CAB00A491AD /* DefaultButton.swift */; };
+		78E7213426A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */; };
 		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
 		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
 		78EACB9C268D037200592B0F /* CapturePlantBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */; };
@@ -238,8 +237,6 @@
 		78C4DBE226921B9E009A1E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		78C4DBE426921BA1009A1E9D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		78C4DBE526921EE0009A1E9D /* UIView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
-		78C4DBE826924C26009A1E9D /* PlantRecognitionResultWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionResultWorker.swift; sourceTree = "<group>"; };
-		78C4DBEA26924C59009A1E9D /* PlantRecognitionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionResult.swift; sourceTree = "<group>"; };
 		78C4DBEC26924ED9009A1E9D /* PlantIdentityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdentityInfo.swift; sourceTree = "<group>"; };
 		78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionServiceProxyFactory.swift; sourceTree = "<group>"; };
 		78C7259C2663B5C2005AA717 /* UIView+LoaderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoaderPresentable.swift"; sourceTree = "<group>"; };
@@ -275,6 +272,7 @@
 		78E1B7AE2682687800A491AD /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		78E1B7B526826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTabNoPlantsYetView.swift; sourceTree = "<group>"; };
 		78E1B7BA26827CAB00A491AD /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoLivePreviewWorker.swift; sourceTree = "<group>"; };
 		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
 		78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantBottomPanelView.swift; sourceTree = "<group>"; };
@@ -617,6 +615,7 @@
 		7897B2CF268884A2005FF62C /* CapturePlantPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				78E7213226A1FE690016E226 /* Workers */,
 				78F12CD4268BB1AE008A1EBE /* View */,
 				7897B2D026888557005FF62C /* CapturePlantPhotoFactory.swift */,
 				7897B2D126888557005FF62C /* CapturePlantPhotoRouter.swift */,
@@ -677,15 +676,6 @@
 			path = Retry;
 			sourceTree = "<group>";
 		};
-		78C4DBE726924C09009A1E9D /* PlantRecognitionResultWorker */ = {
-			isa = PBXGroup;
-			children = (
-				78C4DBE826924C26009A1E9D /* PlantRecognitionResultWorker.swift */,
-				78C4DBEA26924C59009A1E9D /* PlantRecognitionResult.swift */,
-			);
-			path = PlantRecognitionResultWorker;
-			sourceTree = "<group>";
-		};
 		78C725A72663BE42005AA717 /* PlantId */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,7 +687,6 @@
 		78CF13CA265A98F200D5815F /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				78C4DBE726924C09009A1E9D /* PlantRecognitionResultWorker */,
 				7849E1C12663A685003DBD19 /* Views */,
 				7849E1AA26626859003DBD19 /* ImagePicker */,
 				78989D3E265EE89B00D5DAC5 /* PlantRecognitionServiceProxy */,
@@ -810,6 +799,14 @@
 				78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		78E7213226A1FE690016E226 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		78E8E1FC268110B2000695A9 /* ViewComponents */ = {
@@ -1257,7 +1254,6 @@
 				78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */,
 				78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */,
 				7843D537267FB77800768083 /* UILabel+StyledText.swift in Sources */,
-				78C4DBE926924C26009A1E9D /* PlantRecognitionResultWorker.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
 				783B6DE626864E2F0024C040 /* PlantCardTableViewCell.swift in Sources */,
@@ -1295,6 +1291,7 @@
 				78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */,
 				78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
+				78E7213426A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift in Sources */,
 				784AA7D02683B3C0006EBC06 /* MyPlantsListView.swift in Sources */,
 				7897B2D926888557005FF62C /* CapturePlantPhotoViewModel.swift in Sources */,
 				783B6DF2268657F40024C040 /* PlantDetailsUserInfo.swift in Sources */,
@@ -1332,7 +1329,6 @@
 				78C725A52663B9AD005AA717 /* UIImage+Resize.swift in Sources */,
 				7843D53B267FB91200768083 /* TextStyle+Default.swift in Sources */,
 				78DED1C5267E64AA00A7BC84 /* MainTabBarRouter.swift in Sources */,
-				78C4DBEB26924C59009A1E9D /* PlantRecognitionResult.swift in Sources */,
 				782DD96F265AA15900FDE44B /* UIView+Extensions.swift in Sources */,
 				78C725A32663B6CB005AA717 /* Double+Round.swift in Sources */,
 				7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */,

@@ -19,6 +19,6 @@ final class SearchTabRouter: SearchTabRouterProtocol {
     func openCapturePlantModule() {
         let controller = CapturePlantPhotoFactory().create()
         controller.modalPresentationStyle = .fullScreen
-        transitionHandler.present(controller: controller, animated: true)
+        transitionHandler.push(controller: controller, animated: true)
     }
 }

@@ -8,12 +8,13 @@
 import Foundation
 
 struct PlantRecognitionServiceProxyResult {
-    let suggestions: [PlantSuggestion]
+    let resultType: ResultType
 }
 
 extension PlantRecognitionServiceProxyResult {
-    struct PlantSuggestion {
-        let name: String
-        let probability: Double?
+    enum ResultType {
+        case notRecognizedError
+        case recognized(plantIdentity: PlantIdentityInfo, probability: Double?)
     }
 }
+

@@ -84,15 +84,24 @@ private extension HomePageViewModel {
         guard let recognizeResult = recognizeResult else {
             return nil
         }
-        let descriptions = recognizeResult
-            .suggestions
-            .map { PlantRecognitionResultView.PlantDescription(name: $0.name, probability: $0.probability) }
         
-        return .init(
-            recognitionResultType: .many(
-                descriptions: descriptions
+        switch recognizeResult.resultType {
+        case .notRecognizedError:
+            return .init(
+                recognitionResultType: .many(
+                    descriptions: []
+                )
             )
-        )
+        case .recognized(let plantIdentity, let probability):
+            return .init(
+                recognitionResultType: .one(
+                    description: PlantRecognitionResultView.PlantDescription(name: plantIdentity.name, probability: probability ?? 0)
+                )
+            )
+        }
+
+        
+        
     }
 }
 

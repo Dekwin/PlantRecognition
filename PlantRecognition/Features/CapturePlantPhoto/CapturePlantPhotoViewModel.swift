@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol CapturePlantPhotoViewModelProtocol: AnyObject {
     func viewLoaded()
@@ -13,7 +14,7 @@ final class CapturePlantPhotoViewModel {
     
     private let deps: Deps
     
-    private lazy var state: State = .init(content: .takePhotoTint, bottomPanel: .takePhotoButtons) {
+    private lazy var state: State = buildInitialState() {
         didSet {
             updateView()
         }
@@ -23,6 +24,7 @@ final class CapturePlantPhotoViewModel {
         deps: Deps
     ) {
         self.deps = deps
+        deps.capturePlantPhotoLivePreviewWorker.delegate = self
     }
 }
 
@@ -30,17 +32,78 @@ final class CapturePlantPhotoViewModel {
 extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
     func viewLoaded() {
         updateView()
-        
+        setupLiveCameraPreview()
+    }
+    
+    private func runTestFlow() {
         // Test
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.state.content = .recognizing
+            self.state.content = .recognizing(recognizingImage: Asset.Images.DemoImages.cactus1.image)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self.state = .init(
-                    content: .retry(retriesLeft: 3),
+                    content: .retry(recognizedImage: Asset.Images.DemoImages.cactus1.image, retriesLeft: 3),
                     bottomPanel: .plantRecognized(plantIdentity: .init(id: "1", image: Asset.Images.DemoImages.cactus1.image, name: "Sansevieria", description: "Sansevieria is a genus of stemless evergreen perennial herbaceous plants of the Asparagaceae family."))
                 )
             }
+        }
+    }
+    
+    private func setupLiveCameraPreview() {
+        deps.capturePlantPhotoLivePreviewWorker.initializeAndRequestCameraAccess { [weak self] result in
+            switch result {
+            case .success:
+                self?.deps.capturePlantPhotoLivePreviewWorker.startVideoPreview { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.state = self.buildInitialState()
+                }
+            case .failure(let error):
+                self?.view?.presentAlert(error: error)
+            }
+        }
+    }
+    
+    private func buildInitialState() -> State {
+        .init(
+            content: .takePhotoTint(videoPreviewLayer: deps.capturePlantPhotoLivePreviewWorker.videoPreviewLayer),
+            bottomPanel: .takePhotoButtons
+        )
+    }
+}
+
+extension CapturePlantPhotoViewModel: CapturePlantPhotoLivePreviewWorkerDelegate {
+    func photoCaptured(result: Result<UIImage, Error>) {
+        switch result {
+        case .success(let image):
+            state = .init(content: .recognizing(recognizingImage: image), bottomPanel: .takePhotoButtons)
+            self.view?.setInterface(isLocked: true)
+            deps.plantRecognitionServiceProxy.recognize(image: image) { [weak self] result in
+                guard let self = self else { return }
+                self.view?.setInterface(isLocked: false)
+                switch result {
+                case .success(let recognitionResult):
+                    let retriesLeft = 0
+                    switch recognitionResult.resultType {
+                    case .recognized(let plantIdentity, _):
+                        self.state = .init(
+                            content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
+                            bottomPanel: .plantRecognized(plantIdentity: plantIdentity)
+                        )
+                    case .notRecognizedError:
+                        self.state = .init(
+                            content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
+                            bottomPanel: .recognitionError
+                        )
+                    }
+                   
+                case .failure(let error):
+                    self.view?.presentAlert(error: error)
+                }
+            }
+            state = .init(content: .recognizing(recognizingImage: image), bottomPanel: .takePhotoButtons)
+        case .failure(let error):
+            view?.presentAlert(error: error)
         }
     }
 }
@@ -52,7 +115,7 @@ private extension CapturePlantPhotoViewModel {
     }
     
     func makeCameraPhotoTouched() {
-        
+        deps.capturePlantPhotoLivePreviewWorker.capturePhoto()
     }
     
     func retryTouched() {
@@ -89,17 +152,18 @@ private extension CapturePlantPhotoViewModel {
     
     func buildContentState(from state: ContentState) -> CapturePlantPhotoView.ContentState {
         switch state {
-        case .takePhotoTint:
-            return .photoFocusTint(buildPhotoFocusTintModel(isRecognizing: false))
-        case .recognizing:
-            return .photoFocusTint(buildPhotoFocusTintModel(isRecognizing: true))
-        case .retry(let retriesLeft):
-            return .retry(buildRetryModel(retriesLeft: retriesLeft))
+        case .takePhotoTint(let videoPreviewLayer):
+            return .photoFocusTint(buildReadyToTakePhotoFocusTintModel(videoPreviewLayer: videoPreviewLayer))
+        case .recognizing(let image):
+            return .photoFocusTint(buildRecognizingPhotoFocusTintModel(bgImage: image))
+        case .retry(let image, let retriesLeft):
+            return .retry(buildRetryModel(bgImage: image, retriesLeft: retriesLeft))
         }
     }
     
-    func buildRetryModel(retriesLeft: Int) -> CapturePlantPhotoRetryView.Model {
+    func buildRetryModel(bgImage: UIImage, retriesLeft: Int) -> CapturePlantPhotoRetryView.Model {
         return .init(
+            bgImage: bgImage,
             tip: .init(title: L10n.TakePhoto.RetryHint.attempts(retriesLeft)),
             retryButtonAction: { [weak self] in
                 self?.retryTouched()
@@ -107,18 +171,20 @@ private extension CapturePlantPhotoViewModel {
         )
     }
     
-    func buildPhotoFocusTintModel(isRecognizing: Bool) -> CapturePlantPhotoFocusTintView.Model {
-        if isRecognizing {
-            return .init(
-                tip: .init(title: L10n.TakePhoto.TopHint.scanning),
-                state: .scanning
-            )
-        } else {
-            return .init(
-                tip: .init(title: L10n.TakePhoto.TopHint.placePlantInFrame),
-                state: .readyToTakePhoto
-            )
-        }
+    func buildReadyToTakePhotoFocusTintModel(
+        videoPreviewLayer: AVCaptureVideoPreviewLayer
+    ) -> CapturePlantPhotoFocusTintView.Model {
+        return .init(
+            tip: .init(title: L10n.TakePhoto.TopHint.placePlantInFrame),
+            state: .readyToTakePhoto(.init(videoPreviewLayer: videoPreviewLayer))
+        )
+    }
+    
+    func buildRecognizingPhotoFocusTintModel(bgImage: UIImage) -> CapturePlantPhotoFocusTintView.Model {
+        return .init(
+            tip: .init(title: L10n.TakePhoto.TopHint.scanning),
+            state: .scanning(.init(image: bgImage))
+        )
     }
     
     // MARK: - Bottom Panel
@@ -181,9 +247,9 @@ extension CapturePlantPhotoViewModel {
     }
     
     enum ContentState {
-        case takePhotoTint
-        case recognizing
-        case retry(retriesLeft: Int)
+        case takePhotoTint(videoPreviewLayer: AVCaptureVideoPreviewLayer)
+        case recognizing(recognizingImage: UIImage)
+        case retry(recognizedImage: UIImage, retriesLeft: Int)
     }
     
     enum BottomPanelState {
@@ -195,5 +261,6 @@ extension CapturePlantPhotoViewModel {
     struct Deps {
         let router: CapturePlantPhotoRouterProtocol
         let plantRecognitionServiceProxy: PlantRecognitionServiceProxyProtocol
+        let capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorkerProtocol
     }
 }

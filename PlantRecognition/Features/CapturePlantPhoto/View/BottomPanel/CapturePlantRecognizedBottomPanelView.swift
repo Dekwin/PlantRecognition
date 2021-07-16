@@ -117,7 +117,7 @@ private extension CapturePlantRecognizedBottomPanelView {
 // MARK: - Model
 extension CapturePlantRecognizedBottomPanelView {
     struct Model {
-        let image: UIImage
+        let image: UIImage?
         let title: String
         let subtitle: String
         let nextButtonAction: Action

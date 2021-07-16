@@ -136,7 +136,7 @@ private extension PlantCardView {
 // MARK: - Model
 extension PlantCardView {
     struct Model {
-        let image: UIImage
+        let image: UIImage?
         let title: String
         let notificationImages: [UIImage]
         let tapAction: Action

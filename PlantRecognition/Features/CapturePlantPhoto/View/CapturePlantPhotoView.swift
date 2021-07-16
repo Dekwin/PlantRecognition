@@ -32,12 +32,6 @@ final class CapturePlantPhotoView: UIView {
         return view
     }()
     
-    private lazy var videoCaptureView: UIView = {
-        let view = UIImageView(image: Asset.Images.DemoImages.cactus1.image)
-        view.contentMode = .scaleAspectFill
-        return view
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -96,7 +90,6 @@ private extension CapturePlantPhotoView {
     
     func setupSubviews() {
         addSubviews(
-            videoCaptureView,
             photoTintView,
             retryView,
             navigationGradientView,
@@ -104,7 +97,6 @@ private extension CapturePlantPhotoView {
             takePhotoBottomPanelView,
             plantRecognizedBottomPanelView
         )
-        videoCaptureView.clipsToBounds = true
     }
     
     func setupConstraints() {
@@ -118,10 +110,6 @@ private extension CapturePlantPhotoView {
         }
         
         retryView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        videoCaptureView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         

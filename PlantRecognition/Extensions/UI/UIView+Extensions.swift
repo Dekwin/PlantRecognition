@@ -22,3 +22,9 @@ extension UIView {
         layer.insertSublayer(gradient, at: 0)
     }
 }
+
+extension UIView {
+    func removeAllSubviews() {
+        subviews.forEach { $0.removeFromSuperview() }
+    }
+}

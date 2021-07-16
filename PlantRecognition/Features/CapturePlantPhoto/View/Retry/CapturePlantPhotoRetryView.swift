@@ -12,6 +12,12 @@ final class CapturePlantPhotoRetryView: UIView {
     private let appearance = Appearance()
     private lazy var retryButton: UIButton = .init()
     private lazy var tipView: TipView = .init()
+    private lazy var bgImageView: UIImageView = .init(image: nil)
+    private lazy var bgTintView: UIView = {
+        let view = UIView()
+        view.backgroundColor = appearance.bgTintColor
+        return view
+    }()
     private var retryButtonAction: Action?
     
     override init(frame: CGRect) {
@@ -31,19 +37,23 @@ final class CapturePlantPhotoRetryView: UIView {
         } else {
             tipView.isHidden = true
         }
+        
+        bgImageView.image = model.bgImage
     }
 }
 
 // MARK: - Private methods
 private extension CapturePlantPhotoRetryView {
     func commonInit() {
-        backgroundColor = appearance.bgColor
+        backgroundColor = .white
         setupSubviews()
         setupConstraints()
     }
     
     func setupSubviews() {
         addSubviews(
+            bgImageView,
+            bgTintView,
             retryButton,
             tipView
         )
@@ -53,6 +63,14 @@ private extension CapturePlantPhotoRetryView {
     }
     
     func setupConstraints() {
+        bgImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        bgTintView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         retryButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(appearance.retryButtonSize)
@@ -73,6 +91,7 @@ private extension CapturePlantPhotoRetryView {
 // MARK: - Model
 extension CapturePlantPhotoRetryView {
     struct Model {
+        let bgImage: UIImage?
         let tip: TipView.Model?
         let retryButtonAction: Action
     }
@@ -81,7 +100,7 @@ extension CapturePlantPhotoRetryView {
 // MARK: - Appearance
 private extension CapturePlantPhotoRetryView {
     struct Appearance {
-        let bgColor: UIColor = Asset.Colors.mainGreen.color.withAlphaComponent(0.2)
+        let bgTintColor: UIColor = Asset.Colors.mainGreen.color.withAlphaComponent(0.2)
         let buttonAndTipSpacing: CGFloat = .gap2XL
         let retryButtonSize: CGSize = .init(width: 90, height: 90)
     }

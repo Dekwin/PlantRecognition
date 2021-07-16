@@ -7,7 +7,7 @@ import UIKit
 
 struct PlantIdentityInfo {
     let id: String
-    let image: UIImage
+    let image: UIImage?
     let name: String
     let description: String
 }

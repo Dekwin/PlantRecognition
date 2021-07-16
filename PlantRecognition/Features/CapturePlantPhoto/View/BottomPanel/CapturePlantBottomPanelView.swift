@@ -81,8 +81,6 @@ private extension CapturePlantBottomPanelView {
             make.centerY.equalToSuperview()
         }
         
-       
-        
         let leftLayoutGuide = UILayoutGuide()
         addLayoutGuide(leftLayoutGuide)
         

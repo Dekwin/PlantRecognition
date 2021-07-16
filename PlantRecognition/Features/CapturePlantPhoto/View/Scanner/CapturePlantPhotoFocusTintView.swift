@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 final class CapturePlantPhotoFocusTintView: UIView {
     private let appearance = Appearance()
@@ -14,6 +15,12 @@ final class CapturePlantPhotoFocusTintView: UIView {
         image: Asset.Images.CapturePhoto.centerFrame.image
     )
     private lazy var photoCenterFrameScannerView = CapturePlantPhotoScanningView()
+    private lazy var bgView: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.backgroundColor = .black
+        return view
+    }()
     
     private lazy var leftOffsetBgView = buildBgView()
     private lazy var rightOffsetBgView = buildBgView()
@@ -66,12 +73,40 @@ final class CapturePlantPhotoFocusTintView: UIView {
         }
         
         switch model.state {
-        case .readyToTakePhoto:
+        case .readyToTakePhoto(let model):
             photoCenterFrameScannerView.update(with: .init(state: .stopScanning))
             photoCenterFrameScannerView.isHidden = true
-        case .scanning:
+            setupBgView(with: model.videoPreviewLayer)
+        case .scanning(let model):
             photoCenterFrameScannerView.update(with: .init(state: .startScanning))
             photoCenterFrameScannerView.isHidden = false
+            setupBgView(with: model.image)
+        }
+    }
+    
+    private func setupBgView(with videoPreviewLayer: AVCaptureVideoPreviewLayer) {
+        let previewView = UIView()
+        previewView.layer.addSublayer(videoPreviewLayer)
+        
+        bgView.removeAllSubviews()
+        
+        bgView.addSubview(previewView)
+        previewView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        previewView.layoutIfNeeded()
+        videoPreviewLayer.frame = previewView.bounds
+    }
+    
+    private func setupBgView(with image: UIImage) {
+        let view = UIImageView(image: image)
+        view.contentMode = .scaleAspectFill
+        
+        bgView.removeAllSubviews()
+        
+        bgView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 }
@@ -85,6 +120,7 @@ private extension CapturePlantPhotoFocusTintView {
     
     func setupSubviews() {
         addSubviews(
+            bgView,
             photoCenterFrameScannerView,
             verticalStackView,
             tipView
@@ -93,6 +129,10 @@ private extension CapturePlantPhotoFocusTintView {
     }
     
     func setupConstraints() {
+        bgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         verticalStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -152,8 +192,16 @@ extension CapturePlantPhotoFocusTintView {
     }
     
     enum State {
-        case readyToTakePhoto
-        case scanning
+        case readyToTakePhoto(ReadyToTakePhotoModel)
+        case scanning(ScanningModel)
+    }
+    
+    struct ScanningModel {
+        let image: UIImage
+    }
+    
+    struct ReadyToTakePhotoModel {
+        let videoPreviewLayer: AVCaptureVideoPreviewLayer
     }
 }
 

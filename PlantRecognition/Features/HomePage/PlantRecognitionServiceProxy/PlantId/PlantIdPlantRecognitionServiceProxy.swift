@@ -32,13 +32,24 @@ extension PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProto
             completion: { result in
                 switch result {
                 case .success(let suggestions):
-                    let mappedSuggestions = suggestions
+                    let minProbability: Double = 0.3 // 30%
+                    let foundSuggestion = suggestions
                         .suggestions
-                        .map { PlantRecognitionServiceProxyResult.PlantSuggestion(name: $0.plantName, probability: $0.probability) }
+                        .first { suggestion in
+                            let probability = suggestion.probability ?? 0
+                            return probability >= minProbability
+                        }
+                    
+                    let result: PlantRecognitionServiceProxyResult.ResultType = foundSuggestion.map { suggestion in
+                        .recognized(
+                            plantIdentity: .init(id: "1", image: nil, name: suggestion.plantName, description: ""),
+                            probability: suggestion.probability
+                        )
+                    } ?? .notRecognizedError
                     
                     completion(
                         .success(
-                            .init(suggestions: mappedSuggestions)
+                            .init(resultType: result)
                         )
                     )
                 case .failure(let error):
