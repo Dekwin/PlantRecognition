@@ -50,6 +50,14 @@ public enum L10n {
   }
 
   public enum TakePhoto {
+    public enum Errors {
+      public enum NotRecognized {
+        /// We were unable to recognize your plant. Try again and make sure it fits within the scan frame. You can use the tips in the upper right corner.
+        public static let subtitle = L10n.tr("Localizable", "TakePhoto.Errors.NotRecognized.subtitle")
+        /// Not found
+        public static let title = L10n.tr("Localizable", "TakePhoto.Errors.NotRecognized.title")
+      }
+    }
     public enum RetryHint {
       /// Plural format key: "%#@elements@"
       public static func attempts(_ p1: Int) -> String {

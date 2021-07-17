@@ -20,8 +20,15 @@ final class CapturePlantPhotoView: UIView {
     }()
     
     private lazy var takePhotoBottomPanelView = CapturePlantBottomPanelView()
+    
     private lazy var plantRecognizedBottomPanelView: CapturePlantRecognizedBottomPanelView = {
         let view = CapturePlantRecognizedBottomPanelView()
+        view.isHidden = true
+        return view
+    }()
+    
+    private lazy var plantNotRecognizedBottomPanelView: CapturePlantNotRecognizedBottomPanelView = {
+        let view = CapturePlantNotRecognizedBottomPanelView()
         view.isHidden = true
         return view
     }()
@@ -65,16 +72,22 @@ final class CapturePlantPhotoView: UIView {
         switch state {
         case .takePhoto(let model):
             takePhotoBottomPanelView.update(with: model)
-            
             takePhotoBottomPanelView.isHidden = false
+            
             plantRecognizedBottomPanelView.isHidden = true
+            plantNotRecognizedBottomPanelView.isHidden = true
         case .plantRecognized(let model):
             plantRecognizedBottomPanelView.update(with: model)
+            plantRecognizedBottomPanelView.isHidden = false
             
             takePhotoBottomPanelView.isHidden = true
-            plantRecognizedBottomPanelView.isHidden = false
-        case .plantRecognitionError:
-            // TODO: Implement
+            plantNotRecognizedBottomPanelView.isHidden = true
+        case .plantRecognitionError(let model):
+            plantNotRecognizedBottomPanelView.update(with: model)
+            plantNotRecognizedBottomPanelView.isHidden = false
+            
+            takePhotoBottomPanelView.isHidden = true
+            plantRecognizedBottomPanelView.isHidden = true
         break
         }
     }
@@ -95,7 +108,8 @@ private extension CapturePlantPhotoView {
             navigationGradientView,
             safeAreaBottomPanelView,
             takePhotoBottomPanelView,
-            plantRecognizedBottomPanelView
+            plantRecognizedBottomPanelView,
+            plantNotRecognizedBottomPanelView
         )
     }
     
@@ -125,6 +139,12 @@ private extension CapturePlantPhotoView {
             make.bottom.equalTo(safeAreaBottomPanelView.snp.top)
         }
         
+        plantNotRecognizedBottomPanelView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(appearance.plantNotRecognizedBottomPanelViewHeight)
+            make.bottom.equalTo(safeAreaBottomPanelView.snp.top)
+        }
+        
         safeAreaBottomPanelView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide.snp.bottom)
@@ -147,7 +167,7 @@ extension CapturePlantPhotoView {
     enum BottomPanelState {
         case takePhoto(CapturePlantBottomPanelView.Model)
         case plantRecognized(CapturePlantRecognizedBottomPanelView.Model)
-        case plantRecognitionError
+        case plantRecognitionError(CapturePlantNotRecognizedBottomPanelView.Model)
     }
 }
 
@@ -161,6 +181,7 @@ private extension CapturePlantPhotoView {
         ]
         let takePhotoBottomPanelViewHeight: CGFloat = 144.0
         let plantRecognizedBottomPanelViewHeight: CGFloat = 170.0
+        let plantNotRecognizedBottomPanelViewHeight: CGFloat = 154.0
     }
 }
 

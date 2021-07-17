@@ -34,3 +34,6 @@
 "TakePhoto.TopHint.scanning" = "Wait, scanning ...";
 
 "TakePhoto.RetryHint.attempts" = "You have %ld attempts left";
+
+"TakePhoto.Errors.NotRecognized.title" = "Not found";
+"TakePhoto.Errors.NotRecognized.subtitle" = "We were unable to recognize your plant. Try again and make sure it fits within the scan frame. You can use the tips in the upper right corner.";

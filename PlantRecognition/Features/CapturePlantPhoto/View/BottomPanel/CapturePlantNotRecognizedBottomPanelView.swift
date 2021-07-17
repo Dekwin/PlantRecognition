@@ -1,26 +1,19 @@
 //
-//  CapturePlantRecognizedBottomPanelView.swift
+//  CapturePlantNotRecognizedBottomPanelView.swift
 //  PlantRecognition
 //
-//  Created by Igor Kasyanenko on 04.07.2021.
+//  Created by Igor Kasyanenko on 17.07.2021.
 //
 
 import Foundation
 import UIKit
 
-final class CapturePlantRecognizedBottomPanelView: UIView {
+final class CapturePlantNotRecognizedBottomPanelView: UIView {
     private let appearance = Appearance()
     private lazy var bgView: UIView = {
         let view = UIView()
         view.backgroundColor = appearance.bgColor
         return view
-    }()
-    
-    private lazy var nextButton: UIButton = {
-       let button = UIButton()
-        button.setImage(Asset.Images.Components.Buttons.nextButton.image, for: .normal)
-        button.addTarget(self, action: #selector(nextTouched), for: .touchUpInside)
-        return button
     }()
     
     private lazy var plantImageView = UIImageView()
@@ -40,8 +33,6 @@ final class CapturePlantRecognizedBottomPanelView: UIView {
     private lazy var titleLabel = UILabel()
     private lazy var subtitleLabel = UILabel()
     
-    private var nextButtonAction: Action?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -57,7 +48,6 @@ final class CapturePlantRecognizedBottomPanelView: UIView {
     }
     
     func update(with model: Model) {
-        nextButtonAction = model.nextButtonAction
         plantImageView.image = model.image
         titleLabel.set(text: model.title, with: appearance.titleTextStyle)
         subtitleLabel.set(text: model.subtitle, with: appearance.subtitleTextStyle)
@@ -65,13 +55,7 @@ final class CapturePlantRecognizedBottomPanelView: UIView {
 }
 
 // MARK: - Private methods
-private extension CapturePlantRecognizedBottomPanelView {
-    
-    @objc
-    func nextTouched() {
-        nextButtonAction?()
-    }
-    
+private extension CapturePlantNotRecognizedBottomPanelView {
     func commonInit() {
         setupSubviews()
         setupConstraints()
@@ -79,8 +63,7 @@ private extension CapturePlantRecognizedBottomPanelView {
     
     func setupSubviews() {
         addSubviews(
-            bgView,
-            nextButton
+            bgView
         )
         
         bgView.addSubviews(
@@ -101,13 +84,6 @@ private extension CapturePlantRecognizedBottomPanelView {
             make.left.bottom.right.equalToSuperview()
         }
         
-        nextButton.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerY.equalTo(bgView.snp.top)
-            make.right.equalToSuperview().inset(appearance.nextButtonRightInset)
-            make.size.equalTo(appearance.nextButtonSize)
-        }
-        
         plantImageView.snp.makeConstraints { make in
             make.width.equalTo(appearance.plantImageWidth)
             make.top.bottom.left.equalToSuperview().inset(appearance.contentInsets)
@@ -122,17 +98,16 @@ private extension CapturePlantRecognizedBottomPanelView {
 }
 
 // MARK: - Model
-extension CapturePlantRecognizedBottomPanelView {
+extension CapturePlantNotRecognizedBottomPanelView {
     struct Model {
         let image: UIImage?
         let title: String
         let subtitle: String
-        let nextButtonAction: Action
     }
 }
 
 // MARK: - Appearance
-private extension CapturePlantRecognizedBottomPanelView {
+private extension CapturePlantNotRecognizedBottomPanelView {
     struct Appearance {
         let cornerRadius: CGFloat = 20
         let imageCornerRadius: CGFloat = 12

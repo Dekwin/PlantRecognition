@@ -39,8 +39,8 @@ public enum Asset {
   }
   public enum Images {
     public enum CapturePhoto {
-      public static let capturePhotoOverlay = ImageAsset(name: "CapturePhotoOverlay")
       public static let centerFrame = ImageAsset(name: "CenterFrame")
+      public static let plantNotRecognized = ImageAsset(name: "PlantNotRecognized")
       public static let scanPhoto = ImageAsset(name: "ScanPhoto")
     }
     public enum Components {

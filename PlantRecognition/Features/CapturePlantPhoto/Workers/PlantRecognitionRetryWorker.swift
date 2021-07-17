@@ -34,7 +34,6 @@ class PlantRecognitionRetryWorker {
     }
 }
 
-
 extension PlantRecognitionRetryWorker: PlantRecognitionRetryWorkerProtocol {
     var hasRecognizePlantRetryAttempts: Bool {
         recognitionRetriesLeft > 0

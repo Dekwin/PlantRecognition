@@ -206,7 +206,7 @@ private extension CapturePlantPhotoViewModel {
         case .plantRecognized(let plant):
             return .plantRecognized(buildPlantReognizedBottomPanelModel(plantIdentity: plant))
         case .recognitionError:
-            return .plantRecognitionError
+            return .plantRecognitionError(buildPlantNotReognizedBottomPanelModel())
         }
     }
     
@@ -220,6 +220,14 @@ private extension CapturePlantPhotoViewModel {
             nextButtonAction: { [weak self] in
                 self?.plantRecognizedNextButtonTouched(plantIdentity: plantIdentity)
             }
+        )
+    }
+    
+    func buildPlantNotReognizedBottomPanelModel() -> CapturePlantNotRecognizedBottomPanelView.Model {
+        return .init(
+            image: Asset.Images.CapturePhoto.plantNotRecognized.image,
+            title: L10n.TakePhoto.Errors.NotRecognized.title,
+            subtitle: L10n.TakePhoto.Errors.NotRecognized.subtitle
         )
     }
     

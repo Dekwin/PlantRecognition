@@ -34,3 +34,6 @@
 "TakePhoto.TopHint.scanning" = "Подождите, распознаём ...";
 
 "TakePhoto.RetryHint.attempts" = "У вас осталось %ld попыток";
+
+"TakePhoto.Errors.NotRecognized.title" = "Не распознано";
+"TakePhoto.Errors.NotRecognized.subtitle" = "Нам не удалось распознать растение. Попробуйте еще раз и убедитесь, что оно умещается в рамке сканирования. Ознакомьтесь с подсказками в правом верхнем углу.";
