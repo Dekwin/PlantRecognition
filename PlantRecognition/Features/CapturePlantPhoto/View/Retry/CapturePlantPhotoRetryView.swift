@@ -60,6 +60,8 @@ private extension CapturePlantPhotoRetryView {
         
         retryButton.setImage(Asset.Images.Components.Buttons.reloadButton.image, for: .normal)
         retryButton.addTarget(self, action: #selector(retryTouched), for: .touchUpInside)
+        
+        bgImageView.contentMode = .scaleAspectFill
     }
     
     func setupConstraints() {

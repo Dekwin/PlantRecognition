@@ -20,6 +20,8 @@ final class CapturePlantPhotoViewModel {
         }
     }
     
+    private var photoGalleryLastPhotoThumbImage: UIImage?
+    
     init(
         deps: Deps
     ) {
@@ -32,7 +34,10 @@ final class CapturePlantPhotoViewModel {
 extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
     func viewLoaded() {
         updateView()
-        setupLiveCameraPreview()
+        
+        loadGalleryThumbImage { [weak self] in
+            self?.setupLiveCameraPreview()
+        }
     }
     
     private func runTestFlow() {
@@ -71,8 +76,22 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
     private func buildInitialState() -> State {
         .init(
             content: .takePhotoTint(videoPreviewLayer: deps.capturePlantPhotoLivePreviewWorker.videoPreviewLayer),
-            bottomPanel: .takePhotoButtons
+            bottomPanel: .takePhotoButtons(libraryThumbImageProvider: { [weak self] in self?.photoGalleryLastPhotoThumbImage })
         )
+    }
+    
+    private func loadGalleryThumbImage(completion: @escaping Action) {
+        view?.setInterface(isLocked: true)
+        deps.libraryImagePicker.loadLastImageThumb(
+            requestLibraryAccessIfNotGranted: false
+        ) { [weak self] image in
+            guard let self = self else { return }
+            
+            self.view?.setInterface(isLocked: false)
+            self.photoGalleryLastPhotoThumbImage = image
+            self.updateView()
+            completion()
+        }
     }
 }
 
@@ -80,33 +99,42 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoLivePreviewWorkerDelegate
     func photoCaptured(result: Result<UIImage, Error>) {
         switch result {
         case .success(let image):
-            state = .init(content: .recognizing(recognizingImage: image), bottomPanel: .takePhotoButtons)
-            self.view?.setInterface(isLocked: true)
-            deps.plantRecognitionRetryWorker.recognize(sourceImage: image) { [weak self] result in
-                guard let self = self else { return }
-                self.view?.setInterface(isLocked: false)
-                switch result {
-                case .success(let recognitionResult):
-                    let retriesLeft = recognitionResult.recognitionRetriesLeft
-                    switch recognitionResult.recognitionResult.resultType {
-                    case .recognized(let plantIdentity, _):
-                        self.state = .init(
-                            content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
-                            bottomPanel: .plantRecognized(plantIdentity: plantIdentity)
-                        )
-                    case .notRecognizedError:
-                        self.state = .init(
-                            content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
-                            bottomPanel: .recognitionError
-                        )
-                    }
-                   
-                case .failure(let error):
-                    self.view?.presentAlert(error: error)
-                }
-            }
+            startPlantRecognition(plantImage: image)
         case .failure(let error):
             view?.presentAlert(error: error)
+        }
+    }
+    
+    private func startPlantRecognition(plantImage image: UIImage) {
+        state = .init(
+            content: .recognizing(recognizingImage: image),
+            bottomPanel: .takePhotoButtons(libraryThumbImageProvider: { [weak self] in self?.photoGalleryLastPhotoThumbImage })
+        )
+        
+        view?.setInterface(isLocked: true)
+        deps.plantRecognitionRetryWorker.recognize(sourceImage: image) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.view?.setInterface(isLocked: false)
+            switch result {
+            case .success(let recognitionResult):
+                let retriesLeft = recognitionResult.recognitionRetriesLeft
+                switch recognitionResult.recognitionResult.resultType {
+                case .recognized(let plantIdentity, _):
+                    self.state = .init(
+                        content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
+                        bottomPanel: .plantRecognized(plantIdentity: plantIdentity)
+                    )
+                case .notRecognizedError:
+                    self.state = .init(
+                        content: .retry(recognizedImage: image, retriesLeft: retriesLeft),
+                        bottomPanel: .recognitionError
+                    )
+                }
+               
+            case .failure(let error):
+                self.view?.presentAlert(error: error)
+            }
         }
     }
 }
@@ -114,28 +142,48 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoLivePreviewWorkerDelegate
 // MARK: - Button handlers
 private extension CapturePlantPhotoViewModel {
     func selectPhotoFromGalleryTouched() {
+        guard deps.plantRecognitionRetryWorker.hasRecognizePlantRetryAttempts else {
+            openSubscriptionsScreen()
+            return
+        }
         
+        deps.libraryImagePicker.pickImage { [weak self] result in
+            self?.loadGalleryThumbImage {
+                switch result {
+                case .success(let image):
+                    self?.startPlantRecognition(plantImage: image)
+                case .failure(let error):
+                    self?.view?.presentAlert(error: error)
+                }
+            }
+        }
     }
     
     func makeCameraPhotoTouched() {
+        guard deps.plantRecognitionRetryWorker.hasRecognizePlantRetryAttempts else {
+            openSubscriptionsScreen()
+            return
+        }
+        
         deps.capturePlantPhotoLivePreviewWorker.capturePhoto()
     }
     
     func retryTouched() {
-        let userCanRetry = deps.plantRecognitionRetryWorker.hasRecognizePlantRetryAttempts
-        
-        if userCanRetry {
-            setupInitialState()
-        } else {
-            // Do nothing
-        }
+        setupInitialState()
     }
     
     func subscriptionsButtonTouched() {
-        
+        openSubscriptionsScreen()
     }
     
     func plantRecognizedNextButtonTouched(plantIdentity: PlantIdentityInfo) {
+        
+    }
+}
+
+// MARK: - Opening screens
+private extension CapturePlantPhotoViewModel {
+    func openSubscriptionsScreen() {
         
     }
 }
@@ -201,8 +249,8 @@ private extension CapturePlantPhotoViewModel {
     func buildBottomPanelState(from state: BottomPanelState) -> CapturePlantPhotoView.BottomPanelState {
         
         switch state {
-        case .takePhotoButtons:
-            return .takePhoto(buildTakePhotoBottomPanelModel())
+        case .takePhotoButtons(let libraryThumbImageProvider):
+            return .takePhoto(buildTakePhotoBottomPanelModel(libraryThumbImage: libraryThumbImageProvider()))
         case .plantRecognized(let plant):
             return .plantRecognized(buildPlantReognizedBottomPanelModel(plantIdentity: plant))
         case .recognitionError:
@@ -231,13 +279,13 @@ private extension CapturePlantPhotoViewModel {
         )
     }
     
-    func buildTakePhotoBottomPanelModel() -> CapturePlantBottomPanelView.Model {
+    func buildTakePhotoBottomPanelModel(libraryThumbImage: UIImage?) -> CapturePlantBottomPanelView.Model {
         return .init(
             takePhotoButtonAction: { [weak self] in
                 self?.makeCameraPhotoTouched()
             },
             selectImageFromGalleryModel: .init(
-                style: .placeholderImage,
+                style: libraryThumbImage.map { .image($0) } ?? .placeholderImage ,
                 tapAction: { [weak self] in
                     self?.selectPhotoFromGalleryTouched()
                 }
@@ -270,7 +318,7 @@ extension CapturePlantPhotoViewModel {
     }
     
     enum BottomPanelState {
-        case takePhotoButtons
+        case takePhotoButtons(libraryThumbImageProvider: () -> UIImage?)
         case plantRecognized(plantIdentity: PlantIdentityInfo)
         case recognitionError
     }
@@ -279,5 +327,6 @@ extension CapturePlantPhotoViewModel {
         let router: CapturePlantPhotoRouterProtocol
         let plantRecognitionRetryWorker: PlantRecognitionRetryWorkerProtocol
         let capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorkerProtocol
+        let libraryImagePicker: LibraryImagePickerProtocol
     }
 }

@@ -16,15 +16,19 @@ final class CapturePlantPhotoFactory: CapturePlantPhotoFactoryProtocol {
         let recognitionProxy = PlantRecognitionServiceProxyFactory().create(
             isDemo: DemoHelper.shared.isDemoMode
         )
+        let libraryImagePicker = LibraryImagePicker()
         let viewModel = CapturePlantPhotoViewModel(
             deps: .init(
                 router: router,
                 plantRecognitionRetryWorker: PlantRecognitionRetryWorker(plantRecognitionServiceProxy: recognitionProxy),
-                capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorker()
+                capturePlantPhotoLivePreviewWorker: CapturePlantPhotoLivePreviewWorker(),
+                libraryImagePicker: libraryImagePicker
             )
         )
         
         let controller = CapturePlantPhotoViewController(viewModel: viewModel)
+        libraryImagePicker.presentingViewController = controller
+        
         viewModel.view = controller
         transitionHandler.wrapped = controller
         

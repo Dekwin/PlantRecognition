@@ -122,6 +122,7 @@
 		78E7213426A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */; };
 		78E7213626A234460016E226 /* PlantRecognitionRetryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7213526A234460016E226 /* PlantRecognitionRetryWorker.swift */; };
 		78E7213826A2C4F70016E226 /* CapturePlantNotRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7213726A2C4F70016E226 /* CapturePlantNotRecognizedBottomPanelView.swift */; };
+		78E7213A26A2D2E20016E226 /* LibraryImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7213926A2D2E20016E226 /* LibraryImagePicker.swift */; };
 		78E8E1FF26811177000695A9 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E1FE26811177000695A9 /* PlantCardView.swift */; };
 		78E8E201268114FD000695A9 /* CGFloat+Gaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */; };
 		78EACB9C268D037200592B0F /* CapturePlantBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */; };
@@ -277,6 +278,7 @@
 		78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoLivePreviewWorker.swift; sourceTree = "<group>"; };
 		78E7213526A234460016E226 /* PlantRecognitionRetryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionRetryWorker.swift; sourceTree = "<group>"; };
 		78E7213726A2C4F70016E226 /* CapturePlantNotRecognizedBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantNotRecognizedBottomPanelView.swift; sourceTree = "<group>"; };
+		78E7213926A2D2E20016E226 /* LibraryImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImagePicker.swift; sourceTree = "<group>"; };
 		78E8E1FE26811177000695A9 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		78E8E200268114FD000695A9 /* CGFloat+Gaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Gaps.swift"; sourceTree = "<group>"; };
 		78EACB9B268D037200592B0F /* CapturePlantBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantBottomPanelView.swift; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 			children = (
 				78E7213326A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift */,
 				78E7213526A234460016E226 /* PlantRecognitionRetryWorker.swift */,
+				78E7213926A2D2E20016E226 /* LibraryImagePicker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -1331,6 +1334,7 @@
 				78DED1B1267E640400A7BC84 /* SearchTabViewController.swift in Sources */,
 				7849E1BC266293F1003DBD19 /* UIImage+Base64.swift in Sources */,
 				78DED1AF267E640400A7BC84 /* SearchTabFactory.swift in Sources */,
+				78E7213A26A2D2E20016E226 /* LibraryImagePicker.swift in Sources */,
 				781B39F1267F51C300A90EC2 /* MainTabBarTabView.swift in Sources */,
 				786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */,
 				7849E1C42663A6F8003DBD19 /* PlantRecognitionResultView.swift in Sources */,
