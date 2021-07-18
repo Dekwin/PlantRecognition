@@ -17,7 +17,7 @@ final class MyPlantsTabFactory: MyPlantsTabFactoryProtocol {
         let viewModel = MyPlantsTabViewModel(
             deps: .init(
                 router: router,
-                plantsDataService: PlantsDataServiceFactory().create(
+                plantsDataService: MyPlantsDataServiceFactory().create(
                     isDemo: DemoHelper.shared.isDemoMode
                 )
             )

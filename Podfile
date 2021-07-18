@@ -16,6 +16,7 @@ target 'PlantRecognition' do
 
   # Network
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
   # Code generation
   pod 'SwiftGen'

@@ -58,9 +58,9 @@ final class CapturePlantRecognizedBottomPanelView: UIView {
     
     func update(with model: Model) {
         nextButtonAction = model.nextButtonAction
-        plantImageView.image = model.image
+        plantImageView.setImage(withType: model.image)
         titleLabel.set(text: model.title, with: appearance.titleTextStyle)
-        subtitleLabel.set(text: model.subtitle, with: appearance.subtitleTextStyle)
+        subtitleLabel.set(text: model.subtitle ?? "", with: appearance.subtitleTextStyle)
     }
 }
 
@@ -124,9 +124,9 @@ private extension CapturePlantRecognizedBottomPanelView {
 // MARK: - Model
 extension CapturePlantRecognizedBottomPanelView {
     struct Model {
-        let image: UIImage?
+        let image: ImageType?
         let title: String
-        let subtitle: String
+        let subtitle: String?
         let nextButtonAction: Action
     }
 }

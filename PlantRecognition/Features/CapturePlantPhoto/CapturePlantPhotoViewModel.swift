@@ -40,20 +40,6 @@ extension CapturePlantPhotoViewModel: CapturePlantPhotoViewModelProtocol {
         }
     }
     
-    private func runTestFlow() {
-        // Test
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.state.content = .recognizing(recognizingImage: Asset.Images.DemoImages.cactus1.image)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self.state = .init(
-                    content: .retry(recognizedImage: Asset.Images.DemoImages.cactus1.image, retriesLeft: 3),
-                    bottomPanel: .plantRecognized(plantIdentity: .init(id: "1", image: Asset.Images.DemoImages.cactus1.image, name: "Sansevieria", description: "Sansevieria is a genus of stemless evergreen perennial herbaceous plants of the Asparagaceae family."))
-                )
-            }
-        }
-    }
-    
     private func setupLiveCameraPreview() {
         deps.capturePlantPhotoLivePreviewWorker.initializeAndRequestCameraAccess { [weak self] result in
             switch result {

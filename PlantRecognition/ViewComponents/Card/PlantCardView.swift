@@ -32,7 +32,7 @@ final class PlantCardView: UIView {
     }
     
     func update(with model: Model) {
-        leftImageView.image = model.image
+        leftImageView.setImage(withType: model.image)
         titleLabel.set(text: model.title, with: appearance.titleStyle)
         
         setupNotifications(model.notificationImages)
@@ -136,7 +136,7 @@ private extension PlantCardView {
 // MARK: - Model
 extension PlantCardView {
     struct Model {
-        let image: UIImage?
+        let image: ImageType?
         let title: String
         let notificationImages: [UIImage]
         let tapAction: Action

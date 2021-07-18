@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct PlantDetailsUserInfo {
+    let id: String
     let plantIdentity: PlantIdentityInfo
     let notifications: [PlantNotificationInfo]
 }

@@ -80,7 +80,7 @@ extension MyPlantsTabViewModel: MyPlantsTabViewModelProtocol {
 extension MyPlantsTabViewModel {
     struct Deps {
         let router: MyPlantsTabRouterProtocol
-        let plantsDataService: PlantsDataServiceProtocol
+        let plantsDataService: MyPlantsDataServiceProtocol
     }
 }
 
