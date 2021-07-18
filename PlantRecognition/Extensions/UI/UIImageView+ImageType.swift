@@ -19,8 +19,8 @@ extension UIImageView {
         switch imageType {
         case .image(let img):
             image = img
-        case .url(let imageUrl):
-            af.setImage(withURL: imageUrl)
+        case .url(let imageUrl, let placeholderImage):
+            af.setImage(withURL: imageUrl, placeholderImage: placeholderImage)
         }
     }
 }

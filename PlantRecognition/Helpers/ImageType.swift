@@ -10,5 +10,5 @@ import UIKit
 
 enum ImageType {
     case image(UIImage)
-    case url(URL)
+    case url(imageUrl: URL, placeholderImage: UIImage?)
 }
