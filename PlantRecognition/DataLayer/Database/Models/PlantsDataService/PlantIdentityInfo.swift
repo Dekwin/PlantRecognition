@@ -7,14 +7,15 @@ import UIKit
 
 struct PlantIdentityInfo {
     let id: String
+    let updated: Date?
     let image: ImageType?
     let name: String
     let botanicalName: String?
+    let commonNames: [String]
     let description: String?
     let synonyms: [String]
     let family: String?
     let genus: String?
-    
     let emptyData: Bool
     let thumb: ImageType?
     let images: [ImageType]
@@ -25,9 +26,11 @@ struct PlantIdentityInfo {
     
     init(
         id: String,
+        updated: Date? = nil,
         image: ImageType? = nil,
         name: String,
         botanicalName: String? = nil,
+        commonNames: [String] = [],
         description: String? = nil,
         synonyms: [String] = [],
         family: String? = nil,
@@ -41,9 +44,11 @@ struct PlantIdentityInfo {
         tags: [String] = []
     ) {
         self.id = id
+        self.updated = updated
         self.image = image
         self.name = name
         self.botanicalName = botanicalName
+        self.commonNames = commonNames
         self.description = description
         self.synonyms = synonyms
         self.family = family

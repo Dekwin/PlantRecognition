@@ -80,6 +80,11 @@
 		78A67E822690C31700B61B42 /* SelectImageFromGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A67E812690C31700B61B42 /* SelectImageFromGalleryView.swift */; };
 		78A67E842690C32400B61B42 /* PhotoAttemptsVipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */; };
 		78B33435268132A200D31353 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33434268132A200D31353 /* Copyable.swift */; };
+		78BF279826A5F52400D1B7A7 /* AllPlantsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279726A5F52400D1B7A7 /* AllPlantsDataService.swift */; };
+		78BF279A26A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */; };
+		78BF279C26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279B26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift */; };
+		78BF279E26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */; };
+		78BF27A826A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */; };
 		78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */; };
 		78C4DBDC2691D535009A1E9D /* CapturePlantPhotoRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */; };
 		78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */; };
@@ -236,6 +241,11 @@
 		78A67E812690C31700B61B42 /* SelectImageFromGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageFromGalleryView.swift; sourceTree = "<group>"; };
 		78A67E832690C32400B61B42 /* PhotoAttemptsVipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAttemptsVipView.swift; sourceTree = "<group>"; };
 		78B33434268132A200D31353 /* Copyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		78BF279726A5F52400D1B7A7 /* AllPlantsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsDataService.swift; sourceTree = "<group>"; };
+		78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsDataDemoService.swift; sourceTree = "<group>"; };
+		78BF279B26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsDataServiceFactory.swift; sourceTree = "<group>"; };
+		78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsCoreDataDataService.swift; sourceTree = "<group>"; };
+		78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsJsonToCoreDataMapper.swift; sourceTree = "<group>"; };
 		78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoScanningView.swift; sourceTree = "<group>"; };
 		78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoRetryView.swift; sourceTree = "<group>"; };
 		78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantRecognizedBottomPanelView.swift; sourceTree = "<group>"; };
@@ -362,6 +372,7 @@
 		782DD970265AA2B100FDE44B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78BF279F26A5FEFB00D1B7A7 /* PlantsData */,
 				7843D53C267FBAF400768083 /* Fonts */,
 				78DED1D2267E7E8300A7BC84 /* Localizations */,
 				782DD971265AA2EA00FDE44B /* Images.xcassets */,
@@ -399,6 +410,7 @@
 		783B6DEA268655C00024C040 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				78BF279626A5F50400D1B7A7 /* AllPlantsDataService */,
 				783B6DED268656960024C040 /* MyPlantsDataService */,
 			);
 			path = Services;
@@ -669,6 +681,33 @@
 				78C7259A2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift */,
 			);
 			path = PlantRecognitionServiceProxy;
+			sourceTree = "<group>";
+		};
+		78BF279626A5F50400D1B7A7 /* AllPlantsDataService */ = {
+			isa = PBXGroup;
+			children = (
+				78BF27A626A60BBC00D1B7A7 /* CoreData */,
+				78BF279726A5F52400D1B7A7 /* AllPlantsDataService.swift */,
+				78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */,
+				78BF279B26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift */,
+			);
+			path = AllPlantsDataService;
+			sourceTree = "<group>";
+		};
+		78BF279F26A5FEFB00D1B7A7 /* PlantsData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlantsData;
+			sourceTree = "<group>";
+		};
+		78BF27A626A60BBC00D1B7A7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */,
+				78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		78C4DBD72691B7D5009A1E9D /* Scanner */ = {
@@ -1268,12 +1307,14 @@
 				78DED1A9267E639500A7BC84 /* MyPlantsTabViewModel.swift in Sources */,
 				78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */,
 				78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */,
+				78BF279826A5F52400D1B7A7 /* AllPlantsDataService.swift in Sources */,
 				7843D537267FB77800768083 /* UILabel+StyledText.swift in Sources */,
 				78989D42265EEE0200D5DAC5 /* PlantRecognitionDemoServiceProxy.swift in Sources */,
 				78FB92B9265A93AF00986DA5 /* AppEntryPointFactory.swift in Sources */,
 				783B6DE626864E2F0024C040 /* PlantCardTableViewCell.swift in Sources */,
 				78DED1BA267E641100A7BC84 /* SettingsTabRouter.swift in Sources */,
 				78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */,
+				78BF27A826A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift in Sources */,
 				7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */,
 				78C4DBED26924ED9009A1E9D /* PlantIdentityInfo.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
@@ -1286,6 +1327,7 @@
 				7849E1BE266294B6003DBD19 /* PlantIdPlantRecognitionServiceProxy.swift in Sources */,
 				7893AB9226935C7000320C99 /* ImageAssets.swift in Sources */,
 				78CF13CC265A990200D5815F /* HomePageViewController.swift in Sources */,
+				78BF279C26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift in Sources */,
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
 				78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
@@ -1307,6 +1349,7 @@
 				78E1B7AF2682687800A491AD /* InfoCardView.swift in Sources */,
 				78E1B7B626826F9700A491AD /* MyPlantsTabNoPlantsYetView.swift in Sources */,
 				78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */,
+				78BF279A26A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift in Sources */,
 				7849E1C82663AEE8003DBD19 /* PlantRecognitionServiceProxyResult.swift in Sources */,
 				78E7213426A1FEDD0016E226 /* CapturePlantPhotoLivePreviewWorker.swift in Sources */,
 				784AA7D02683B3C0006EBC06 /* MyPlantsListView.swift in Sources */,
@@ -1318,6 +1361,7 @@
 				78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */,
 				7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */,
 				782DD96C265A9FE700FDE44B /* HomePageView.swift in Sources */,
+				78BF279E26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift in Sources */,
 				78DED1C8267E64AA00A7BC84 /* MainTabBarViewModel.swift in Sources */,
 				78DED1B3267E640400A7BC84 /* SearchTabViewModel.swift in Sources */,
 				78DED1BD267E641100A7BC84 /* SettingsTabViewModel.swift in Sources */,
