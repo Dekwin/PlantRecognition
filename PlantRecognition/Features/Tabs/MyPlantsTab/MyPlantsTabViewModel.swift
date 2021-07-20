@@ -109,7 +109,7 @@ private extension MyPlantsTabViewModel {
     func buildMyPlantsModel(from plants: [PlantDetailsUserInfo]) -> MyPlantsListView.Model {
         let plantModels: [PlantCardView.Model] = plants.map { plantInfo in
             return .init(
-                image: plantInfo.plantIdentity.image,
+                image: plantInfo.plantIdentity.thumb,
                 title: plantInfo.plantIdentity.name,
                 notificationImages: plantInfo.notifications.map { $0.type.image },
                 tapAction: { [weak self] in

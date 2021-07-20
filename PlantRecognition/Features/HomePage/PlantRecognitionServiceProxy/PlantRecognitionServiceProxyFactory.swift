@@ -12,7 +12,13 @@ final class PlantRecognitionServiceProxyFactory {
         return isDemo
             ? PlantRecognitionDemoServiceProxy()
             : PlantIdPlantRecognitionServiceProxy(
-                plantIdService: PlantIdService()
+                deps: .init(
+                    allPlantsDataService: AllPlantsCoreDataDataService(
+                        coreDataStackService: CoreDataStackService.shared,
+                        initializationWorker: CoreDataInitializationWorker.shared
+                    ),
+                    plantIdService: PlantIdService()
+                )
             )
     }
 }

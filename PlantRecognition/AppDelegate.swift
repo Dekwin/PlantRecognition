@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupFrameworks()
-        
         setupWindow()
+        setupDatabase()
         
         return true
     }
@@ -39,6 +39,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupFrameworks() {
         FirebaseApp.configure()
     }
-
+    
+    private func setupDatabase() {
+        let worker = CoreDataInitializationWorker.shared
+        let shouldReinitializeDbWithData = !worker.isDataInitialized
+        
+        if shouldReinitializeDbWithData {
+            worker.initialize { result in
+                switch result {
+                case .success:
+                    print("Database initialized")
+                case .failure(let error):
+                    print("Database not initialized")
+                    print(error)
+                }
+            }
+        }
+    }
 }
-

@@ -12,6 +12,7 @@
         <attribute name="synonyms" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="tags" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="thumb" optional="YES" attributeType="URI"/>
+        <attribute name="thumbImageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="updatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -20,6 +21,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CDPlantIdentityInfo" positionX="-63" positionY="-18" width="128" height="209"/>
+        <element name="CDPlantIdentityInfo" positionX="-63" positionY="-18" width="128" height="224"/>
     </elements>
 </model>

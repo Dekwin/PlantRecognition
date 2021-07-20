@@ -248,7 +248,7 @@ private extension CapturePlantPhotoViewModel {
         plantIdentity: PlantIdentityInfo
     ) -> CapturePlantRecognizedBottomPanelView.Model {
         return .init(
-            image: plantIdentity.image,
+            image: plantIdentity.thumb,
             title: plantIdentity.name,
             subtitle: plantIdentity.description,
             nextButtonAction: { [weak self] in

@@ -14,6 +14,9 @@ protocol AllPlantsJsonMapperProtocol: AnyObject {
 
 class AllPlantsJsonMapper {
     private let plantsListFileName = "plants_with_details_list_with_replaced_images_path"
+    
+    // full example: "http://novadosoft.com/plant-recognition-2021/data/../data/resources/R2V0dHlJbW-GettyImages-1142656507-49f5b21d3e294b939fc0d9c1c0aa72b1.jpg"
+    private let imagesBaseUrl = "http://novadosoft.com/plant-recognition-2021/data/"
 }
 
 extension AllPlantsJsonMapper: AllPlantsJsonMapperProtocol {
@@ -26,6 +29,7 @@ extension AllPlantsJsonMapper: AllPlantsJsonMapperProtocol {
             DispatchQueue.main.async {
                 completion(itemsResult)
             }
+            "http://novadosoft.com/plant-recognition-2021/data/../data/resources/R2V0dHlJbW-GettyImages-1142656507-49f5b21d3e294b939fc0d9c1c0aa72b1.jpg"
         }
     }
 }
@@ -65,8 +69,15 @@ private extension AllPlantsJsonMapper {
             return nil
         }
         
+        let thumb = plantDict[PlantKeys.thumb] as? String
+        let thumbImage: ImageType? = thumb
+            .map { imagesBaseUrl + $0 }
+            .map { URL(string: $0) }?
+            .map { .url(imageUrl: $0, placeholderImage: nil) }
+        
         let plant = PlantIdentityInfo(
             id: String(id),
+            thumb: thumbImage,
             name: name,
             botanicalName: plantDict[PlantKeys.botanicalName] as? String
         )
@@ -80,6 +91,7 @@ private extension AllPlantsJsonMapper {
         static let id = "id"
         static let name = "name"
         static let botanicalName = "botanicalName"
+        static let thumb = "thumb"
     }
     
     enum ParseError: Error {

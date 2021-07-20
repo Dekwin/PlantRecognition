@@ -25,7 +25,7 @@ private extension AllPlantsDataDemoService {
     enum DemoData {
         static let plant = PlantIdentityInfo(
             id: "1",
-            image: .image(Asset.Images.DemoImages.cactus1.image),
+            thumb: .image(Asset.Images.DemoImages.cactus1.image),
             name: "cactus"
         )
     }

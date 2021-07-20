@@ -64,7 +64,7 @@ extension PlantRecognitionRetryWorker: PlantRecognitionRetryWorkerProtocol {
                 case .recognized(let plantIdentity, let probability):
                     completion(
                         .success(
-                            .init(recognitionRetriesLeft: self.recognitionRetriesLeft, canRetryAgain: self.hasRecognizePlantRetryAttempts, recognitionResult: .init(resultType: .recognized(plantIdentity: plantIdentity.createCopy(withNewImage: .image(sourceImage)), probability: probability)))
+                            .init(recognitionRetriesLeft: self.recognitionRetriesLeft, canRetryAgain: self.hasRecognizePlantRetryAttempts, recognitionResult: .init(resultType: .recognized(plantIdentity: plantIdentity, probability: probability)))
                         )
                     )
                 }
@@ -82,7 +82,7 @@ extension PlantRecognitionRetryWorker {
 }
 
 private extension PlantIdentityInfo {
-    func createCopy(withNewImage image: ImageType) -> PlantIdentityInfo {
-        .init(id: id, image: image, name: name, description: description)
+    func createCopy(withNewThumb thumb: ImageType) -> PlantIdentityInfo {
+        .init(id: id, thumb: thumb, name: name, description: description)
     }
 }

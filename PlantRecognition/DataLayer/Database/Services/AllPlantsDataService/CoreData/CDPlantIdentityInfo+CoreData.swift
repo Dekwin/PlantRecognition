@@ -7,10 +7,24 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 extension CDPlantIdentityInfo {
     func update(with plant: PlantIdentityInfo) {
         id = plant.id
+        
+        switch plant.thumb {
+        case .url(let imageUrl, _):
+            thumbImageData = nil
+            thumb = imageUrl
+        case .image(let image):
+            thumbImageData = image.jpegData(compressionQuality: 1)
+            thumb = nil
+        case nil:
+            thumbImageData = nil
+            thumb = nil
+        }
+        
         name = plant.name
         botanicalName = plant.botanicalName
     }
@@ -18,8 +32,18 @@ extension CDPlantIdentityInfo {
     func toDTO() -> PlantIdentityInfo? {
         guard let id = id, let name = name else { return nil }
         
+        let thumb: ImageType?
+        if let thumbUrl = self.thumb {
+            thumb = .url(imageUrl: thumbUrl, placeholderImage: nil)
+        } else if let thumbImageData = self.thumbImageData, let image = UIImage(data: thumbImageData) {
+            thumb = .image(image)
+        } else {
+            thumb = nil
+        }
+        
         return .init(
             id: id,
+            thumb: thumb,
             name: name,
             botanicalName: botanicalName
         )

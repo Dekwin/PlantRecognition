@@ -8,7 +8,7 @@ import UIKit
 struct PlantIdentityInfo {
     let id: String
     let updated: Date?
-    let image: ImageType?
+    let thumb: ImageType?
     let name: String
     let botanicalName: String?
     let commonNames: [String]
@@ -17,7 +17,6 @@ struct PlantIdentityInfo {
     let family: String?
     let genus: String?
     let emptyData: Bool
-    let thumb: ImageType?
     let images: [ImageType]
     let profile: [ProfileItem]
     let data: [DataItem]
@@ -27,7 +26,7 @@ struct PlantIdentityInfo {
     init(
         id: String,
         updated: Date? = nil,
-        image: ImageType? = nil,
+        thumb: ImageType? = nil,
         name: String,
         botanicalName: String? = nil,
         commonNames: [String] = [],
@@ -36,7 +35,6 @@ struct PlantIdentityInfo {
         family: String? = nil,
         genus: String? = nil,
         emptyData: Bool = false,
-        thumb: ImageType? = nil,
         images: [ImageType] = [],
         profile: [PlantIdentityInfo.ProfileItem] = [],
         data: [PlantIdentityInfo.DataItem] = [],
@@ -45,7 +43,7 @@ struct PlantIdentityInfo {
     ) {
         self.id = id
         self.updated = updated
-        self.image = image
+        self.thumb = thumb
         self.name = name
         self.botanicalName = botanicalName
         self.commonNames = commonNames
@@ -54,7 +52,6 @@ struct PlantIdentityInfo {
         self.family = family
         self.genus = genus
         self.emptyData = emptyData
-        self.thumb = thumb
         self.images = images
         self.profile = profile
         self.data = data
