@@ -64,6 +64,10 @@
 		786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */; };
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
+		78792ED226A6168800508253 /* plants_with_details_list_with_replaced_images_path.json in Resources */ = {isa = PBXBuildFile; fileRef = 78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */; };
+		78825B8326A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8226A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift */; };
+		78825B8526A71EC200AAD32F /* CoreDataStackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8426A71EC200AAD32F /* CoreDataStackService.swift */; };
+		78825B8726A7272D00AAD32F /* CoreDataInitializationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8626A7272D00AAD32F /* CoreDataInitializationWorker.swift */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
 		7893AB9226935C7000320C99 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893AB9126935C7000320C99 /* ImageAssets.swift */; };
 		7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */; };
@@ -84,7 +88,8 @@
 		78BF279A26A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */; };
 		78BF279C26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279B26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift */; };
 		78BF279E26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */; };
-		78BF27A826A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */; };
+		78BF27A826A60BF200D1B7A7 /* AllPlantsJsonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF27A726A60BF200D1B7A7 /* AllPlantsJsonMapper.swift */; };
+		78BF27AC26A60F3300D1B7A7 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78BF27AA26A60F3300D1B7A7 /* Database.xcdatamodeld */; };
 		78C4DBD92691B801009A1E9D /* CapturePlantPhotoScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */; };
 		78C4DBDC2691D535009A1E9D /* CapturePlantPhotoRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */; };
 		78C4DBDE2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */; };
@@ -225,6 +230,10 @@
 		786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestions.swift; sourceTree = "<group>"; };
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
+		78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plants_with_details_list_with_replaced_images_path.json; sourceTree = "<group>"; };
+		78825B8226A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlantIdentityInfo+CoreData.swift"; sourceTree = "<group>"; };
+		78825B8426A71EC200AAD32F /* CoreDataStackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackService.swift; sourceTree = "<group>"; };
+		78825B8626A7272D00AAD32F /* CoreDataInitializationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInitializationWorker.swift; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 		7893AB9126935C7000320C99 /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBgGradientView.swift; sourceTree = "<group>"; };
@@ -245,7 +254,8 @@
 		78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsDataDemoService.swift; sourceTree = "<group>"; };
 		78BF279B26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsDataServiceFactory.swift; sourceTree = "<group>"; };
 		78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsCoreDataDataService.swift; sourceTree = "<group>"; };
-		78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsJsonToCoreDataMapper.swift; sourceTree = "<group>"; };
+		78BF27A726A60BF200D1B7A7 /* AllPlantsJsonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsJsonMapper.swift; sourceTree = "<group>"; };
+		78BF27AB26A60F3300D1B7A7 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		78C4DBD82691B801009A1E9D /* CapturePlantPhotoScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoScanningView.swift; sourceTree = "<group>"; };
 		78C4DBDB2691D535009A1E9D /* CapturePlantPhotoRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantPhotoRetryView.swift; sourceTree = "<group>"; };
 		78C4DBDD2691D9DB009A1E9D /* CapturePlantRecognizedBottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePlantRecognizedBottomPanelView.swift; sourceTree = "<group>"; };
@@ -372,6 +382,7 @@
 		782DD970265AA2B100FDE44B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78BF27A926A60EEB00D1B7A7 /* Database */,
 				78BF279F26A5FEFB00D1B7A7 /* PlantsData */,
 				7843D53C267FBAF400768083 /* Fonts */,
 				78DED1D2267E7E8300A7BC84 /* Localizations */,
@@ -686,6 +697,7 @@
 		78BF279626A5F50400D1B7A7 /* AllPlantsDataService */ = {
 			isa = PBXGroup;
 			children = (
+				78BF27A726A60BF200D1B7A7 /* AllPlantsJsonMapper.swift */,
 				78BF27A626A60BBC00D1B7A7 /* CoreData */,
 				78BF279726A5F52400D1B7A7 /* AllPlantsDataService.swift */,
 				78BF279926A5F66D00D1B7A7 /* AllPlantsDataDemoService.swift */,
@@ -697,6 +709,7 @@
 		78BF279F26A5FEFB00D1B7A7 /* PlantsData */ = {
 			isa = PBXGroup;
 			children = (
+				78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */,
 			);
 			path = PlantsData;
 			sourceTree = "<group>";
@@ -705,9 +718,19 @@
 			isa = PBXGroup;
 			children = (
 				78BF279D26A5F97A00D1B7A7 /* AllPlantsCoreDataDataService.swift */,
-				78BF27A726A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift */,
+				78825B8226A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift */,
+				78825B8426A71EC200AAD32F /* CoreDataStackService.swift */,
+				78825B8626A7272D00AAD32F /* CoreDataInitializationWorker.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		78BF27A926A60EEB00D1B7A7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				78BF27AA26A60F3300D1B7A7 /* Database.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		78C4DBD72691B7D5009A1E9D /* Scanner */ = {
@@ -1118,6 +1141,7 @@
 				78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */,
 				7843D55D267FBB0100768083 /* FiraSans-SemiBold.ttf in Resources */,
 				78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */,
+				78792ED226A6168800508253 /* plants_with_details_list_with_replaced_images_path.json in Resources */,
 				7843D561267FBB0100768083 /* FiraSans-Italic.ttf in Resources */,
 				7843D559267FBB0100768083 /* FiraSans-BlackItalic.ttf in Resources */,
 				782DD972265AA2EA00FDE44B /* Images.xcassets in Resources */,
@@ -1300,10 +1324,12 @@
 				7849E1A72662674C003DBD19 /* AlertPresentable.swift in Sources */,
 				78DED1A8267E639500A7BC84 /* MyPlantsTabView.swift in Sources */,
 				783B6DF82686618A0024C040 /* DemoHelper.swift in Sources */,
+				78825B8526A71EC200AAD32F /* CoreDataStackService.swift in Sources */,
 				78DED1C6267E64AA00A7BC84 /* MainTabBarViewController.swift in Sources */,
 				78C7259B2663B2E8005AA717 /* PlantRecognitionServiceProxyFactory.swift in Sources */,
 				78CF13CE265A991300D5815F /* HomePageFactory.swift in Sources */,
 				78DED1C4267E64AA00A7BC84 /* MainTabBarFactory.swift in Sources */,
+				78825B8326A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift in Sources */,
 				78DED1A9267E639500A7BC84 /* MyPlantsTabViewModel.swift in Sources */,
 				78DED1CA267E688D00A7BC84 /* MainTabBarTabs.swift in Sources */,
 				78DED1B9267E641100A7BC84 /* SettingsTabFactory.swift in Sources */,
@@ -1314,7 +1340,7 @@
 				783B6DE626864E2F0024C040 /* PlantCardTableViewCell.swift in Sources */,
 				78DED1BA267E641100A7BC84 /* SettingsTabRouter.swift in Sources */,
 				78C725A12663B626005AA717 /* AlertLoaderPresentable.swift in Sources */,
-				78BF27A826A60BF200D1B7A7 /* AllPlantsJsonToCoreDataMapper.swift in Sources */,
+				78BF27A826A60BF200D1B7A7 /* AllPlantsJsonMapper.swift in Sources */,
 				7897B2D826888557005FF62C /* CapturePlantPhotoView.swift in Sources */,
 				78C4DBED26924ED9009A1E9D /* PlantIdentityInfo.swift in Sources */,
 				782D0634265C23CA001DE889 /* HomePageViewModel.swift in Sources */,
@@ -1330,6 +1356,7 @@
 				78BF279C26A5F74800D1B7A7 /* AllPlantsDataServiceFactory.swift in Sources */,
 				78E1B7BB26827CAB00A491AD /* DefaultButton.swift in Sources */,
 				78C4DBE626921EE0009A1E9D /* UIView+Corners.swift in Sources */,
+				78825B8726A7272D00AAD32F /* CoreDataInitializationWorker.swift in Sources */,
 				7849E1A9266267D6003DBD19 /* UIViewController+AlertPresentable.swift in Sources */,
 				78E7213E26A4B8E70016E226 /* UIImageView+ImageType.swift in Sources */,
 				78DED1D8267E846100A7BC84 /* LocalizationStrings.swift in Sources */,
@@ -1357,6 +1384,7 @@
 				783B6DF2268657F40024C040 /* PlantDetailsUserInfo.swift in Sources */,
 				78DED1BB267E641100A7BC84 /* SettingsTabViewController.swift in Sources */,
 				78E7213826A2C4F70016E226 /* CapturePlantNotRecognizedBottomPanelView.swift in Sources */,
+				78BF27AC26A60F3300D1B7A7 /* Database.xcdatamodeld in Sources */,
 				78989D3C265EE78400D5DAC5 /* PlantIdIdentifyRequest.swift in Sources */,
 				78DED1A5267E639500A7BC84 /* MyPlantsTabFactory.swift in Sources */,
 				7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */,
@@ -1757,6 +1785,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78BF27AA26A60F3300D1B7A7 /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78BF27AB26A60F3300D1B7A7 /* Database.xcdatamodel */,
+			);
+			currentVersion = 78BF27AB26A60F3300D1B7A7 /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 78FB927B265A915800986DA5 /* Project object */;
 }

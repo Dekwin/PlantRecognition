@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDPlantIdentityInfo" representedClassName="CDPlantIdentityInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="botanicalName" optional="YES" attributeType="String"/>
+        <attribute name="commonNames" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="genus" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="images" optional="YES" attributeType="Transformable" customClassName="[URL]"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="synonyms" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="thumb" optional="YES" attributeType="URI"/>
+        <attribute name="updatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="CDPlantIdentityInfo" positionX="-63" positionY="-18" width="128" height="209"/>
+    </elements>
+</model>

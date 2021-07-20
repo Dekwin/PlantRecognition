@@ -14,8 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        FirebaseApp.configure()
+        setupFrameworks()
         
         setupWindow()
         
@@ -35,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// 5. Set the window and call makeKeyAndVisible()
         self.window = window
         window.makeKeyAndVisible()
+    }
+
+    private func setupFrameworks() {
+        FirebaseApp.configure()
     }
 
 }

@@ -11,6 +11,9 @@ class AllPlantsDataServiceFactory {
     func create(isDemo: Bool) -> AllPlantsDataServiceProtocol {
         return isDemo
             ? AllPlantsDataDemoService()
-            : AllPlantsDataDemoService()
+            : AllPlantsCoreDataDataService(
+                coreDataStackService: CoreDataStackService.shared,
+                initializationWorker: CoreDataInitializationWorker.shared
+            )
     }
 }
