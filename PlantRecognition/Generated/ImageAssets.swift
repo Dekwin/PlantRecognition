@@ -79,6 +79,12 @@ public enum Asset {
       public static let selectedSearch = ImageAsset(name: "SelectedSearch")
       public static let selectedSetting = ImageAsset(name: "SelectedSetting")
     }
+    public enum SplashScreen {
+      public static let splashBgGradient = ImageAsset(name: "SplashBgGradient")
+      public static let splashCenterImage = ImageAsset(name: "SplashCenterImage")
+      public static let splashTextImg = ImageAsset(name: "SplashTextImg")
+      public static let splashTopIcon = ImageAsset(name: "SplashTopIcon")
+    }
     public enum TabBar {
       public static let tabBarBg = ImageAsset(name: "TabBarBg")
     }
