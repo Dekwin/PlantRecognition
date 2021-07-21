@@ -73,13 +73,14 @@ private extension AllPlantsJsonMapper {
         let thumbImage: ImageType? = thumb
             .map { imagesBaseUrl + $0 }
             .map { URL(string: $0) }?
-            .map { .url(imageUrl: $0, placeholderImage: nil) }
+            .map { .url(imageUrl: $0, placeholderImage: Asset.Images.Components.plantPlaceholderImage.image) }
         
         let plant = PlantIdentityInfo(
             id: String(id),
             thumb: thumbImage,
             name: name,
-            botanicalName: plantDict[PlantKeys.botanicalName] as? String
+            botanicalName: plantDict[PlantKeys.botanicalName] as? String,
+            description: plantDict[PlantKeys.description] as? String
         )
         
         return plant
@@ -92,6 +93,7 @@ private extension AllPlantsJsonMapper {
         static let name = "name"
         static let botanicalName = "botanicalName"
         static let thumb = "thumb"
+        static let description = "description"
     }
     
     enum ParseError: Error {

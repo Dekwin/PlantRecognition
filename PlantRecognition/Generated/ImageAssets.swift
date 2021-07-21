@@ -58,6 +58,7 @@ public enum Asset {
       public enum Cards {
         public static let cardBg = ImageAsset(name: "CardBg")
       }
+      public static let plantPlaceholderImage = ImageAsset(name: "PlantPlaceholderImage")
     }
     public enum DemoImages {
       public static let demoPlant = ImageAsset(name: "DemoPlant")

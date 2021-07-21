@@ -32,8 +32,8 @@ extension PlantIdPlantRecognitionServiceProxy: PlantRecognitionServiceProxyProto
                 
                 let botanicalName = foundSuggestion.plantName
                 
-                self?.deps.allPlantsDataService.getPlant(
-                    byBotanicalName: botanicalName,
+                self?.deps.allPlantsDataService.findPlant(
+                    matchingName: botanicalName,
                     completion: { result in
                         guard let self = self else { return }
                         
@@ -80,7 +80,7 @@ private extension PlantIdPlantRecognitionServiceProxy {
     func buildPlantIdentity(from suggestion: PlantIdSuggestion, plantOriginalPhoto: UIImage) -> PlantIdentityInfo {
         let thumb: ImageType?
         if let thumbUrl = suggestion.plantDetails?.wikiImage?.value {
-            thumb = .url(imageUrl: thumbUrl, placeholderImage: nil)
+            thumb = .url(imageUrl: thumbUrl, placeholderImage: Asset.Images.Components.plantPlaceholderImage.image)
         } else {
             thumb = .image(plantOriginalPhoto)
         }

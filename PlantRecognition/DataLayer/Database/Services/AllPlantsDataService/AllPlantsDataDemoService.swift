@@ -12,6 +12,10 @@ class AllPlantsDataDemoService {
 }
 
 extension AllPlantsDataDemoService: AllPlantsDataServiceProtocol {
+    func findPlant(matchingName name: String, completion: @escaping (Result<PlantIdentityInfo?, Error>) -> Void) {
+        completion(.success(DemoData.plant))
+    }
+    
     func getPlant(byId id: String, completion: @escaping (Result<PlantIdentityInfo?, Error>) -> Void) {
         completion(.success(DemoData.plant))
     }

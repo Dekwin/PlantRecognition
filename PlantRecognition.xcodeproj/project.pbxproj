@@ -64,10 +64,10 @@
 		786F571B265D9A0E004E45EF /* PlantIdSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */; };
 		786F571D265D9A39004E45EF /* PlantIdSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */; };
 		786F5721265D9ABF004E45EF /* PlantIdServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */; };
-		78792ED226A6168800508253 /* plants_with_details_list_with_replaced_images_path.json in Resources */ = {isa = PBXBuildFile; fileRef = 78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */; };
 		78825B8326A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8226A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift */; };
 		78825B8526A71EC200AAD32F /* CoreDataStackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8426A71EC200AAD32F /* CoreDataStackService.swift */; };
 		78825B8726A7272D00AAD32F /* CoreDataInitializationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825B8626A7272D00AAD32F /* CoreDataInitializationWorker.swift */; };
+		78825B8926A8857000AAD32F /* plants_with_details_list_with_replaced_images_path.json in Resources */ = {isa = PBXBuildFile; fileRef = 78825B8826A8857000AAD32F /* plants_with_details_list_with_replaced_images_path.json */; };
 		7891EE79265D7D6A005BEAE1 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891EE78265D7D6A005BEAE1 /* Transitionable.swift */; };
 		7893AB9226935C7000320C99 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893AB9126935C7000320C99 /* ImageAssets.swift */; };
 		7897B2CD26878DBB005FF62C /* SearchTabBgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */; };
@@ -230,10 +230,10 @@
 		786F571A265D9A0E004E45EF /* PlantIdSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestions.swift; sourceTree = "<group>"; };
 		786F571C265D9A39004E45EF /* PlantIdSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdSuggestion.swift; sourceTree = "<group>"; };
 		786F5720265D9ABF004E45EF /* PlantIdServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIdServiceProtocol.swift; sourceTree = "<group>"; };
-		78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plants_with_details_list_with_replaced_images_path.json; sourceTree = "<group>"; };
 		78825B8226A71DA300AAD32F /* CDPlantIdentityInfo+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlantIdentityInfo+CoreData.swift"; sourceTree = "<group>"; };
 		78825B8426A71EC200AAD32F /* CoreDataStackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackService.swift; sourceTree = "<group>"; };
 		78825B8626A7272D00AAD32F /* CoreDataInitializationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInitializationWorker.swift; sourceTree = "<group>"; };
+		78825B8826A8857000AAD32F /* plants_with_details_list_with_replaced_images_path.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plants_with_details_list_with_replaced_images_path.json; sourceTree = "<group>"; };
 		7891EE78265D7D6A005BEAE1 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 		7893AB9126935C7000320C99 /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		7897B2CC26878DBB005FF62C /* SearchTabBgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBgGradientView.swift; sourceTree = "<group>"; };
@@ -709,7 +709,7 @@
 		78BF279F26A5FEFB00D1B7A7 /* PlantsData */ = {
 			isa = PBXGroup;
 			children = (
-				78792ED126A6168800508253 /* plants_with_details_list_with_replaced_images_path.json */,
+				78825B8826A8857000AAD32F /* plants_with_details_list_with_replaced_images_path.json */,
 			);
 			path = PlantsData;
 			sourceTree = "<group>";
@@ -1141,7 +1141,7 @@
 				78FB9293265A915A00986DA5 /* LaunchScreen.storyboard in Resources */,
 				7843D55D267FBB0100768083 /* FiraSans-SemiBold.ttf in Resources */,
 				78DED1DB267E862700A7BC84 /* Localizable.strings in Resources */,
-				78792ED226A6168800508253 /* plants_with_details_list_with_replaced_images_path.json in Resources */,
+				78825B8926A8857000AAD32F /* plants_with_details_list_with_replaced_images_path.json in Resources */,
 				7843D561267FBB0100768083 /* FiraSans-Italic.ttf in Resources */,
 				7843D559267FBB0100768083 /* FiraSans-BlackItalic.ttf in Resources */,
 				782DD972265AA2EA00FDE44B /* Images.xcassets in Resources */,
@@ -1619,7 +1619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
@@ -1642,7 +1642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 86PK8S9X9K;
 				INFOPLIST_FILE = PlantRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

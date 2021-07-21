@@ -69,4 +69,24 @@ extension AllPlantsCoreDataDataService: AllPlantsDataServiceProtocol {
             }
         }
     }
+    
+    func findPlant(matchingName name: String, completion: @escaping (Result<PlantIdentityInfo?, Error>) -> Void) {
+        let request: NSFetchRequest<CDPlantIdentityInfo> = CDPlantIdentityInfo.fetchRequest()
+        request.predicate = NSPredicate(format: "name LIKE[cd] %@ OR botanicalName LIKE[cd] %@", name, name)
+        
+        context.perform { [weak self] in
+            guard let self = self else { return }
+            do {
+                let result = try self.context.fetch(request)
+                let dto = result.first?.toDTO()
+                DispatchQueue.main.async {
+                    completion(.success(dto))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }

@@ -27,6 +27,7 @@ extension CDPlantIdentityInfo {
         
         name = plant.name
         botanicalName = plant.botanicalName
+        descriptionText = plant.description
     }
     
     func toDTO() -> PlantIdentityInfo? {
@@ -34,7 +35,7 @@ extension CDPlantIdentityInfo {
         
         let thumb: ImageType?
         if let thumbUrl = self.thumb {
-            thumb = .url(imageUrl: thumbUrl, placeholderImage: nil)
+            thumb = .url(imageUrl: thumbUrl, placeholderImage: Asset.Images.Components.plantPlaceholderImage.image)
         } else if let thumbImageData = self.thumbImageData, let image = UIImage(data: thumbImageData) {
             thumb = .image(image)
         } else {
@@ -45,7 +46,8 @@ extension CDPlantIdentityInfo {
             id: id,
             thumb: thumb,
             name: name,
-            botanicalName: botanicalName
+            botanicalName: botanicalName,
+            description: descriptionText
         )
     }
 }
